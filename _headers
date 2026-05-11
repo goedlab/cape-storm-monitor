@@ -1,0 +1,5 @@
+/data/data.json
+  Cache-Control: no-cache, max-age=0
+
+/data/geojson.json
+  Cache-Control: no-cache, max-age=0

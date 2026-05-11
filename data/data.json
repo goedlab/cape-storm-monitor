@@ -1,12 +1,12 @@
 {
-  "status": "WARNING",
-  "last_updated": "2026-05-11T09:47:41+02:00",
-  "summary": "Strong NW winds expected. Seas 5–6m. Avoid coastal roads.",
+  "status": "EMERGENCY",
+  "last_updated": "2026-05-11T12:28:00+02:00",
+  "summary": "Flash flooding Strand/Gordon's Bay. Storm surge warning Table Bay 15:00–18:00. Gale force winds 100km/h+.",
   "stats": {
-    "active_incidents": 4,
-    "roads_closed": 2,
-    "shelters_open": 1,
-    "areas_affected": 4
+    "active_incidents": 9,
+    "roads_closed": 5,
+    "shelters_open": 2,
+    "areas_affected": 9
   },
   "incidents": [
     {
@@ -19,9 +19,11 @@
       "severity": "WARNING",
       "description": "Road closed due to wave action topping the seawall. Reopens when seas subside.",
       "source": "City of Cape Town",
-      "source_url": "https://www.capetown.gov.za",
+      "source_url": "https://www.capetown.gov.za/Media-and-news/Newsroom",
       "updated": "2026-05-11T13:45:00+02:00",
-      "active": true
+      "active": true,
+      "actions": ["Road closed in both directions. Do not attempt to pass.", "Use M63 Ou Kaapse Weg (M64) via Tokai as alternate."],
+      "alternate_route": "M63 Ou Kaapse Weg via Tokai"
     },
     {
       "id": "inc-002",
@@ -33,7 +35,7 @@
       "severity": "WATCH",
       "description": "Unplanned outage affecting approximately 4,000 homes. Storm damage to substation. ETA restoration: unknown.",
       "source": "City of Cape Town Electricity",
-      "source_url": "https://www.capetown.gov.za/electricity",
+      "source_url": "https://www.capetown.gov.za/Media-and-news/Newsroom",
       "updated": "2026-05-11T12:00:00+02:00",
       "active": true
     },
@@ -47,9 +49,11 @@
       "severity": "WARNING",
       "description": "N2 partially flooded. Single lane open. Expect heavy delays. Trucks advised to avoid.",
       "source": "Traffic SA",
-      "source_url": "https://traffic.gov.za",
+      "source_url": "https://www.traffic.gov.za",
       "updated": "2026-05-11T14:10:00+02:00",
-      "active": true
+      "active": true,
+      "actions": ["Use R300 via Mitchells Plain or N1 as alternate.", "Trucks must divert. Allow 45–60 min extra travel time."],
+      "alternate_route": "R300 via Mitchells Plain / N1"
     },
     {
       "id": "inc-004",
@@ -61,9 +65,84 @@
       "severity": "WATCH",
       "description": "Openserve fibre outage affecting residential and business customers. Underground cable damaged by flooding.",
       "source": "Openserve",
-      "source_url": "https://www.telkom.co.za/network-status",
+      "source_url": "https://www.openserve.co.za",
       "updated": "2026-05-11T11:30:00+02:00",
       "active": true
+    },
+    {
+      "id": "inc-005",
+      "type": "flood",
+      "title": "Flash Flooding – Strand / Gordon's Bay",
+      "area": "Strand / Gordon's Bay",
+      "lat": -34.11,
+      "lng": 18.85,
+      "severity": "EMERGENCY",
+      "description": "Flash flooding across the R44 corridor. Vehicles stranded. Rescue teams deployed. Residents in low-lying areas urged to evacuate immediately.",
+      "source": "City of Cape Town",
+      "source_url": "https://www.capetown.gov.za/Media-and-news/Newsroom",
+      "updated": "2026-05-11T14:30:00+02:00",
+      "active": true,
+      "actions": ["Evacuate low-lying areas immediately.", "Do not drive through floodwater — turn around.", "Call 021 480 7700 for rescue assistance."]
+    },
+    {
+      "id": "inc-006",
+      "type": "wind",
+      "title": "Gale Force Winds – Cape Peninsula",
+      "area": "Cape Point / Simon's Town / Kommetjie",
+      "lat": -34.35,
+      "lng": 18.48,
+      "severity": "WARNING",
+      "description": "Gusts exceeding 100 km/h recorded at Cape Point. Flying debris reported. Hikers and cyclists advised to stay off exposed paths.",
+      "source": "SA Weather Service",
+      "source_url": "https://www.weathersa.co.za/home/mediareleases",
+      "updated": "2026-05-11T13:00:00+02:00",
+      "active": true,
+      "actions": ["Stay off exposed paths, cliff-tops, and beaches.", "Secure vehicles away from trees. Flying debris reported."]
+    },
+    {
+      "id": "inc-007",
+      "type": "road",
+      "title": "R44 Closure – Stellenbosch Direction",
+      "area": "Stellenbosch / Somerset West",
+      "lat": -34.02,
+      "lng": 18.84,
+      "severity": "WARNING",
+      "description": "R44 closed in both directions near Lourensford Road due to debris and surface flooding. Use N2 via Somerset West as alternate.",
+      "source": "Traffic SA",
+      "source_url": "https://www.traffic.gov.za",
+      "updated": "2026-05-11T13:50:00+02:00",
+      "active": true,
+      "actions": ["Use N2 via Somerset West interchange as alternate.", "Allow extra 30 min. Traffic building on N2."],
+      "alternate_route": "N2 via Somerset West interchange"
+    },
+    {
+      "id": "inc-008",
+      "type": "infrastructure",
+      "title": "Water Pipe Burst – Bellville CBD",
+      "area": "Bellville",
+      "lat": -33.9,
+      "lng": 18.63,
+      "severity": "WATCH",
+      "description": "Major water main burst on Voortrekker Road. Repairs underway. Water pressure reduced across Bellville and Parow. Expect disruptions until 20:00.",
+      "source": "City of Cape Town Water",
+      "source_url": "https://www.capetown.gov.za/Media-and-news/Newsroom",
+      "updated": "2026-05-11T11:15:00+02:00",
+      "active": true
+    },
+    {
+      "id": "inc-009",
+      "type": "storm",
+      "title": "Storm Surge Warning – Table Bay",
+      "area": "Woodstock Beach / Salt River / Foreshore",
+      "lat": -33.93,
+      "lng": 18.47,
+      "severity": "WARNING",
+      "description": "Storm surge of 0.8m above predicted tide level expected between 15:00–18:00. Low-lying coastal industrial areas at risk of inundation. Port Cape Town operating under restricted conditions.",
+      "source": "SA Weather Service",
+      "source_url": "https://www.weathersa.co.za/home/mediareleases",
+      "updated": "2026-05-11T14:00:00+02:00",
+      "active": true,
+      "actions": ["Stay away from Woodstock Beach, Salt River mouth, and Foreshore waterfront.", "Port Cape Town operating under restricted conditions — avoid harbour area."]
     }
   ],
   "map_markers": [
@@ -100,22 +179,86 @@
       "severity": "WATCH"
     },
     {
+      "id": "m-inc-005",
+      "type": "flood",
+      "lat": -34.11,
+      "lng": 18.85,
+      "label": "Flash Flooding – Strand / Gordon's Bay",
+      "severity": "EMERGENCY"
+    },
+    {
+      "id": "m-inc-006",
+      "type": "wind",
+      "lat": -34.35,
+      "lng": 18.48,
+      "label": "Gale Force Winds – Cape Peninsula",
+      "severity": "WARNING"
+    },
+    {
+      "id": "m-inc-007",
+      "type": "road",
+      "lat": -34.02,
+      "lng": 18.84,
+      "label": "R44 Closure – Stellenbosch Direction",
+      "severity": "WARNING"
+    },
+    {
+      "id": "m-inc-008",
+      "type": "infrastructure",
+      "lat": -33.9,
+      "lng": 18.63,
+      "label": "Water Pipe Burst – Bellville CBD",
+      "severity": "WATCH"
+    },
+    {
+      "id": "m-inc-009",
+      "type": "storm",
+      "lat": -33.93,
+      "lng": 18.47,
+      "label": "Storm Surge Warning – Table Bay",
+      "severity": "WARNING"
+    },
+    {
       "id": "m002",
       "type": "shelter",
       "lat": -33.93,
       "lng": 18.54,
       "label": "Evacuation Shelter: Goodwood Community Hall",
       "severity": "ALL_CLEAR"
+    },
+    {
+      "id": "m003",
+      "type": "shelter",
+      "lat": -34.11,
+      "lng": 18.84,
+      "label": "Evacuation Shelter: Strand Civic Centre",
+      "severity": "ALL_CLEAR"
     }
   ],
   "timeline": [
+    {
+      "id": "tl-005",
+      "timestamp": "2026-05-11T14:30:00+02:00",
+      "source": "City of Cape Town",
+      "text": "EMERGENCY declared: Flash flooding in Strand and Gordon's Bay. Rescue teams on scene. Evacuate low-lying areas immediately.",
+      "severity": "EMERGENCY",
+      "url": "https://www.capetown.gov.za/Media-and-news/Newsroom"
+    },
+    {
+      "id": "tl-004",
+      "timestamp": "2026-05-11T14:15:00+02:00",
+      "source": "SA Weather Service",
+      "text": "Storm surge warning issued for Table Bay: 0.8m above tide level expected 15:00–18:00. Low-lying coastal areas at risk.",
+      "severity": "WARNING",
+      "url": "https://www.weathersa.co.za/home/mediareleases"
+    },
     {
       "id": "tl-001",
       "timestamp": "2026-05-11T14:00:00+02:00",
       "source": "SA Weather Service",
       "text": "Gale warning issued for sea areas False Bay and Cape Point.",
       "severity": "WARNING",
-      "url": "https://www.weathersa.co.za"
+      "url": "https://www.weathersa.co.za/home/mediareleases"
     },
     {
       "id": "tl-002",
@@ -123,7 +266,7 @@
       "source": "City of Cape Town",
       "text": "Chapman's Peak Drive closed to all traffic. Storm surge monitoring in progress.",
       "severity": "WARNING",
-      "url": "https://www.capetown.gov.za"
+      "url": "https://www.capetown.gov.za/Media-and-news/Newsroom"
     },
     {
       "id": "tl-003",
@@ -131,7 +274,7 @@
       "source": "SA Weather Service",
       "text": "NW gale warning extended through Sunday. Wind gusts up to 100km/h forecast for Cape Peninsula.",
       "severity": "WARNING",
-      "url": "https://www.weathersa.co.za"
+      "url": "https://www.weathersa.co.za/home/mediareleases"
     }
   ],
   "contacts": [
@@ -174,6 +317,24 @@
       "name": "Openserve Faults",
       "number": "10210",
       "display": "10210"
+    }
+  ],
+  "shelters": [
+    {
+      "id": "sh-001",
+      "name": "Goodwood Community Hall",
+      "address": "Voortrekker Road, Goodwood, 7460",
+      "open": true,
+      "contact": "021 480 7700",
+      "bring": ["ID document", "Medication", "Warm clothing", "Food for 24 hours"]
+    },
+    {
+      "id": "sh-002",
+      "name": "Strand Civic Centre",
+      "address": "1 Milner Street, Strand, 7140",
+      "open": true,
+      "contact": "021 480 7700",
+      "bring": ["ID document", "Medication", "Warm clothing", "Food for 24 hours"]
     }
   ],
   "actions": {
