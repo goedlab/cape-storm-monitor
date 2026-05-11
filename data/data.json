@@ -1,6 +1,6 @@
 {
-  "status": "WARNING",
-  "last_updated": "2026-05-12T00:53:59+02:00",
+  "status": "EMERGENCY",
+  "last_updated": "2026-05-12T01:58:05+02:00",
   "summary": "Flash flooding Strand/Gordon's Bay. Storm surge warning Table Bay 15:00–18:00. Gale force winds 100km/h+.",
   "stats": {
     "active_incidents": 1,
@@ -12,15 +12,15 @@
     {
       "id": "om-wind-001",
       "type": "wind",
-      "title": "Strong Wind Advisory – Cape Town (99 km/h gusts)",
+      "title": "Strong Wind Advisory – Cape Town (109 km/h gusts)",
       "area": "Cape Town Metro",
       "lat": -33.9249,
       "lng": 18.4241,
-      "severity": "WARNING",
-      "description": "Wind gusts of 99 km/h detected. Secure loose outdoor items and avoid exposed coastal or mountain areas.",
+      "severity": "EMERGENCY",
+      "description": "Wind gusts of 109 km/h detected. Secure loose outdoor items and avoid exposed coastal or mountain areas.",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "updated": "2026-05-12T00:53:58+02:00",
+      "updated": "2026-05-12T01:58:04+02:00",
       "active": true
     }
   ],
@@ -30,8 +30,8 @@
       "type": "wind",
       "lat": -33.9249,
       "lng": 18.4241,
-      "label": "Strong Wind Advisory – Cape Town (99 km/h gusts)",
-      "severity": "WARNING"
+      "label": "Strong Wind Advisory – Cape Town (109 km/h gusts)",
+      "severity": "EMERGENCY"
     },
     {
       "id": "m002",
