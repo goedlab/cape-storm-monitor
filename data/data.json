@@ -1,0 +1,206 @@
+{
+  "status": "WARNING",
+  "last_updated": "2026-05-11T09:47:41+02:00",
+  "summary": "Strong NW winds expected. Seas 5–6m. Avoid coastal roads.",
+  "stats": {
+    "active_incidents": 4,
+    "roads_closed": 2,
+    "shelters_open": 1,
+    "areas_affected": 4
+  },
+  "incidents": [
+    {
+      "id": "inc-001",
+      "type": "coastal",
+      "title": "Chapman's Peak Road Closure",
+      "area": "Hout Bay / Noordhoek",
+      "lat": -34.09,
+      "lng": 18.36,
+      "severity": "WARNING",
+      "description": "Road closed due to wave action topping the seawall. Reopens when seas subside.",
+      "source": "City of Cape Town",
+      "source_url": "https://www.capetown.gov.za",
+      "updated": "2026-05-11T13:45:00+02:00",
+      "active": true
+    },
+    {
+      "id": "inc-002",
+      "type": "power",
+      "title": "Power Outage – Mitchells Plain",
+      "area": "Mitchells Plain",
+      "lat": -34.04,
+      "lng": 18.62,
+      "severity": "WATCH",
+      "description": "Unplanned outage affecting approximately 4,000 homes. Storm damage to substation. ETA restoration: unknown.",
+      "source": "City of Cape Town Electricity",
+      "source_url": "https://www.capetown.gov.za/electricity",
+      "updated": "2026-05-11T12:00:00+02:00",
+      "active": true
+    },
+    {
+      "id": "inc-003",
+      "type": "road",
+      "title": "N2 Flooding – Sir Lowry's Pass",
+      "area": "Sir Lowry's Pass / Somerset West",
+      "lat": -34.12,
+      "lng": 18.87,
+      "severity": "WARNING",
+      "description": "N2 partially flooded. Single lane open. Expect heavy delays. Trucks advised to avoid.",
+      "source": "Traffic SA",
+      "source_url": "https://traffic.gov.za",
+      "updated": "2026-05-11T14:10:00+02:00",
+      "active": true
+    },
+    {
+      "id": "inc-004",
+      "type": "internet",
+      "title": "Fibre Outage – Atlantic Seaboard",
+      "area": "Sea Point / Green Point / De Waterkant",
+      "lat": -33.91,
+      "lng": 18.4,
+      "severity": "WATCH",
+      "description": "Openserve fibre outage affecting residential and business customers. Underground cable damaged by flooding.",
+      "source": "Openserve",
+      "source_url": "https://www.telkom.co.za/network-status",
+      "updated": "2026-05-11T11:30:00+02:00",
+      "active": true
+    }
+  ],
+  "map_markers": [
+    {
+      "id": "m-inc-001",
+      "type": "coastal",
+      "lat": -34.09,
+      "lng": 18.36,
+      "label": "Chapman's Peak Road Closure",
+      "severity": "WARNING"
+    },
+    {
+      "id": "m-inc-002",
+      "type": "power",
+      "lat": -34.04,
+      "lng": 18.62,
+      "label": "Power Outage – Mitchells Plain",
+      "severity": "WATCH"
+    },
+    {
+      "id": "m-inc-003",
+      "type": "road",
+      "lat": -34.12,
+      "lng": 18.87,
+      "label": "N2 Flooding – Sir Lowry's Pass",
+      "severity": "WARNING"
+    },
+    {
+      "id": "m-inc-004",
+      "type": "internet",
+      "lat": -33.91,
+      "lng": 18.4,
+      "label": "Fibre Outage – Atlantic Seaboard",
+      "severity": "WATCH"
+    },
+    {
+      "id": "m002",
+      "type": "shelter",
+      "lat": -33.93,
+      "lng": 18.54,
+      "label": "Evacuation Shelter: Goodwood Community Hall",
+      "severity": "ALL_CLEAR"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "tl-001",
+      "timestamp": "2026-05-11T14:00:00+02:00",
+      "source": "SA Weather Service",
+      "text": "Gale warning issued for sea areas False Bay and Cape Point.",
+      "severity": "WARNING",
+      "url": "https://www.weathersa.co.za"
+    },
+    {
+      "id": "tl-002",
+      "timestamp": "2026-05-11T12:30:00+02:00",
+      "source": "City of Cape Town",
+      "text": "Chapman's Peak Drive closed to all traffic. Storm surge monitoring in progress.",
+      "severity": "WARNING",
+      "url": "https://www.capetown.gov.za"
+    },
+    {
+      "id": "tl-003",
+      "timestamp": "2026-05-11T11:00:00+02:00",
+      "source": "SA Weather Service",
+      "text": "NW gale warning extended through Sunday. Wind gusts up to 100km/h forecast for Cape Peninsula.",
+      "severity": "WARNING",
+      "url": "https://www.weathersa.co.za"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "CT Disaster Management",
+      "number": "0214807700",
+      "display": "021 480 7700"
+    },
+    {
+      "name": "NSRI",
+      "number": "0870949774",
+      "display": "087 094 9774"
+    },
+    {
+      "name": "SAPS Emergency",
+      "number": "10111",
+      "display": "10111"
+    },
+    {
+      "name": "ER24",
+      "number": "084124",
+      "display": "084 124"
+    },
+    {
+      "name": "Eskom Faults",
+      "number": "0860037566",
+      "display": "0860 037 566"
+    },
+    {
+      "name": "City of CT Electricity",
+      "number": "0860103089",
+      "display": "0860 103 089"
+    },
+    {
+      "name": "City of CT Roads",
+      "number": "0800656463",
+      "display": "0800 656 463"
+    },
+    {
+      "name": "Openserve Faults",
+      "number": "10210",
+      "display": "10210"
+    }
+  ],
+  "actions": {
+    "ALL_CLEAR": [
+      "Normal conditions. Stay weather-aware.",
+      "Check that your emergency contacts are saved."
+    ],
+    "WATCH": [
+      "Secure loose outdoor items.",
+      "Avoid unnecessary coastal or mountain trips.",
+      "Keep phone charged."
+    ],
+    "WARNING": [
+      "Stay indoors if possible.",
+      "Avoid flood-prone roads and low-lying areas.",
+      "Do not attempt to cross flooded roads.",
+      "Keep emergency contacts accessible."
+    ],
+    "EMERGENCY": [
+      "Follow official evacuation instructions immediately.",
+      "Call 107 (CT Emergency) or 10111.",
+      "Do not attempt river or flood crossings.",
+      "Move to higher ground if in a flood zone."
+    ]
+  },
+  "outlook": {
+    "season": "Autumn / Winter",
+    "text": "Cape Town's winter storm season runs May–August. North-westerly frontal systems bring strong winds and heavy rain, particularly affecting coastal roads, the Cape Peninsula, and low-lying flood plains. Berg wind events in autumn bring extreme fire risk to the northern suburbs and winelands."
+  }
+}

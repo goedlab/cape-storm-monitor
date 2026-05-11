@@ -1,0 +1,98 @@
+{
+  "type": "FeatureCollection",
+  "generated": "2026-05-11T09:47:41+02:00",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.36,
+          -34.09
+        ]
+      },
+      "properties": {
+        "id": "inc-001",
+        "type": "coastal",
+        "title": "Chapman's Peak Road Closure",
+        "area": "Hout Bay / Noordhoek",
+        "severity": "WARNING",
+        "description": "Road closed due to wave action topping the seawall. Reopens when seas subside.",
+        "updated": "2026-05-11T13:45:00+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.62,
+          -34.04
+        ]
+      },
+      "properties": {
+        "id": "inc-002",
+        "type": "power",
+        "title": "Power Outage – Mitchells Plain",
+        "area": "Mitchells Plain",
+        "severity": "WATCH",
+        "description": "Unplanned outage affecting approximately 4,000 homes. Storm damage to substation. ETA restoration: unknown.",
+        "updated": "2026-05-11T12:00:00+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.87,
+          -34.12
+        ]
+      },
+      "properties": {
+        "id": "inc-003",
+        "type": "road",
+        "title": "N2 Flooding – Sir Lowry's Pass",
+        "area": "Sir Lowry's Pass / Somerset West",
+        "severity": "WARNING",
+        "description": "N2 partially flooded. Single lane open. Expect heavy delays. Trucks advised to avoid.",
+        "updated": "2026-05-11T14:10:00+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.4,
+          -33.91
+        ]
+      },
+      "properties": {
+        "id": "inc-004",
+        "type": "internet",
+        "title": "Fibre Outage – Atlantic Seaboard",
+        "area": "Sea Point / Green Point / De Waterkant",
+        "severity": "WATCH",
+        "description": "Openserve fibre outage affecting residential and business customers. Underground cable damaged by flooding.",
+        "updated": "2026-05-11T11:30:00+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.54,
+          -33.93
+        ]
+      },
+      "properties": {
+        "id": "m002",
+        "type": "shelter",
+        "title": "Evacuation Shelter: Goodwood Community Hall",
+        "severity": "ALL_CLEAR"
+      }
+    }
+  ]
+}
