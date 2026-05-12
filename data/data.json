@@ -1,6 +1,6 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-05-12T13:55:48+02:00",
+  "last_updated": "2026-05-12T16:28:05+02:00",
   "summary": "Flash flooding Strand/Gordon's Bay. Storm surge warning Table Bay 15:00–18:00. Gale force winds 100km/h+.",
   "stats": {
     "active_incidents": 1,
@@ -20,7 +20,7 @@
       "description": "Wind gusts of 73 km/h detected. Secure loose outdoor items and avoid exposed coastal or mountain areas.",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "updated": "2026-05-12T13:55:46+02:00",
+      "updated": "2026-05-12T16:28:01+02:00",
       "active": true
     }
   ],
