@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-05-12T05:52:45+02:00",
+  "generated": "2026-05-12T08:37:12+02:00",
   "features": [
     {
       "type": "Feature",
@@ -14,11 +14,11 @@
       "properties": {
         "id": "om-wind-001",
         "type": "wind",
-        "title": "Strong Wind Advisory – Cape Town (111 km/h gusts)",
+        "title": "Strong Wind Advisory – Cape Town (96 km/h gusts)",
         "area": "Cape Town Metro",
-        "severity": "EMERGENCY",
-        "description": "Wind gusts of 111 km/h detected. Secure loose outdoor items and avoid exposed coastal or mountain areas.",
-        "updated": "2026-05-12T05:52:44+02:00"
+        "severity": "WARNING",
+        "description": "Wind gusts of 96 km/h detected. Secure loose outdoor items and avoid exposed coastal or mountain areas.",
+        "updated": "2026-05-12T08:37:10+02:00"
       }
     },
     {
