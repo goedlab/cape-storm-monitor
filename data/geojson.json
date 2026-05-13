@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-05-13T00:11:57+02:00",
+  "generated": "2026-05-13T05:24:17+02:00",
   "features": [
     {
       "type": "Feature",
@@ -18,7 +18,7 @@
         "area": "Cape Town Metro",
         "severity": "WATCH",
         "description": "Wind gusts of 60 km/h detected. Secure loose outdoor items and avoid exposed coastal or mountain areas.",
-        "updated": "2026-05-13T00:11:55+02:00"
+        "updated": "2026-05-13T05:24:15+02:00"
       }
     },
     {
