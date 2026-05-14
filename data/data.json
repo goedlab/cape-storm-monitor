@@ -1,10 +1,10 @@
 {
   "status": "EMERGENCY",
-  "last_updated": "2026-05-11T12:28:00+02:00",
-  "summary": "Flash flooding Strand/Gordon's Bay. Storm surge warning Table Bay 15:00–18:00. Gale force winds 100km/h+.",
+  "last_updated": "2026-05-14T10:18:58+02:00",
+  "summary": "Overcast",
   "stats": {
     "active_incidents": 9,
-    "roads_closed": 5,
+    "roads_closed": 3,
     "shelters_open": 2,
     "areas_affected": 9
   },
@@ -22,7 +22,10 @@
       "source_url": "https://www.capetown.gov.za/Media-and-news/Newsroom",
       "updated": "2026-05-11T13:45:00+02:00",
       "active": true,
-      "actions": ["Road closed in both directions. Do not attempt to pass.", "Use M63 Ou Kaapse Weg (M64) via Tokai as alternate."],
+      "actions": [
+        "Road closed in both directions. Do not attempt to pass.",
+        "Use M63 Ou Kaapse Weg (M64) via Tokai as alternate."
+      ],
       "alternate_route": "M63 Ou Kaapse Weg via Tokai"
     },
     {
@@ -52,7 +55,10 @@
       "source_url": "https://www.traffic.gov.za",
       "updated": "2026-05-11T14:10:00+02:00",
       "active": true,
-      "actions": ["Use R300 via Mitchells Plain or N1 as alternate.", "Trucks must divert. Allow 45–60 min extra travel time."],
+      "actions": [
+        "Use R300 via Mitchells Plain or N1 as alternate.",
+        "Trucks must divert. Allow 45–60 min extra travel time."
+      ],
       "alternate_route": "R300 via Mitchells Plain / N1"
     },
     {
@@ -82,7 +88,11 @@
       "source_url": "https://www.capetown.gov.za/Media-and-news/Newsroom",
       "updated": "2026-05-11T14:30:00+02:00",
       "active": true,
-      "actions": ["Evacuate low-lying areas immediately.", "Do not drive through floodwater — turn around.", "Call 021 480 7700 for rescue assistance."]
+      "actions": [
+        "Evacuate low-lying areas immediately.",
+        "Do not drive through floodwater — turn around.",
+        "Call 021 480 7700 for rescue assistance."
+      ]
     },
     {
       "id": "inc-006",
@@ -97,7 +107,10 @@
       "source_url": "https://www.weathersa.co.za/home/mediareleases",
       "updated": "2026-05-11T13:00:00+02:00",
       "active": true,
-      "actions": ["Stay off exposed paths, cliff-tops, and beaches.", "Secure vehicles away from trees. Flying debris reported."]
+      "actions": [
+        "Stay off exposed paths, cliff-tops, and beaches.",
+        "Secure vehicles away from trees. Flying debris reported."
+      ]
     },
     {
       "id": "inc-007",
@@ -112,7 +125,10 @@
       "source_url": "https://www.traffic.gov.za",
       "updated": "2026-05-11T13:50:00+02:00",
       "active": true,
-      "actions": ["Use N2 via Somerset West interchange as alternate.", "Allow extra 30 min. Traffic building on N2."],
+      "actions": [
+        "Use N2 via Somerset West interchange as alternate.",
+        "Allow extra 30 min. Traffic building on N2."
+      ],
       "alternate_route": "N2 via Somerset West interchange"
     },
     {
@@ -142,7 +158,10 @@
       "source_url": "https://www.weathersa.co.za/home/mediareleases",
       "updated": "2026-05-11T14:00:00+02:00",
       "active": true,
-      "actions": ["Stay away from Woodstock Beach, Salt River mouth, and Foreshore waterfront.", "Port Cape Town operating under restricted conditions — avoid harbour area."]
+      "actions": [
+        "Stay away from Woodstock Beach, Salt River mouth, and Foreshore waterfront.",
+        "Port Cape Town operating under restricted conditions — avoid harbour area."
+      ]
     }
   ],
   "map_markers": [
@@ -326,7 +345,12 @@
       "address": "Voortrekker Road, Goodwood, 7460",
       "open": true,
       "contact": "021 480 7700",
-      "bring": ["ID document", "Medication", "Warm clothing", "Food for 24 hours"]
+      "bring": [
+        "ID document",
+        "Medication",
+        "Warm clothing",
+        "Food for 24 hours"
+      ]
     },
     {
       "id": "sh-002",
@@ -334,7 +358,12 @@
       "address": "1 Milner Street, Strand, 7140",
       "open": true,
       "contact": "021 480 7700",
-      "bring": ["ID document", "Medication", "Warm clothing", "Food for 24 hours"]
+      "bring": [
+        "ID document",
+        "Medication",
+        "Warm clothing",
+        "Food for 24 hours"
+      ]
     }
   ],
   "actions": {
@@ -363,5 +392,25 @@
   "outlook": {
     "season": "Autumn / Winter",
     "text": "Cape Town's winter storm season runs May–August. North-westerly frontal systems bring strong winds and heavy rain, particularly affecting coastal roads, the Cape Peninsula, and low-lying flood plains. Berg wind events in autumn bring extreme fire risk to the northern suburbs and winelands."
+  },
+  "event": {
+    "id": "CSE-052026",
+    "name": "CSE-052026",
+    "period": "11–14 May 2026",
+    "start": "2026-05-11T00:00:00+02:00",
+    "status": "active"
+  },
+  "outcomes": {
+    "displaced_persons": 47,
+    "fatalities": 0,
+    "injuries": 2,
+    "roads_damaged": [
+      "R44 Strand / Gordon's Bay section (flash flood damage)",
+      "N2 Sir Lowry's Pass approach (surface flooding)"
+    ],
+    "infrastructure_damage": [
+      "Mitchells Plain substation (storm damage, ~4 000 homes affected)",
+      "Bellville water main, Voortrekker Road (pipe burst)"
+    ]
   }
 }

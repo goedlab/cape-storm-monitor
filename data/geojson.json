@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-05-11T09:47:41+02:00",
+  "generated": "2026-05-14T10:18:58+02:00",
   "features": [
     {
       "type": "Feature",
@@ -83,6 +83,101 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          18.85,
+          -34.11
+        ]
+      },
+      "properties": {
+        "id": "inc-005",
+        "type": "flood",
+        "title": "Flash Flooding – Strand / Gordon's Bay",
+        "area": "Strand / Gordon's Bay",
+        "severity": "EMERGENCY",
+        "description": "Flash flooding across the R44 corridor. Vehicles stranded. Rescue teams deployed. Residents in low-lying areas urged to evacuate immediately.",
+        "updated": "2026-05-11T14:30:00+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.48,
+          -34.35
+        ]
+      },
+      "properties": {
+        "id": "inc-006",
+        "type": "wind",
+        "title": "Gale Force Winds – Cape Peninsula",
+        "area": "Cape Point / Simon's Town / Kommetjie",
+        "severity": "WARNING",
+        "description": "Gusts exceeding 100 km/h recorded at Cape Point. Flying debris reported. Hikers and cyclists advised to stay off exposed paths.",
+        "updated": "2026-05-11T13:00:00+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.84,
+          -34.02
+        ]
+      },
+      "properties": {
+        "id": "inc-007",
+        "type": "road",
+        "title": "R44 Closure – Stellenbosch Direction",
+        "area": "Stellenbosch / Somerset West",
+        "severity": "WARNING",
+        "description": "R44 closed in both directions near Lourensford Road due to debris and surface flooding. Use N2 via Somerset West as alternate.",
+        "updated": "2026-05-11T13:50:00+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.63,
+          -33.9
+        ]
+      },
+      "properties": {
+        "id": "inc-008",
+        "type": "infrastructure",
+        "title": "Water Pipe Burst – Bellville CBD",
+        "area": "Bellville",
+        "severity": "WATCH",
+        "description": "Major water main burst on Voortrekker Road. Repairs underway. Water pressure reduced across Bellville and Parow. Expect disruptions until 20:00.",
+        "updated": "2026-05-11T11:15:00+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.47,
+          -33.93
+        ]
+      },
+      "properties": {
+        "id": "inc-009",
+        "type": "storm",
+        "title": "Storm Surge Warning – Table Bay",
+        "area": "Woodstock Beach / Salt River / Foreshore",
+        "severity": "WARNING",
+        "description": "Storm surge of 0.8m above predicted tide level expected between 15:00–18:00. Low-lying coastal industrial areas at risk of inundation. Port Cape Town operating under restricted conditions.",
+        "updated": "2026-05-11T14:00:00+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           18.54,
           -33.93
         ]
@@ -91,6 +186,22 @@
         "id": "m002",
         "type": "shelter",
         "title": "Evacuation Shelter: Goodwood Community Hall",
+        "severity": "ALL_CLEAR"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.84,
+          -34.11
+        ]
+      },
+      "properties": {
+        "id": "m003",
+        "type": "shelter",
+        "title": "Evacuation Shelter: Strand Civic Centre",
         "severity": "ALL_CLEAR"
       }
     }
