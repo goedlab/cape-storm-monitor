@@ -111,9 +111,8 @@ body {
 /* ── Hero banner ── */
 .hero-banner {
   position: relative;
-  min-height: 180px;
   background: linear-gradient(135deg, #ffffff 0%, #faf9f7 100%);
-  padding: 40px 24px;
+  padding: 25px 24px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

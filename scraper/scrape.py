@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
 Cape Storm Monitor scraper.
-Fetches data from SA Weather Service, City of Cape Town, and Traffic SA,
-builds data.json + geojson.json, and commits only when content has changed.
+Fetches data from SA Weather Service, City of Cape Town, Traffic SA,
+Open-Meteo (weather + flood), and GDACS.
+Builds data.json + geojson.json and commits only when content has changed.
 """
 
 import hashlib
@@ -18,8 +19,8 @@ from bs4 import BeautifulSoup
 
 SAST = ZoneInfo("Africa/Johannesburg")
 
-ROOT_DIR    = os.path.join(os.path.dirname(__file__), '..')
-DATA_FILE   = os.path.join(ROOT_DIR, 'data', 'data.json')
+ROOT_DIR     = os.path.join(os.path.dirname(__file__), '..')
+DATA_FILE    = os.path.join(ROOT_DIR, 'data', 'data.json')
 GEOJSON_FILE = os.path.join(ROOT_DIR, 'data', 'geojson.json')
 
 HEADERS = {
@@ -30,6 +31,35 @@ TIMEOUT = 15
 
 def now_sast() -> str:
     return datetime.now(SAST).isoformat(timespec='seconds')
+
+
+# ── Western Cape locations for weather ───────────────────────────────────────
+
+WC_LOCATIONS = [
+    {'name': 'Cape Town',    'lat': -33.9249, 'lng': 18.4241},
+    {'name': 'Citrusdal',    'lat': -32.5833, 'lng': 19.0167},
+    {'name': 'Stellenbosch', 'lat': -33.9321, 'lng': 18.8602},
+    {'name': 'George',       'lat': -33.9646, 'lng': 22.4608},
+    {'name': 'Ceres',        'lat': -33.3667, 'lng': 19.3167},
+]
+
+FLOOD_RIVERS = [
+    {'name': 'Olifants River', 'area': 'Citrusdal',          'lat': -32.35, 'lng': 19.00},
+    {'name': 'Breede River',   'area': 'Worcester',           'lat': -33.65, 'lng': 19.45},
+    {'name': 'Berg River',     'area': 'Paarl / Franschhoek', 'lat': -33.70, 'lng': 18.96},
+    {'name': 'Eerste River',   'area': 'Stellenbosch',        'lat': -33.93, 'lng': 18.86},
+    {'name': 'Liesbeek River', 'area': 'Cape Town',           'lat': -33.94, 'lng': 18.49},
+]
+
+WMO_LABELS = {
+    0: 'Clear sky', 1: 'Mainly clear', 2: 'Partly cloudy', 3: 'Overcast',
+    45: 'Fog', 48: 'Freezing fog',
+    51: 'Light drizzle', 53: 'Moderate drizzle', 55: 'Dense drizzle',
+    61: 'Slight rain', 63: 'Moderate rain', 65: 'Heavy rain',
+    71: 'Slight snow', 73: 'Moderate snow', 75: 'Heavy snow',
+    80: 'Rain showers', 81: 'Moderate showers', 82: 'Violent showers',
+    95: 'Thunderstorm', 96: 'Thunderstorm with hail', 99: 'Severe thunderstorm',
+}
 
 
 # ── Scrapers ──────────────────────────────────────────────────────────────────
@@ -45,7 +75,6 @@ def scrape_saws() -> list:
         res.raise_for_status()
         soup = BeautifulSoup(res.text, 'lxml')
 
-        # Try to find warning/alert elements — SAWS HTML structure varies by deploy
         candidates = (
             soup.find_all(class_=lambda c: c and any(
                 kw in c.lower() for kw in ('warning', 'alert', 'bulletin', 'advisory')
@@ -83,7 +112,6 @@ def scrape_city_of_ct() -> list:
     incidents = []
     urls = [
         ('https://www.capetown.gov.za/Media-and-news/Newsroom', 'infrastructure'),
-        ('https://www.capetown.gov.za/general/alerts-and-notifications', 'power'),
     ]
     for url, inc_type in urls:
         try:
@@ -153,13 +181,14 @@ def scrape_traffic_sa() -> list:
     return incidents
 
 
-def scrape_open_meteo() -> list:
-    """Fetch inclement conditions from Open-Meteo (free, no key)."""
-    incidents = []
+def fetch_open_meteo() -> dict | None:
+    """Fetch current conditions across key Western Cape locations from Open-Meteo."""
     try:
+        lats = ','.join(str(l['lat']) for l in WC_LOCATIONS)
+        lngs = ','.join(str(l['lng']) for l in WC_LOCATIONS)
         url = (
             'https://api.open-meteo.com/v1/forecast'
-            '?latitude=-33.9249&longitude=18.4241'
+            f'?latitude={lats}&longitude={lngs}'
             '&current=wind_speed_10m,wind_gusts_10m,precipitation,weather_code'
             '&hourly=wave_height'
             '&forecast_days=1'
@@ -167,92 +196,169 @@ def scrape_open_meteo() -> list:
         )
         res = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
         res.raise_for_status()
-        d = res.json()
+        results = res.json()
+        if not isinstance(results, list):
+            results = [results]
 
-        cur = d.get('current', {})
-        gusts    = cur.get('wind_gusts_10m', 0) or 0
-        precip   = cur.get('precipitation', 0) or 0
-        wmo_code = cur.get('weather_code', 0) or 0
+        locations = []
+        for i, d in enumerate(results):
+            cur = d.get('current', {})
+            hourly = d.get('hourly', {})
+            wave_heights = [h for h in (hourly.get('wave_height') or []) if h is not None]
+            locations.append({
+                'name':     WC_LOCATIONS[i]['name'] if i < len(WC_LOCATIONS) else f'loc-{i}',
+                'lat':      WC_LOCATIONS[i]['lat'],
+                'lng':      WC_LOCATIONS[i]['lng'],
+                'gusts':    cur.get('wind_gusts_10m', 0) or 0,
+                'wind':     cur.get('wind_speed_10m', 0) or 0,
+                'precip':   cur.get('precipitation', 0) or 0,
+                'wmo':      cur.get('weather_code', 0) or 0,
+                'max_wave': max(wave_heights[:6]) if wave_heights else 0,
+            })
 
-        hourly = d.get('hourly', {})
-        wave_heights = [h for h in (hourly.get('wave_height') or []) if h is not None]
-        max_wave = max(wave_heights[:6]) if wave_heights else 0
+        return {
+            'locations': locations,
+            'gusts':    max(l['gusts']    for l in locations),
+            'wind':     max(l['wind']     for l in locations),
+            'precip':   max(l['precip']   for l in locations),
+            'wmo':      locations[0]['wmo'],
+            'max_wave': max(l['max_wave'] for l in locations),
+        }
+    except Exception as exc:
+        print(f'[WARN] Open-Meteo fetch failed: {exc}', file=sys.stderr)
+        return None
 
-        if gusts > 100:
-            sev = 'EMERGENCY'
-        elif gusts > 80:
-            sev = 'WARNING'
-        elif gusts > 60:
-            sev = 'WATCH'
-        else:
-            sev = None
 
+def open_meteo_summary(c: dict) -> str:
+    """Build a one-line status summary from Open-Meteo conditions."""
+    parts = []
+    label = WMO_LABELS.get(c['wmo'], '')
+    parts.append(f'Cape Town: {label}' if label else 'Western Cape')
+    if c['gusts'] >= 40:
+        parts.append(f'gusts {round(c["gusts"])} km/h')
+    if c['precip'] > 0.2:
+        parts.append(f'{round(c["precip"], 1)} mm rain')
+    if c['max_wave'] > 1.0:
+        parts.append(f'seas {round(c["max_wave"], 1)} m')
+    alerts = [l['name'] for l in c.get('locations', [])[1:]
+              if l['gusts'] > 60 or l['precip'] > 5]
+    if alerts:
+        parts.append(f'alerts: {", ".join(alerts)}')
+    return ' · '.join(parts)
+
+
+def open_meteo_incidents(c: dict) -> list:
+    """Generate incidents for any Western Cape location exceeding thresholds."""
+    incidents = []
+    for loc in c.get('locations', []):
+        name, lat, lng = loc['name'], loc['lat'], loc['lng']
+        slug = name.lower().replace(' ', '-')
+        gusts, precip, max_wave = loc['gusts'], loc['precip'], loc['max_wave']
+
+        if gusts > 100:      sev = 'EMERGENCY'
+        elif gusts > 80:     sev = 'WARNING'
+        elif gusts > 60:     sev = 'WATCH'
+        else:                sev = None
         if sev:
             incidents.append({
-                'id':          'om-wind-001',
-                'type':        'wind',
-                'title':       f'Strong Wind Advisory – Cape Town ({round(gusts)} km/h gusts)',
-                'area':        'Cape Town Metro',
-                'lat':         -33.9249,
-                'lng':         18.4241,
-                'severity':    sev,
-                'description': f'Wind gusts of {round(gusts)} km/h detected. Secure loose outdoor items and avoid exposed coastal or mountain areas.',
-                'source':      'Open-Meteo',
-                'source_url':  'https://open-meteo.com',
-                'updated':     now_sast(),
-                'active':      True,
+                'id': f'om-wind-{slug}', 'type': 'wind',
+                'title': f'Strong Wind Advisory – {name} ({round(gusts)} km/h gusts)',
+                'area': name, 'lat': lat, 'lng': lng, 'severity': sev,
+                'description': f'Wind gusts of {round(gusts)} km/h at {name}. Secure loose items and avoid exposed areas.',
+                'source': 'Open-Meteo', 'source_url': 'https://open-meteo.com',
+                'updated': now_sast(), 'active': True,
             })
 
-        if precip > 15:
-            rain_sev = 'EMERGENCY'
-        elif precip > 5:
-            rain_sev = 'WARNING'
-        else:
-            rain_sev = None
-
+        if precip > 15:      rain_sev = 'EMERGENCY'
+        elif precip > 5:     rain_sev = 'WARNING'
+        else:                rain_sev = None
         if rain_sev:
             incidents.append({
-                'id':          'om-rain-001',
-                'type':        'flood',
-                'title':       f'Heavy Rainfall – Cape Town ({precip} mm/hr)',
-                'area':        'Cape Town Metro',
-                'lat':         -33.9249,
-                'lng':         18.4241,
-                'severity':    rain_sev,
-                'description': f'Rainfall rate of {precip} mm/hr. Avoid low-lying areas and flood-prone roads.',
-                'source':      'Open-Meteo',
-                'source_url':  'https://open-meteo.com',
-                'updated':     now_sast(),
-                'active':      True,
+                'id': f'om-rain-{slug}', 'type': 'flood',
+                'title': f'Heavy Rainfall – {name} ({precip} mm/hr)',
+                'area': name, 'lat': lat, 'lng': lng, 'severity': rain_sev,
+                'description': f'Rainfall rate of {precip} mm/hr at {name}. Avoid low-lying areas and flood-prone roads.',
+                'source': 'Open-Meteo', 'source_url': 'https://open-meteo.com',
+                'updated': now_sast(), 'active': True,
             })
 
-        if max_wave > 6:
-            wave_sev = 'EMERGENCY'
-        elif max_wave > 4:
-            wave_sev = 'WARNING'
-        elif max_wave > 2.5:
-            wave_sev = 'WATCH'
-        else:
-            wave_sev = None
-
+        if max_wave > 6:     wave_sev = 'EMERGENCY'
+        elif max_wave > 4:   wave_sev = 'WARNING'
+        elif max_wave > 2.5: wave_sev = 'WATCH'
+        else:                wave_sev = None
         if wave_sev:
             incidents.append({
-                'id':          'om-wave-001',
-                'type':        'coastal',
-                'title':       f'High Wave Warning – Cape Coast ({max_wave}m)',
-                'area':        'Cape Town Coastal',
-                'lat':         -33.9249,
-                'lng':         18.4241,
-                'severity':    wave_sev,
-                'description': f'Wave heights up to {max_wave}m forecast. Keep clear of coastal rocks, beaches, and piers.',
-                'source':      'Open-Meteo',
-                'source_url':  'https://open-meteo.com',
-                'updated':     now_sast(),
-                'active':      True,
+                'id': f'om-wave-{slug}', 'type': 'coastal',
+                'title': f'High Wave Warning – {name} ({max_wave}m)',
+                'area': name, 'lat': lat, 'lng': lng, 'severity': wave_sev,
+                'description': f'Wave heights up to {max_wave}m at {name}. Keep clear of coastal rocks and piers.',
+                'source': 'Open-Meteo', 'source_url': 'https://open-meteo.com',
+                'updated': now_sast(), 'active': True,
             })
+    return incidents
+
+
+def scrape_flood_api() -> list:
+    """Fetch river discharge for key Western Cape rivers via Open-Meteo Flood API."""
+    incidents = []
+    try:
+        lats = ','.join(str(r['lat']) for r in FLOOD_RIVERS)
+        lngs = ','.join(str(r['lng']) for r in FLOOD_RIVERS)
+        url = (
+            'https://flood.open-meteo.com/v1/flood'
+            f'?latitude={lats}&longitude={lngs}'
+            '&daily=river_discharge'
+            '&past_days=14&forecast_days=1'
+        )
+        res = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+        res.raise_for_status()
+        results = res.json()
+        if not isinstance(results, list):
+            results = [results]
+
+        for i, d in enumerate(results):
+            if i >= len(FLOOD_RIVERS):
+                break
+            river = FLOOD_RIVERS[i]
+            discharges = [v for v in (d.get('daily', {}).get('river_discharge') or []) if v is not None]
+            if len(discharges) < 2:
+                continue
+            current  = discharges[-1]
+            baseline = discharges[:-1]
+            mean     = sum(baseline) / len(baseline)
+            if mean <= 0:
+                continue
+
+            ratio = current / mean
+            if ratio > 5:     sev = 'EMERGENCY'
+            elif ratio > 3:   sev = 'WARNING'
+            elif ratio > 1.8: sev = 'WATCH'
+            else:              sev = None
+
+            if sev:
+                slug = river['name'].lower().replace(' ', '-')
+                print(f'  [FLOOD] {river["name"]}: {round(current)} m³/s ({round(ratio,1)}× mean) → {sev}')
+                incidents.append({
+                    'id':          f'flood-{slug}',
+                    'type':        'flood',
+                    'title':       f'{river["name"]} Flooding – {river["area"]}',
+                    'area':        river['area'],
+                    'lat':         river['lat'],
+                    'lng':         river['lng'],
+                    'severity':    sev,
+                    'description': (
+                        f'{river["name"]} discharge {round(current)} m³/s — '
+                        f'{round(ratio, 1)}× above 14-day mean ({round(mean)} m³/s). '
+                        'River levels significantly elevated.'
+                    ),
+                    'source':      'Open-Meteo Flood API',
+                    'source_url':  'https://open-meteo.com/en/docs/flood-api',
+                    'updated':     now_sast(),
+                    'active':      True,
+                })
 
     except Exception as exc:
-        print(f'[WARN] Open-Meteo scrape failed: {exc}', file=sys.stderr)
+        print(f'[WARN] Flood API failed: {exc}', file=sys.stderr)
 
     return incidents
 
@@ -267,7 +373,7 @@ def scrape_gdacs() -> list:
         root = ET.fromstring(res.text)
 
         sa_terms = ('south africa', 'cape town', 'western cape', 'eastern cape')
-        channel = root.find('channel')
+        channel  = root.find('channel')
         if channel is None:
             return incidents
 
@@ -333,14 +439,10 @@ def fetch_openweathermap(api_key: str) -> dict | None:
         wind_kmh = d.get('wind', {}).get('speed', 0) * 3.6
         desc     = d.get('weather', [{}])[0].get('description', 'unknown')
 
-        if wind_kmh > 80:
-            sev = 'EMERGENCY'
-        elif wind_kmh > 60:
-            sev = 'WARNING'
-        elif wind_kmh > 40:
-            sev = 'WATCH'
-        else:
-            sev = 'ALL_CLEAR'
+        if wind_kmh > 80:    sev = 'EMERGENCY'
+        elif wind_kmh > 60:  sev = 'WARNING'
+        elif wind_kmh > 40:  sev = 'WATCH'
+        else:                sev = 'ALL_CLEAR'
 
         return {'wind_kmh': round(wind_kmh), 'description': desc, 'severity': sev}
     except Exception as exc:
@@ -373,11 +475,13 @@ def dominant_severity(incidents: list) -> str:
     return 'ALL_CLEAR'
 
 
-def build_data(scraped: list, existing: dict) -> dict:
+def build_data(scraped: list, existing: dict, summary: str = '', live_scraped: list | None = None) -> dict:
     active       = [i for i in scraped if i.get('active')]
     roads_closed = sum(1 for i in active if i.get('type') in ('road', 'coastal'))
     areas        = len({i.get('area', '') for i in active})
-    severity     = dominant_severity(scraped)
+    open_shelters = sum(1 for s in existing.get('shelters', []) if s.get('open'))
+    # Status reflects only freshly-scraped data so stale incidents don't inflate severity
+    severity     = dominant_severity(live_scraped if live_scraped is not None else scraped)
 
     map_markers = [
         {
@@ -390,7 +494,6 @@ def build_data(scraped: list, existing: dict) -> dict:
         }
         for inc in active if inc.get('lat') and inc.get('lng')
     ]
-    # Preserve shelter markers from previous data
     for m in existing.get('map_markers', []):
         if m.get('type') == 'shelter':
             map_markers.append(m)
@@ -398,19 +501,22 @@ def build_data(scraped: list, existing: dict) -> dict:
     return {
         'status':       severity,
         'last_updated': now_sast(),
-        'summary':      existing.get('summary', 'Monitoring active. Check incidents for current conditions.'),
+        'summary':      summary or existing.get('summary', 'Conditions monitoring active'),
         'stats': {
             'active_incidents': len(active),
             'roads_closed':     roads_closed,
-            'shelters_open':    existing.get('stats', {}).get('shelters_open', 0),
+            'shelters_open':    open_shelters,
             'areas_affected':   areas,
         },
         'incidents':    scraped,
         'map_markers':  map_markers,
         'timeline':     existing.get('timeline', []),
         'contacts':     existing.get('contacts', []),
+        'shelters':     existing.get('shelters', []),
         'actions':      existing.get('actions', {}),
         'outlook':      existing.get('outlook', {}),
+        'event':        existing.get('event'),
+        'outcomes':     existing.get('outcomes'),
     }
 
 
@@ -485,27 +591,36 @@ def main():
     traffic = scrape_traffic_sa()
 
     print('Fetching Open-Meteo conditions…')
-    open_meteo = scrape_open_meteo()
+    om_conditions = fetch_open_meteo()
+    open_meteo    = open_meteo_incidents(om_conditions) if om_conditions else []
+    om_summary    = open_meteo_summary(om_conditions)   if om_conditions else ''
+    if om_conditions:
+        print(f'  Open-Meteo: {om_summary}')
+
+    print('Fetching flood data…')
+    flood = scrape_flood_api()
 
     print('Fetching GDACS alerts…')
     gdacs = scrape_gdacs()
 
-    all_scraped = saws + cct + traffic + open_meteo + gdacs
-    if not all_scraped:
-        print('[WARN] All scrapers returned empty — retaining existing incidents.')
+    live_scraped = saws + cct + traffic + open_meteo + flood + gdacs
+
+    if not live_scraped:
+        print('[WARN] All scrapers returned empty — retaining existing incidents for display only.')
         all_scraped = existing.get('incidents', [])
+    else:
+        all_scraped = live_scraped
 
     weather = fetch_openweathermap(api_key)
     if weather:
-        print(f'OpenWeatherMap: {weather["description"]}, {weather["wind_kmh"]} km/h wind ({weather["severity"]})')
+        print(f'  OpenWeatherMap: {weather["description"]}, {weather["wind_kmh"]} km/h ({weather["severity"]})')
 
-    new_data = build_data(all_scraped, existing)
+    new_data = build_data(all_scraped, existing, summary=om_summary, live_scraped=live_scraped)
 
     geojson = build_geojson(new_data)
     with open(GEOJSON_FILE, 'w', encoding='utf-8') as f:
         json.dump(geojson, f, indent=2, ensure_ascii=False)
 
-    # Compare without last_updated to avoid spurious commits on time-only changes
     def strip_ts(d):
         return {k: v for k, v in d.items() if k != 'last_updated'}
 

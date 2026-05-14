@@ -84,6 +84,30 @@ const SEVERITY_COLORS = {
   EMERGENCY: 'rgb(252,61,33)'
 };
 
+function hexToRgb(hex) {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+
+function lightenColor(color, factor) {
+  let rgb;
+  if (color.startsWith('#')) {
+    rgb = hexToRgb(color);
+  } else {
+    const match = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+    rgb = match ? { r: parseInt(match[1]), g: parseInt(match[2]), b: parseInt(match[3]) } : null;
+  }
+  if (!rgb) return color;
+  const r = Math.min(255, Math.floor(rgb.r + (255 - rgb.r) * factor));
+  const g = Math.min(255, Math.floor(rgb.g + (255 - rgb.g) * factor));
+  const b = Math.min(255, Math.floor(rgb.b + (255 - rgb.b) * factor));
+  return `rgb(${r},${g},${b})`;
+}
+
 const TYPE_ICONS = {
   coastal:        '🌊',
   storm:          '⛈️',
@@ -103,6 +127,89 @@ let lastData = null;
 let map = null;
 let incidentLayer = null;
 let shelterLayer = null;
+let suburbLayer = null;
+let layerControl = null;
+let currentSuburbColorMap = new Map();
+
+const SUBURB_FILL = {
+  EMERGENCY: { color: '#dc2626', fillOpacity: 0.38, weight: 2 },
+  WARNING:   { color: '#cb4b16', fillOpacity: 0.30, weight: 1.5 },
+  WATCH:     { color: '#b58900', fillOpacity: 0.22, weight: 1.5 },
+  ALL_CLEAR: { color: '#16a34a', fillOpacity: 0.18, weight: 1 },
+};
+const SUBURB_FILL_RECOVERY = {
+  EMERGENCY: { color: '#dc2626', fillOpacity: 0.14, weight: 1 },
+  WARNING:   { color: '#cb4b16', fillOpacity: 0.11, weight: 1 },
+  WATCH:     { color: '#b58900', fillOpacity: 0.09, weight: 1 },
+};
+const RECOVERY_MS = 14 * 24 * 60 * 60 * 1000;
+
+function normalizeSuburbName(name) {
+  return name.toUpperCase().replace(/[''`]/g, '').replace(/[^A-Z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+let suburbIsRecovery = false;
+
+function buildSuburbColorMap(incidents, recovery) {
+  const colorMap = new Map();
+  const rank = { EMERGENCY: 0, WARNING: 1, WATCH: 2, ALL_CLEAR: 3 };
+  const cutoff = Date.now() - (recovery ? RECOVERY_MS : STALE_MS);
+  incidents.filter(i => i.active && new Date(i.updated).getTime() > cutoff).forEach(inc => {
+    inc.area.split(/[\/,]/).map(p => normalizeSuburbName(p)).filter(Boolean).forEach(part => {
+      const cur = colorMap.get(part);
+      if (!cur || (rank[inc.severity] ?? 9) < (rank[cur.severity] ?? 9)) {
+        colorMap.set(part, { severity: inc.severity, type: inc.type });
+      }
+    });
+  });
+  return colorMap;
+}
+
+function suburbStyle(feature) {
+  const name = normalizeSuburbName(feature.properties.OFC_SBRB_NAME || '');
+  const match = currentSuburbColorMap.get(name);
+  if (!match) return { fillOpacity: 0, weight: 0, opacity: 0 };
+  const palette = suburbIsRecovery ? SUBURB_FILL_RECOVERY : SUBURB_FILL;
+  const cfg = palette[match.severity] || SUBURB_FILL_RECOVERY.WATCH;
+  return { color: cfg.color, weight: cfg.weight, fillColor: cfg.color, fillOpacity: cfg.fillOpacity, opacity: 0.75 };
+}
+
+async function initSuburbLayer() {
+  try {
+    const res = await fetch('data/Official_Planning_Suburbs.geojson.json');
+    const geoData = await res.json();
+    suburbLayer = L.geoJSON(geoData, {
+      style: suburbStyle,
+      onEachFeature: (feature, layer) => {
+        layer.on('click', () => {
+          const rawName = feature.properties.OFC_SBRB_NAME || '';
+          const match = currentSuburbColorMap.get(normalizeSuburbName(rawName));
+          if (match) {
+            layer.bindPopup(`
+              <div class="popup-content">
+                <strong class="popup-title">${rawName}</strong>
+                <p class="popup-area">${match.type.toUpperCase()} incident in area</p>
+                <span class="severity-badge ${match.severity}">${match.severity.replace('_', ' ')}</span>
+              </div>
+            `).openPopup();
+          }
+        });
+      }
+    });
+    if (layerControl) layerControl.addOverlay(suburbLayer, 'Affected Areas');
+    suburbLayer.addTo(map);
+    if (lastData) updateSuburbHighlights(lastData.incidents, lastData.event);
+  } catch (e) {
+    console.error('Cape Storm Monitor: suburb GeoJSON load failed —', e.message);
+  }
+}
+
+function updateSuburbHighlights(incidents, event) {
+  if (!suburbLayer) return;
+  suburbIsRecovery = event?.status === 'recovery';
+  currentSuburbColorMap = buildSuburbColorMap(incidents, suburbIsRecovery);
+  suburbLayer.setStyle(suburbStyle);
+}
 
 // ── Map ──────────────────────────────────────────────────────────────────────
 
@@ -118,7 +225,7 @@ function initMap() {
   incidentLayer = L.layerGroup().addTo(map);
   shelterLayer  = L.layerGroup().addTo(map);
 
-  L.control.layers(null, {
+  layerControl = L.control.layers(null, {
     'Active Incidents': incidentLayer,
     'Shelters':         shelterLayer
   }, { collapsed: false, position: 'topright' }).addTo(map);
@@ -158,6 +265,8 @@ function addLegend() {
       <div class="legend-row"><span class="legend-dot" style="background:#cb4b16;"></span> Warning</div>
       <div class="legend-row"><span class="legend-dot" style="background:#b58900;"></span> Watch</div>
       <div class="legend-row"><span class="legend-dot" style="background:#859900;"></span> All Clear / Shelter</div>
+      <div class="legend-sep"></div>
+      <div class="legend-row"><span class="legend-square" style="background:#cb4b16;opacity:0.4;border-radius:2px;"></span> Affected suburb</div>
     `;
     return div;
   };
@@ -183,10 +292,19 @@ function updateMapMarkers(incidents, mapMarkers) {
   shelterLayer.clearLayers();
 
   incidents
-    .filter(inc => inc.active && inc.lat != null && inc.lng != null)
+    .filter(inc => inc.active && !isStale(inc) && inc.lat != null && inc.lng != null)
     .forEach(inc => {
-      const icon   = makeMarkerIcon(inc.type, inc.severity);
+      const color = SEVERITY_COLORS[inc.severity] || SEVERITY_COLORS.WATCH;
+      const lighterColor = lightenColor(color, 0.3);
+      const icon = makeMarkerIcon(inc.type, inc.severity);
       const marker = L.marker([inc.lat, inc.lng], { icon });
+      marker.lighterColor = lighterColor;
+      marker.on('click', function() {
+        this._icon.style.boxShadow = `0 2px 8px rgba(0,0,0,0.35), 0 0 0 3px ${this.lighterColor}`;
+      });
+      marker.on('popupclose', function() {
+        this._icon.style.boxShadow = '0 2px 8px rgba(0,0,0,0.35)';
+      });
       marker.bindPopup(buildPopupHtml(inc));
       incidentLayer.addLayer(marker);
     });
@@ -195,8 +313,17 @@ function updateMapMarkers(incidents, mapMarkers) {
     mapMarkers
       .filter(m => m.type === 'shelter')
       .forEach(m => {
-        const icon   = makeMarkerIcon('shelter', m.severity || 'ALL_CLEAR');
+        const color = SEVERITY_COLORS[m.severity || 'ALL_CLEAR'];
+        const lighterColor = lightenColor(color, 0.3);
+        const icon = makeMarkerIcon('shelter', m.severity || 'ALL_CLEAR');
         const marker = L.marker([m.lat, m.lng], { icon });
+        marker.lighterColor = lighterColor;
+        marker.on('click', function() {
+          this._icon.style.boxShadow = `0 2px 8px rgba(0,0,0,0.35), 0 0 0 3px ${this.lighterColor}`;
+        });
+        marker.on('popupclose', function() {
+          this._icon.style.boxShadow = '0 2px 8px rgba(0,0,0,0.35)';
+        });
         marker.bindPopup(`<div class="popup-content"><strong class="popup-title">${m.label}</strong></div>`);
         shelterLayer.addLayer(marker);
       });
@@ -244,21 +371,42 @@ function updateStatusBanner(status, lastUpdated, summary) {
 
 // ── Stats bar ─────────────────────────────────────────────────────────────────
 
-function updateStatsBar(stats) {
-  document.getElementById('stat-incidents').textContent = stats.active_incidents ?? '—';
-  document.getElementById('stat-areas').textContent     = stats.areas_affected   ?? '—';
-  document.getElementById('stat-roads').textContent     = stats.roads_closed     ?? '—';
-  document.getElementById('stat-shelters').textContent  = stats.shelters_open    ?? '—';
+function updateStatsBar(incidents, sheltersOpen) {
+  const fresh = incidents.filter(i => i.active && !isStale(i));
+  const areas = [...new Set(fresh.map(i => i.area.split(/[\/,]/)[0].trim()))];
+  const roads = fresh.filter(i => ['road', 'coastal'].includes(i.type)).length;
+
+  document.getElementById('stat-incidents').textContent = fresh.length || '—';
+  document.getElementById('stat-roads').textContent     = roads || '—';
+  document.getElementById('stat-shelters').textContent  = sheltersOpen ?? '—';
+
+  const areaEl = document.getElementById('stat-areas');
+  if (areas.length === 0) {
+    areaEl.textContent  = '—';
+    areaEl.className    = 'stat-number';
+  } else if (areas.length <= 2) {
+    areaEl.textContent  = areas.join(', ');
+    areaEl.className    = 'stat-number stat-name';
+  } else {
+    areaEl.textContent  = areas.length;
+    areaEl.className    = 'stat-number';
+  }
 }
 
 // ── Incident cards ────────────────────────────────────────────────────────────
 
 const SEVERITY_ORDER = { EMERGENCY: 0, WARNING: 1, WATCH: 2, ALL_CLEAR: 3 };
+const STALE_MS = 48 * 60 * 60 * 1000;
+
+function isStale(inc) {
+  if (!inc.updated) return false;
+  return Date.now() - new Date(inc.updated).getTime() > STALE_MS;
+}
 
 function updateIncidentCards(incidents) {
   const list   = document.getElementById('incident-list');
   const active = incidents
-    .filter(i => i.active)
+    .filter(i => i.active && !isStale(i))
     .sort((a, b) => (SEVERITY_ORDER[a.severity] ?? 9) - (SEVERITY_ORDER[b.severity] ?? 9));
 
   if (active.length === 0) {
@@ -412,6 +560,46 @@ function updateTimeline(timeline) {
   }).join('');
 }
 
+// ── Event / outcomes ──────────────────────────────────────────────────────────
+
+function updateEvent(event, outcomes) {
+  const section = document.getElementById('event-section');
+  if (!section) return;
+  if (!event) { section.style.display = 'none'; return; }
+
+  section.style.display = '';
+  document.getElementById('event-name').textContent = 'Storm Event';
+  document.getElementById('event-period').textContent = event.period || '';
+
+  const STATUS_LABELS = { active: 'ACTIVE', recovery: 'RECOVERY', resolved: 'RESOLVED' };
+  const badge = document.getElementById('event-status-badge');
+  badge.textContent = STATUS_LABELS[event.status] || event.status.toUpperCase();
+  badge.className = `event-status-badge ${event.status}`;
+
+  document.getElementById('outcomes-grid').innerHTML = '';
+
+  if (!outcomes) { document.getElementById('outcomes-lists').innerHTML = ''; return; }
+
+  const lists = [];
+  if (outcomes.roads_damaged?.length) {
+    lists.push(`
+      <div class="outcomes-list-block">
+        <div class="outcomes-list-label">Roads Damaged</div>
+        <ul class="outcomes-list">${outcomes.roads_damaged.map(r => `<li>${r}</li>`).join('')}</ul>
+      </div>
+    `);
+  }
+  if (outcomes.infrastructure_damage?.length) {
+    lists.push(`
+      <div class="outcomes-list-block">
+        <div class="outcomes-list-label">Infrastructure</div>
+        <ul class="outcomes-list">${outcomes.infrastructure_damage.map(r => `<li>${r}</li>`).join('')}</ul>
+      </div>
+    `);
+  }
+  document.getElementById('outcomes-lists').innerHTML = lists.join('');
+}
+
 // ── Stale warning ─────────────────────────────────────────────────────────────
 
 function showStaleWarning() {
@@ -456,11 +644,13 @@ async function pollUpdates() {
       currentLastUpdated = data.last_updated;
       lastData = data;
       updateStatusBanner(data.status, data.last_updated, data.summary);
-      updateStatsBar(data.stats);
+      updateStatsBar(data.incidents, data.stats?.shelters_open);
       updateIncidentCards(data.incidents);
       updateMapMarkers(data.incidents, data.map_markers);
+      updateSuburbHighlights(data.incidents, data.event);
       updateTimeline(data.timeline);
       updateShelters(data.shelters);
+      updateEvent(data.event, data.outcomes);
     }
 
     hideStaleWarning();
@@ -483,6 +673,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initMapTabs();
   initMap();
+  initSuburbLayer();
   pollUpdates();
   setInterval(pollUpdates, 2 * 60 * 1000);
 });
