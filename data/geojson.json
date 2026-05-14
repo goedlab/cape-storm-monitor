@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-05-14T10:24:12+02:00",
+  "generated": "2026-05-14T10:45:37+02:00",
   "features": [
     {
       "type": "Feature",
@@ -133,6 +133,25 @@
         "severity": "WARNING",
         "description": "R44 closed in both directions near Lourensford Road due to debris and surface flooding. Use N2 via Somerset West as alternate.",
         "updated": "2026-05-11T13:50:00+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.0167,
+          -32.5833
+        ]
+      },
+      "properties": {
+        "id": "inc-010",
+        "type": "flood",
+        "title": "Flood Damage – Citrusdal",
+        "area": "Citrusdal",
+        "severity": "WARNING",
+        "description": "Significant flood damage reported in Citrusdal following the storm system. Roads damaged, properties flooded in low-lying areas. Cederberg Municipality assessment teams on the ground.",
+        "updated": "2026-05-14T09:00:00+02:00"
       }
     },
     {

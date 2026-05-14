@@ -1,12 +1,12 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-05-14T10:24:12+02:00",
-  "summary": "Overcast",
+  "last_updated": "2026-05-14T10:45:37+02:00",
+  "summary": "Cape Town: Mainly clear",
   "stats": {
-    "active_incidents": 9,
+    "active_incidents": 10,
     "roads_closed": 3,
     "shelters_open": 2,
-    "areas_affected": 9
+    "areas_affected": 10
   },
   "incidents": [
     {
@@ -132,6 +132,24 @@
       "alternate_route": "N2 via Somerset West interchange"
     },
     {
+      "id": "inc-010",
+      "type": "flood",
+      "title": "Flood Damage – Citrusdal",
+      "area": "Citrusdal",
+      "lat": -32.5833,
+      "lng": 19.0167,
+      "severity": "WARNING",
+      "description": "Significant flood damage reported in Citrusdal following the storm system. Roads damaged, properties flooded in low-lying areas. Cederberg Municipality assessment teams on the ground.",
+      "source": "Cederberg Municipality",
+      "source_url": "https://www.westerncape.gov.za/disaster-management",
+      "updated": "2026-05-14T09:00:00+02:00",
+      "active": true,
+      "actions": [
+        "Avoid low-lying roads in and around Citrusdal.",
+        "Contact Cederberg Municipality for assistance: 027 482 8000."
+      ]
+    },
+    {
       "id": "inc-008",
       "type": "infrastructure",
       "title": "Water Pipe Burst – Bellville CBD",
@@ -219,6 +237,14 @@
       "lat": -34.02,
       "lng": 18.84,
       "label": "R44 Closure – Stellenbosch Direction",
+      "severity": "WARNING"
+    },
+    {
+      "id": "m-inc-010",
+      "type": "flood",
+      "lat": -32.5833,
+      "lng": 19.0167,
+      "label": "Flood Damage – Citrusdal",
       "severity": "WARNING"
     },
     {
@@ -398,7 +424,7 @@
     "name": "CSE-052026",
     "period": "11–14 May 2026",
     "start": "2026-05-11T00:00:00+02:00",
-    "status": "active"
+    "status": "recovery"
   },
   "outcomes": {
     "displaced_persons": 47,
