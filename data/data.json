@@ -1,11 +1,11 @@
 {
-  "status": "ALL_CLEAR",
-  "last_updated": "2026-05-14T11:17:10+02:00",
-  "summary": "Cape Town: Clear sky",
+  "status": "WATCH",
+  "last_updated": "2026-05-14T11:52:41+02:00",
+  "summary": "Cape Town: Clear sky · Recovery monitoring active",
   "stats": {
     "active_incidents": 10,
     "roads_closed": 3,
-    "shelters_open": 0,
+    "shelters_open": 2,
     "areas_affected": 10
   },
   "incidents": [
@@ -364,7 +364,34 @@
       "display": "10210"
     }
   ],
-  "shelters": [],
+  "shelters": [
+    {
+      "id": "sh-001",
+      "name": "Goodwood Community Hall",
+      "address": "Voortrekker Road, Goodwood, 7460",
+      "open": true,
+      "contact": "021 480 7700",
+      "bring": [
+        "ID document",
+        "Medication",
+        "Warm clothing",
+        "Food for 24 hours"
+      ]
+    },
+    {
+      "id": "sh-002",
+      "name": "Strand Civic Centre",
+      "address": "1 Milner Street, Strand, 7140",
+      "open": true,
+      "contact": "021 480 7700",
+      "bring": [
+        "ID document",
+        "Medication",
+        "Warm clothing",
+        "Food for 24 hours"
+      ]
+    }
+  ],
   "actions": {
     "ALL_CLEAR": [
       "Normal conditions. Stay weather-aware.",
@@ -392,6 +419,24 @@
     "season": "Autumn / Winter",
     "text": "Cape Town's winter storm season runs May–August. North-westerly frontal systems bring strong winds and heavy rain, particularly affecting coastal roads, the Cape Peninsula, and low-lying flood plains. Berg wind events in autumn bring extreme fire risk to the northern suburbs and winelands."
   },
-  "event": null,
-  "outcomes": null
+  "event": {
+    "id": "CSE-052026",
+    "name": "CSE-052026",
+    "period": "11-14 May 2026",
+    "start": "2026-05-11T00:00:00+02:00",
+    "status": "recovery"
+  },
+  "outcomes": {
+    "displaced_persons": 47,
+    "fatalities": 0,
+    "injuries": 2,
+    "roads_damaged": [
+      "R44 Strand / Gordon's Bay section (flash flood damage)",
+      "N2 Sir Lowry's Pass approach (surface flooding)"
+    ],
+    "infrastructure_damage": [
+      "Mitchells Plain substation (storm damage, ~4 000 homes affected)",
+      "Bellville water main, Voortrekker Road (pipe burst)"
+    ]
+  }
 }
