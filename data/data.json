@@ -1,6 +1,6 @@
 {
-  "status": "EMERGENCY",
-  "last_updated": "2026-05-14T10:18:58+02:00",
+  "status": "ALL_CLEAR",
+  "last_updated": "2026-05-14T10:24:12+02:00",
   "summary": "Overcast",
   "stats": {
     "active_incidents": 9,
