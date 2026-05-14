@@ -1,11 +1,11 @@
 {
-  "status": "EMERGENCY",
-  "last_updated": "2026-05-14T11:14:48+02:00",
-  "summary": "Cape Town: Mainly clear",
+  "status": "ALL_CLEAR",
+  "last_updated": "2026-05-14T11:17:10+02:00",
+  "summary": "Cape Town: Clear sky",
   "stats": {
     "active_incidents": 10,
     "roads_closed": 3,
-    "shelters_open": 2,
+    "shelters_open": 0,
     "areas_affected": 10
   },
   "incidents": [
@@ -364,6 +364,7 @@
       "display": "10210"
     }
   ],
+  "shelters": [],
   "actions": {
     "ALL_CLEAR": [
       "Normal conditions. Stay weather-aware.",
@@ -390,5 +391,7 @@
   "outlook": {
     "season": "Autumn / Winter",
     "text": "Cape Town's winter storm season runs May–August. North-westerly frontal systems bring strong winds and heavy rain, particularly affecting coastal roads, the Cape Peninsula, and low-lying flood plains. Berg wind events in autumn bring extreme fire risk to the northern suburbs and winelands."
-  }
+  },
+  "event": null,
+  "outcomes": null
 }
