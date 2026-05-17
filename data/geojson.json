@@ -1,195 +1,24 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-05-17T16:04:26+02:00",
+  "generated": "2026-05-17T20:01:57+02:00",
   "features": [
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.36,
-          -34.09
+          18.4241,
+          -33.9249
         ]
       },
       "properties": {
-        "id": "inc-001",
-        "type": "coastal",
-        "title": "Chapman's Peak Road Closure",
-        "area": "Hout Bay / Noordhoek",
-        "severity": "WARNING",
-        "description": "Road closed due to wave action topping the seawall. Reopens when seas subside.",
-        "updated": "2026-05-11T13:45:00+02:00"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.62,
-          -34.04
-        ]
-      },
-      "properties": {
-        "id": "inc-002",
-        "type": "power",
-        "title": "Power Outage – Mitchells Plain",
-        "area": "Mitchells Plain",
-        "severity": "WATCH",
-        "description": "Unplanned outage affecting approximately 4,000 homes. Storm damage to substation. ETA restoration: unknown.",
-        "updated": "2026-05-11T12:00:00+02:00"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.87,
-          -34.12
-        ]
-      },
-      "properties": {
-        "id": "inc-003",
-        "type": "road",
-        "title": "N2 Flooding – Sir Lowry's Pass",
-        "area": "Sir Lowry's Pass / Somerset West",
-        "severity": "WARNING",
-        "description": "N2 partially flooded. Single lane open. Expect heavy delays. Trucks advised to avoid.",
-        "updated": "2026-05-11T14:10:00+02:00"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.4,
-          -33.91
-        ]
-      },
-      "properties": {
-        "id": "inc-004",
-        "type": "internet",
-        "title": "Fibre Outage – Atlantic Seaboard",
-        "area": "Sea Point / Green Point / De Waterkant",
-        "severity": "WATCH",
-        "description": "Openserve fibre outage affecting residential and business customers. Underground cable damaged by flooding.",
-        "updated": "2026-05-11T11:30:00+02:00"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.85,
-          -34.11
-        ]
-      },
-      "properties": {
-        "id": "inc-005",
-        "type": "flood",
-        "title": "Flash Flooding – Strand / Gordon's Bay",
-        "area": "Strand / Gordon's Bay",
-        "severity": "EMERGENCY",
-        "description": "Flash flooding across the R44 corridor. Vehicles stranded. Rescue teams deployed. Residents in low-lying areas urged to evacuate immediately.",
-        "updated": "2026-05-11T14:30:00+02:00"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.48,
-          -34.35
-        ]
-      },
-      "properties": {
-        "id": "inc-006",
+        "id": "om-wind-cape-town",
         "type": "wind",
-        "title": "Gale Force Winds – Cape Peninsula",
-        "area": "Cape Point / Simon's Town / Kommetjie",
-        "severity": "WARNING",
-        "description": "Gusts exceeding 100 km/h recorded at Cape Point. Flying debris reported. Hikers and cyclists advised to stay off exposed paths.",
-        "updated": "2026-05-11T13:00:00+02:00"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.84,
-          -34.02
-        ]
-      },
-      "properties": {
-        "id": "inc-007",
-        "type": "road",
-        "title": "R44 Closure – Stellenbosch Direction",
-        "area": "Stellenbosch / Somerset West",
-        "severity": "WARNING",
-        "description": "R44 closed in both directions near Lourensford Road due to debris and surface flooding. Use N2 via Somerset West as alternate.",
-        "updated": "2026-05-11T13:50:00+02:00"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.0167,
-          -32.5833
-        ]
-      },
-      "properties": {
-        "id": "inc-010",
-        "type": "flood",
-        "title": "Flood Damage – Citrusdal",
-        "area": "Citrusdal",
-        "severity": "WARNING",
-        "description": "Significant flood damage reported in Citrusdal following the storm system. Roads damaged, properties flooded in low-lying areas. Cederberg Municipality assessment teams on the ground.",
-        "updated": "2026-05-14T09:00:00+02:00"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.63,
-          -33.9
-        ]
-      },
-      "properties": {
-        "id": "inc-008",
-        "type": "infrastructure",
-        "title": "Water Pipe Burst – Bellville CBD",
-        "area": "Bellville",
+        "title": "Strong Wind Advisory – Cape Town (61 km/h gusts)",
+        "area": "Cape Town",
         "severity": "WATCH",
-        "description": "Major water main burst on Voortrekker Road. Repairs underway. Water pressure reduced across Bellville and Parow. Expect disruptions until 20:00.",
-        "updated": "2026-05-11T11:15:00+02:00"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.47,
-          -33.93
-        ]
-      },
-      "properties": {
-        "id": "inc-009",
-        "type": "storm",
-        "title": "Storm Surge Warning – Table Bay",
-        "area": "Woodstock Beach / Salt River / Foreshore",
-        "severity": "WARNING",
-        "description": "Storm surge of 0.8m above predicted tide level expected between 15:00–18:00. Low-lying coastal industrial areas at risk of inundation. Port Cape Town operating under restricted conditions.",
-        "updated": "2026-05-11T14:00:00+02:00"
+        "description": "Wind gusts of 61 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+        "updated": "2026-05-17T20:01:56+02:00"
       }
     },
     {
