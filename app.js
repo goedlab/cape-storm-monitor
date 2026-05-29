@@ -344,6 +344,9 @@ function updateStatusBanner(status, lastUpdated, summary) {
   updatedEl.textContent = `Last updated ${formatDateTime(lastUpdated)} SAST`;
 
   document.title = `[${t(`status.${status}`)}] Cape Storm Monitor`;
+
+  const nudge = document.getElementById('all-clear-nudge');
+  if (nudge) nudge.style.display = status === 'ALL_CLEAR' ? '' : 'none';
 }
 
 // ── Stats bar ─────────────────────────────────────────────────────────────────
@@ -495,11 +498,18 @@ function filterIncidents() {
 
 // ── Shelters ──────────────────────────────────────────────────────────────────
 
-function updateSeasonalOutlook(outlook) {
+function updateSeasonalOutlook(outlook, status) {
   const section = document.getElementById('seasonal-section');
   if (!section) return;
   if (!outlook || !outlook.length) { section.style.display = 'none'; return; }
   section.style.display = '';
+
+  if (status === 'ALL_CLEAR') {
+    const list = document.getElementById('seasonal-list');
+    const hint = document.getElementById('seasonal-expand-hint');
+    if (list) list.style.display = '';
+    if (hint) hint.innerHTML = '&#9660;';
+  }
 
   const rows = outlook.map(m => `
     <tr>
@@ -689,15 +699,16 @@ async function pollUpdates() {
     if (data.last_updated !== currentLastUpdated) {
       currentLastUpdated = data.last_updated;
       lastData = data;
-      updateStatusBanner(data.status, data.last_updated, data.summary);
-      updateStatsBar(data.incidents, data.stats?.shelters_open, data.event);
-      updateIncidentCards(data.incidents);
-      updateMapMarkers(data.incidents, data.map_markers);
-      updateSuburbHighlights(data.incidents, data.event);
-      updateTimeline(data.timeline);
-      updateShelters(data.shelters);
-      updateSeasonalOutlook(data.seasonal_outlook);
-      updateEvent(data.event, data.outcomes);
+      const run = (fn, ...args) => { try { fn(...args); } catch(e) { console.error(fn.name, e); } };
+      run(updateStatusBanner,    data.status, data.last_updated, data.summary);
+      run(updateStatsBar,        data.incidents ?? [], data.stats?.shelters_open, data.event);
+      run(updateIncidentCards,   data.incidents ?? []);
+      run(updateMapMarkers,      data.incidents ?? [], data.map_markers ?? []);
+      run(updateSuburbHighlights,data.incidents ?? [], data.event);
+      run(updateTimeline,        data.timeline  ?? []);
+      run(updateShelters,        data.shelters  ?? []);
+      run(updateSeasonalOutlook, data.seasonal_outlook ?? [], data.status);
+      run(updateEvent,           data.event, data.outcomes);
     }
 
     hideStaleWarning();
