@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "status": "WATCH",
   "last_updated": "2026-05-29T22:25:35+02:00",
@@ -483,4 +484,217 @@
       "Bellville water main, Voortrekker Road (pipe burst)"
     ]
   }
+=======
+{
+  "status": "ALL_CLEAR",
+  "last_updated": "2026-05-29T15:45:11+02:00",
+  "summary": "Cape Town: Clear sky",
+  "stats": {
+    "active_incidents": 1,
+    "roads_closed": 0,
+    "shelters_open": 2,
+    "areas_affected": 1
+  },
+  "incidents": [
+    {
+      "id": "om-wind-cape-town",
+      "type": "wind",
+      "title": "Strong Wind Advisory – Cape Town (60 km/h gusts)",
+      "area": "Cape Town",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "severity": "WATCH",
+      "description": "Wind gusts of 60 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+      "source": "Open-Meteo",
+      "source_url": "https://open-meteo.com",
+      "updated": "2026-05-18T00:53:38+02:00",
+      "active": true
+    }
+  ],
+  "map_markers": [
+    {
+      "id": "m-om-wind-cape-town",
+      "type": "wind",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "label": "Strong Wind Advisory – Cape Town (60 km/h gusts)",
+      "severity": "WATCH"
+    },
+    {
+      "id": "m002",
+      "type": "shelter",
+      "lat": -33.93,
+      "lng": 18.54,
+      "label": "Evacuation Shelter: Goodwood Community Hall",
+      "severity": "ALL_CLEAR"
+    },
+    {
+      "id": "m003",
+      "type": "shelter",
+      "lat": -34.11,
+      "lng": 18.84,
+      "label": "Evacuation Shelter: Strand Civic Centre",
+      "severity": "ALL_CLEAR"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "tl-005",
+      "timestamp": "2026-05-11T14:30:00+02:00",
+      "source": "City of Cape Town",
+      "text": "EMERGENCY declared: Flash flooding in Strand and Gordon's Bay. Rescue teams on scene. Evacuate low-lying areas immediately.",
+      "severity": "EMERGENCY",
+      "url": "https://www.capetown.gov.za/Media-and-news/Newsroom"
+    },
+    {
+      "id": "tl-004",
+      "timestamp": "2026-05-11T14:15:00+02:00",
+      "source": "SA Weather Service",
+      "text": "Storm surge warning issued for Table Bay: 0.8m above tide level expected 15:00–18:00. Low-lying coastal areas at risk.",
+      "severity": "WARNING",
+      "url": "https://www.weathersa.co.za/home/mediareleases"
+    },
+    {
+      "id": "tl-001",
+      "timestamp": "2026-05-11T14:00:00+02:00",
+      "source": "SA Weather Service",
+      "text": "Gale warning issued for sea areas False Bay and Cape Point.",
+      "severity": "WARNING",
+      "url": "https://www.weathersa.co.za/home/mediareleases"
+    },
+    {
+      "id": "tl-002",
+      "timestamp": "2026-05-11T12:30:00+02:00",
+      "source": "City of Cape Town",
+      "text": "Chapman's Peak Drive closed to all traffic. Storm surge monitoring in progress.",
+      "severity": "WARNING",
+      "url": "https://www.capetown.gov.za/Media-and-news/Newsroom"
+    },
+    {
+      "id": "tl-003",
+      "timestamp": "2026-05-11T11:00:00+02:00",
+      "source": "SA Weather Service",
+      "text": "NW gale warning extended through Sunday. Wind gusts up to 100km/h forecast for Cape Peninsula.",
+      "severity": "WARNING",
+      "url": "https://www.weathersa.co.za/home/mediareleases"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "CT Disaster Management",
+      "number": "0214807700",
+      "display": "021 480 7700"
+    },
+    {
+      "name": "NSRI",
+      "number": "0870949774",
+      "display": "087 094 9774"
+    },
+    {
+      "name": "SAPS Emergency",
+      "number": "10111",
+      "display": "10111"
+    },
+    {
+      "name": "ER24",
+      "number": "084124",
+      "display": "084 124"
+    },
+    {
+      "name": "Eskom Faults",
+      "number": "0860037566",
+      "display": "0860 037 566"
+    },
+    {
+      "name": "City of CT Electricity",
+      "number": "0860103089",
+      "display": "0860 103 089"
+    },
+    {
+      "name": "City of CT Roads",
+      "number": "0800656463",
+      "display": "0800 656 463"
+    },
+    {
+      "name": "Openserve Faults",
+      "number": "10210",
+      "display": "10210"
+    }
+  ],
+  "shelters": [
+    {
+      "id": "sh-001",
+      "name": "Goodwood Community Hall",
+      "address": "Voortrekker Road, Goodwood, 7460",
+      "open": true,
+      "contact": "021 480 7700",
+      "bring": [
+        "ID document",
+        "Medication",
+        "Warm clothing",
+        "Food for 24 hours"
+      ]
+    },
+    {
+      "id": "sh-002",
+      "name": "Strand Civic Centre",
+      "address": "1 Milner Street, Strand, 7140",
+      "open": true,
+      "contact": "021 480 7700",
+      "bring": [
+        "ID document",
+        "Medication",
+        "Warm clothing",
+        "Food for 24 hours"
+      ]
+    }
+  ],
+  "actions": {
+    "ALL_CLEAR": [
+      "Normal conditions. Stay weather-aware.",
+      "Check that your emergency contacts are saved."
+    ],
+    "WATCH": [
+      "Secure loose outdoor items.",
+      "Avoid unnecessary coastal or mountain trips.",
+      "Keep phone charged."
+    ],
+    "WARNING": [
+      "Stay indoors if possible.",
+      "Avoid flood-prone roads and low-lying areas.",
+      "Do not attempt to cross flooded roads.",
+      "Keep emergency contacts accessible."
+    ],
+    "EMERGENCY": [
+      "Follow official evacuation instructions immediately.",
+      "Call 107 (CT Emergency) or 10111.",
+      "Do not attempt river or flood crossings.",
+      "Move to higher ground if in a flood zone."
+    ]
+  },
+  "outlook": {
+    "season": "Autumn / Winter",
+    "text": "Cape Town's winter storm season runs May–August. North-westerly frontal systems bring strong winds and heavy rain, particularly affecting coastal roads, the Cape Peninsula, and low-lying flood plains. Berg wind events in autumn bring extreme fire risk to the northern suburbs and winelands."
+  },
+  "event": {
+    "id": "CSE-052026",
+    "name": "CSE-052026",
+    "period": "11-14 May 2026",
+    "start": "2026-05-11T00:00:00+02:00",
+    "status": "recovery"
+  },
+  "outcomes": {
+    "displaced_persons": 47,
+    "fatalities": 0,
+    "injuries": 2,
+    "roads_damaged": [
+      "R44 Strand / Gordon's Bay section (flash flood damage)",
+      "N2 Sir Lowry's Pass approach (surface flooding)"
+    ],
+    "infrastructure_damage": [
+      "Mitchells Plain substation (storm damage, ~4 000 homes affected)",
+      "Bellville water main, Voortrekker Road (pipe burst)"
+    ]
+  }
+>>>>>>> b29a61adfe1fe27a734f4dd45c2065d8d921e9d2
 }
