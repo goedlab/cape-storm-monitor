@@ -51,6 +51,14 @@ FLOOD_RIVERS = [
     {'name': 'Liesbeek River', 'area': 'Cape Town',           'lat': -33.94, 'lng': 18.49},
 ]
 
+# Monthly climatological normals for Cape Town (precip mm, temp °C)
+CAPE_TOWN_CLIMATOLOGY = {
+    1:  (17,  22.0), 2:  (14,  22.0), 3:  (21,  20.5),
+    4:  (41,  18.5), 5:  (68,  16.5), 6:  (93,  14.0),
+    7:  (82,  13.0), 8:  (77,  13.5), 9:  (43,  15.5),
+    10: (30,  17.5), 11: (22,  19.5), 12: (16,  21.0),
+}
+
 WMO_LABELS = {
     0: 'Clear sky', 1: 'Mainly clear', 2: 'Partly cloudy', 3: 'Overcast',
     45: 'Fog', 48: 'Freezing fog',
@@ -298,6 +306,76 @@ def open_meteo_incidents(c: dict) -> list:
     return incidents
 
 
+def fetch_seasonal_forecast() -> list:
+    """Fetch SEAS5 daily forecast for Cape Town, aggregate to monthly, return anomaly labels."""
+    try:
+        url = (
+            'https://seasonal-api.open-meteo.com/v1/seasonal'
+            '?latitude=-33.9249&longitude=18.4241'
+            '&daily=precipitation_sum,temperature_2m_max,temperature_2m_min'
+            '&models=ecmwf_seas5'
+        )
+        res = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+        res.raise_for_status()
+        daily = res.json().get('daily', {})
+        times    = daily.get('time', [])
+        precips  = daily.get('precipitation_sum', [])
+        t_maxes  = daily.get('temperature_2m_max', [])
+        t_mins   = daily.get('temperature_2m_min', [])
+        if not times:
+            return []
+
+        # Aggregate daily → monthly buckets
+        buckets = {}
+        for i, t in enumerate(times):
+            dt = datetime.fromisoformat(t)
+            key = (dt.year, dt.month)
+            if key not in buckets:
+                buckets[key] = {'precip': [], 'temp': []}
+            p = precips[i] if i < len(precips) and precips[i] is not None else None
+            tmax = t_maxes[i] if i < len(t_maxes) and t_maxes[i] is not None else None
+            tmin = t_mins[i]  if i < len(t_mins)  and t_mins[i]  is not None else None
+            if p is not None:
+                buckets[key]['precip'].append(p)
+            if tmax is not None and tmin is not None:
+                buckets[key]['temp'].append((tmax + tmin) / 2)
+
+        # Drop current partial month
+        now = datetime.now(SAST)
+        buckets.pop((now.year, now.month), None)
+
+        outlook = []
+        for (year, month), vals in sorted(buckets.items())[:6]:
+            if not vals['precip'] or not vals['temp']:
+                continue
+            clim_p, clim_t = CAPE_TOWN_CLIMATOLOGY.get(month, (50, 17.0))
+            mean_p = sum(vals['precip'])               # monthly total
+            mean_t = sum(vals['temp']) / len(vals['temp'])
+
+            ratio = mean_p / clim_p if clim_p > 0 else 1.0
+            if ratio > 1.25:   p_label = 'wetter than normal'
+            elif ratio < 0.75: p_label = 'drier than normal'
+            else:              p_label = 'near normal'
+
+            diff = mean_t - clim_t
+            if diff > 1.0:     t_label = 'warmer than normal'
+            elif diff < -1.0:  t_label = 'cooler than normal'
+            else:              t_label = 'near normal'
+
+            outlook.append({
+                'month':        datetime(year, month, 1).strftime('%b %Y'),
+                'precip_label': p_label,
+                'temp_label':   t_label,
+                'precip_mm':    round(mean_p),
+                'temp_c':       round(mean_t, 1),
+            })
+
+        return outlook
+    except Exception as exc:
+        print(f'[WARN] Seasonal forecast failed: {exc}', file=sys.stderr)
+        return []
+
+
 def scrape_flood_api() -> list:
     """Fetch river discharge for key Western Cape rivers via Open-Meteo Flood API."""
     incidents = []
@@ -466,6 +544,9 @@ def get_hash(data: dict) -> str:
     ).hexdigest()
 
 
+SEV_RANK = {'EMERGENCY': 0, 'WARNING': 1, 'WATCH': 2, 'ALL_CLEAR': 3}
+
+
 def dominant_severity(incidents: list) -> str:
     order = ['EMERGENCY', 'WARNING', 'WATCH', 'ALL_CLEAR']
     active_sevs = {i['severity'] for i in incidents if i.get('active')}
@@ -475,13 +556,42 @@ def dominant_severity(incidents: list) -> str:
     return 'ALL_CLEAR'
 
 
-def build_data(scraped: list, existing: dict, summary: str = '', live_scraped: list | None = None) -> dict:
+def compute_status(live_scraped: list, existing: dict) -> tuple[str, str]:
+    """
+    Return (status, summary_context) applying event-aware floor:
+      active event   → floor WARNING
+      recovery event → floor WATCH  (never show ALL CLEAR while monitoring)
+      no event       → pure weather/incident reading
+    """
+    live_sev   = dominant_severity(live_scraped)
+    event      = existing.get('event') or {}
+    evt_status = event.get('status', '')
+
+    if evt_status == 'active':
+        floor, context = 'WARNING', 'Storm event active — monitoring ongoing'
+    elif evt_status == 'recovery':
+        floor, context = 'WATCH',   'Recovery monitoring active'
+    else:
+        floor, context = 'ALL_CLEAR', ''
+
+    if SEV_RANK.get(live_sev, 3) <= SEV_RANK.get(floor, 3):
+        return live_sev, ''          # weather/incident reading is worse — use it as-is
+    return floor, context            # floor overrides; attach context to summary
+
+
+def build_data(scraped: list, existing: dict, summary: str = '', live_scraped: list | None = None, seasonal: list | None = None) -> dict:
     active       = [i for i in scraped if i.get('active')]
     roads_closed = sum(1 for i in active if i.get('type') in ('road', 'coastal'))
     areas        = len({i.get('area', '') for i in active})
     open_shelters = sum(1 for s in existing.get('shelters', []) if s.get('open'))
-    # Status reflects only freshly-scraped data so stale incidents don't inflate severity
-    severity     = dominant_severity(live_scraped if live_scraped is not None else scraped)
+
+    live = live_scraped if live_scraped is not None else scraped
+    severity, status_context = compute_status(live, existing)
+
+    # Append monitoring context to summary when the floor is overriding
+    effective_summary = summary or existing.get('summary', 'Conditions monitoring active')
+    if status_context:
+        effective_summary = f'{effective_summary} · {status_context}' if effective_summary else status_context
 
     map_markers = [
         {
@@ -501,7 +611,7 @@ def build_data(scraped: list, existing: dict, summary: str = '', live_scraped: l
     return {
         'status':       severity,
         'last_updated': now_sast(),
-        'summary':      summary or existing.get('summary', 'Conditions monitoring active'),
+        'summary':      effective_summary,
         'stats': {
             'active_incidents': len(active),
             'roads_closed':     roads_closed,
@@ -515,6 +625,7 @@ def build_data(scraped: list, existing: dict, summary: str = '', live_scraped: l
         'shelters':     existing.get('shelters', []),
         'actions':      existing.get('actions', {}),
         'outlook':      existing.get('outlook', {}),
+        'seasonal_outlook': seasonal if seasonal is not None else existing.get('seasonal_outlook', []),
         'event':        existing.get('event'),
         'outcomes':     existing.get('outcomes'),
     }
@@ -597,6 +708,11 @@ def main():
     if om_conditions:
         print(f'  Open-Meteo: {om_summary}')
 
+    print('Fetching seasonal forecast…')
+    seasonal = fetch_seasonal_forecast()
+    if seasonal:
+        print(f'  Seasonal: {len(seasonal)} months — {seasonal[0]["month"]} {seasonal[0]["precip_label"]}')
+
     print('Fetching flood data…')
     flood = scrape_flood_api()
 
@@ -615,7 +731,7 @@ def main():
     if weather:
         print(f'  OpenWeatherMap: {weather["description"]}, {weather["wind_kmh"]} km/h ({weather["severity"]})')
 
-    new_data = build_data(all_scraped, existing, summary=om_summary, live_scraped=live_scraped)
+    new_data = build_data(all_scraped, existing, summary=om_summary, live_scraped=live_scraped, seasonal=seasonal)
 
     geojson = build_geojson(new_data)
     with open(GEOJSON_FILE, 'w', encoding='utf-8') as f:

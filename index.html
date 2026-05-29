@@ -6,9 +6,7 @@
   <meta name="description" content="Cape Town storm and incident tracker">
   <meta name="theme-color" content="#0a0f1a">
   <title>Cape Storm Monitor</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -80,13 +78,18 @@
 <main>
 
   <section id="event-section" style="display:none;">
-    <div class="event-header">
-      <h2 class="section-title" id="event-name">Storm Event</h2>
+    <div class="event-card" onclick="toggleEventCard()">
+      <span class="expand-hint" id="event-expand-hint">&#9658;</span>
+      <span class="event-card-label" id="event-name">Storm Event</span>
+      <span class="event-card-period" id="event-period"></span>
       <span class="event-status-badge" id="event-status-badge">ACTIVE</span>
     </div>
-    <div class="event-period" id="event-period"></div>
-    <div class="outcomes-grid" id="outcomes-grid"></div>
-    <div class="outcomes-lists" id="outcomes-lists"></div>
+    <div class="event-card-detail" id="event-card-detail">
+      <div class="event-detail-inner">
+        <div id="outcomes-stats"></div>
+        <div id="outcomes-lists"></div>
+      </div>
+    </div>
   </section>
 
   <section id="incidents-section">
@@ -98,16 +101,18 @@
     </div>
   </section>
 
-  <section id="shelters-section" style="display:none;">
-    <h2 class="section-title" data-i18n="section.shelters">Open Shelters</h2>
-    <div class="shelters-grid" id="shelters-list"></div>
-  </section>
-
   <section id="timeline-section">
     <h2 class="section-title" data-i18n="section.timeline">Updates Timeline</h2>
     <div class="timeline-list" id="timeline-list">
       <div class="skeleton" style="height:60px;border-radius:8px;"></div>
     </div>
+  </section>
+
+  <section id="seasonal-section" style="display:none;">
+    <h2 class="section-title" onclick="toggleSeasonal()" style="cursor:pointer;">
+      <span id="seasonal-expand-hint" style="font-size:9px;margin-right:5px;">&#9658;</span>Seasonal Outlook
+    </h2>
+    <div id="seasonal-list" style="display:none;"></div>
   </section>
 
   <a href="assets/what-to-do.html" class="guide-link" target="_blank" rel="noopener">
@@ -117,6 +122,11 @@
     </div>
     <span class="guide-link-arrow">&#8599;</span>
   </a>
+
+  <section id="shelters-section" style="display:none;">
+    <h2 class="section-title" data-i18n="section.shelters">Known Shelter Sites</h2>
+    <div class="shelters-grid" id="shelters-list"></div>
+  </section>
 
 </main>
 

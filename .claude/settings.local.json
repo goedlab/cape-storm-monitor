@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python scraper/scrape.py)",
+      "Bash(git stash *)",
+      "Bash(python -c ' *)"
+    ]
+  }
+}

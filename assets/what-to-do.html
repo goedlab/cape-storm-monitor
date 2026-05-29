@@ -5,271 +5,149 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Storm and flood safety guide for Cape Town residents">
   <title>Storm &amp; Flood Safety — Cape Storm Monitor</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
   <style>
-    /* ── Guide-specific overrides ── */
-    body { max-width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    body {
+      background: #f0ede8;
+      color: #000;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 12px 48px;
+    }
+
+    a { color: #00c; }
+    a:visited { color: #551a8b; }
+    a:hover { color: #c00; }
+
+    /* ── Header ── */
     .guide-header {
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 24px;
+      padding: 4px 0;
+      border-bottom: 1px solid #000;
       display: flex;
-      align-items: center;
+      align-items: baseline;
       justify-content: space-between;
-      flex-wrap: wrap;
       gap: 12px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
     .guide-header-title {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-primary);
+      font-family: Georgia, serif;
+      font-size: 12px;
+      font-weight: bold;
     }
-    .guide-back {
-      font-size: 0.8rem;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .guide-back:hover { text-decoration: underline; }
-
-    /* ── Phase hero ── */
-    .guide-hero {
-      background: linear-gradient(135deg, #ffffff 0%, #faf9f7 100%);
-      position: relative;
-      padding: 48px 24px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
-    .guide-hero::before { display: none; }
-    .guide-hero-inner { position: relative; max-width: 600px; margin: 0 auto; }
-    .guide-hero-title {
-      font-family: var(--font-display);
-      font-size: 3rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #1e293b;
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-    .guide-hero-sub {
-      font-size: 0.9375rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
+    .guide-back { font-size: 12px; }
 
     /* ── Phase nav ── */
     .phase-nav {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      padding: 6px 0;
+      border-bottom: 1px solid #ccc;
       display: flex;
-      background: transparent;
-      border-bottom: 1px solid var(--border);
-      overflow-x: auto;
+      flex-wrap: wrap;
+      gap: 0;
     }
-    .phase-nav-item {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 16px 12px;
-      text-decoration: none;
-      border-right: 1px solid var(--border);
-      min-width: 100px;
-      transition: background 0.12s;
+    .phase-nav a {
+      color: #00c;
+      text-decoration: underline;
+      padding: 0 8px 0 0;
     }
-    .phase-nav-item:last-child { border-right: none; }
-    .phase-nav-item:hover { background: var(--bg-hover); }
-    .phase-nav-label {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 800;
+    .phase-nav a:first-child { padding-left: 0; }
+    .phase-nav span { color: #ccc; padding-right: 8px; }
+
+    /* ── Alert ── */
+    .alert {
+      border-left: 3px solid #c00;
+      padding: 8px 12px;
+      background: #fff8f8;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    .alert strong { color: #c00; }
+
+    /* ── Sections ── */
+    .phase-section {
+      padding-top: 24px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 16px 0 4px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #000;
+    }
+
+    h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
+      letter-spacing: 0.06em;
+      color: #555;
+      margin: 18px 0 6px;
     }
-    .phase-nav-desc { font-size: 0.7rem; color: var(--text-muted); margin-top: 3px; text-align: center; }
 
-    /* ── Phase sections ── */
-    .guide-body { max-width: 900px; margin: 0 auto; padding: 0 24px 64px; }
-
-    .phase-section { padding-top: 48px; }
-    .phase-header {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-      margin-bottom: 24px;
-      padding: 18px 20px;
-      background: var(--bg-card);
-      border-left: 4px solid var(--border);
-      border-radius: 6px;
+    h3 {
+      font-family: Georgia, serif;
+      font-size: 13px;
+      font-weight: bold;
+      margin: 12px 0 4px;
     }
-    .phase-header.get-ready { border-left-color: var(--color-all-clear); }
-    .phase-header.get-set   { border-left-color: var(--color-watch); }
-    .phase-header.go        { border-left-color: var(--color-emergency); }
-    .phase-header.after     { border-left-color: var(--color-all-clear); }
 
-    .phase-tag {
-      font-family: var(--font-display);
-      font-size: 0.65rem;
-      font-weight: 800;
+    p {
+      font-size: 13px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      color: #222;
+    }
+    ul li { margin-bottom: 4px; }
+
+    /* ── Contacts table ── */
+    .contacts-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 10px;
+    }
+    .contacts-table th {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      padding: 4px 10px;
-      border-radius: 3px;
-      flex-shrink: 0;
+      letter-spacing: 0.05em;
+      color: #555;
+      padding: 5px 8px;
+      border-bottom: 1px solid #000;
+      text-align: left;
+      background: #eae7e2;
     }
-    .phase-tag.get-ready { background: var(--bg-all-clear); color: var(--color-all-clear); }
-    .phase-tag.get-set   { background: var(--bg-watch);     color: var(--color-watch); }
-    .phase-tag.go        { background: var(--bg-emergency);  color: var(--color-emergency); }
-    .phase-tag.after     { background: var(--bg-all-clear); color: var(--color-all-clear); }
-
-    .phase-title {
-      font-family: var(--font-display);
-      font-size: 1.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--text-primary);
-      line-height: 1;
+    .contacts-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #ddd;
+      vertical-align: middle;
     }
-    .phase-intro {
-      font-size: 0.9375rem;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      margin-bottom: 28px;
-      max-width: 680px;
+    .contacts-table tr:last-child td { border-bottom: none; }
+    .contacts-table tr:hover { background: #ebe8e3; }
+    .contacts-table .num {
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      font-size: 14px;
     }
-
-    /* ── Step card group ── */
-    .step-group {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      margin-bottom: 24px;
-      overflow: hidden;
-    }
-    .step-group-title {
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      padding: 12px 18px;
-      background: rgba(107, 114, 128, 0.04);
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* ── Steps ── */
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 32px; }
-    .step-card {
-      padding: 18px 20px;
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      min-height: 150px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .step-card-title {
-      font-family: var(--font-display);
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      letter-spacing: 0.01em;
-    }
-    .step-card-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-    .step-card-list li {
-      position: relative;
-      padding-left: 16px;
-    }
-    .step-card-list li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      line-height: 1;
-    }
-
-    /* ── Alert box ── */
-    .alert-box {
-      padding: 18px 20px;
-      border-radius: 6px;
-      border-left: 4px solid var(--color-emergency);
-      font-size: 0.875rem;
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-    .alert-box.emergency {
-      background: var(--bg-emergency);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--color-emergency);
-      color: var(--text-primary);
-    }
-    .alert-box strong { color: var(--color-emergency); }
-
-    /* ── Contacts grid ── */
-    .contacts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .contact-tile {
-      background: transparent;
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--accent);
-      border-radius: 4px;
-      padding: 16px 18px;
-      text-decoration: none;
-      transition: border-color 0.12s;
-      display: block;
-    }
-    .contact-tile:hover { border-color: var(--accent); background: var(--bg-hover); }
-    .contact-tile-name {
-      font-size: 0.65rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-    .contact-tile-number {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--accent);
-      letter-spacing: 0.03em;
-      font-variant-numeric: tabular-nums;
-    }
+    .contacts-table a { color: #00c; }
 
     @media print {
-      .guide-header, .guide-back, .phase-nav { display: none; }
-      .guide-hero { background: none; padding: 16px 0; border: none; }
-      .guide-hero-title { color: #000; font-size: 2rem; }
-      .guide-hero-sub { color: #444; }
-      .step, .contact-tile { border: 1px solid #ccc; background: #fff; }
-      body { background: #fff; color: #000; }
-      .phase-title, .step-num { color: #000; }
+      body { background: #fff; }
+      .guide-header, .phase-nav { display: none; }
     }
   </style>
 </head>
@@ -280,221 +158,117 @@
   <a href="../index.html" class="guide-back">&#8592; Live Monitor</a>
 </div>
 
-<div class="guide-hero">
-  <div class="guide-hero-inner">
-    <div class="guide-hero-title">Be ready.<br>Act fast.<br>Stay safe.</div>
-    <p class="guide-hero-sub">General guidance for Cape Town storm and flood events. Not a substitute for instructions from official emergency services.</p>
-  </div>
-</div>
-
 <nav class="phase-nav">
-  <a href="#get-ready" class="phase-nav-item">
-    <span class="phase-nav-label">Get Ready</span>
-    <span class="phase-nav-desc">Before a storm</span>
-  </a>
-  <a href="#get-set" class="phase-nav-item">
-    <span class="phase-nav-label">Get Set</span>
-    <span class="phase-nav-desc">Warning issued</span>
-  </a>
-  <a href="#go" class="phase-nav-item">
-    <span class="phase-nav-label">Go</span>
-    <span class="phase-nav-desc">Emergency / flooding</span>
-  </a>
-  <a href="#after" class="phase-nav-item">
-    <span class="phase-nav-label">After</span>
-    <span class="phase-nav-desc">Post storm</span>
-  </a>
-  <a href="#contacts" class="phase-nav-item">
-    <span class="phase-nav-label">Contacts</span>
-    <span class="phase-nav-desc">Emergency numbers</span>
-  </a>
+  <a href="#get-ready">Before</a><span>/</span>
+  <a href="#get-set">Warning</a><span>/</span>
+  <a href="#go">Emergency</a><span>/</span>
+  <a href="#after">After</a><span>/</span>
+  <a href="#contacts">Contacts</a>
 </nav>
 
-<div class="guide-body">
+<p style="font-size:11px; color:#777; font-style:italic; padding: 8px 0 0;">General guidance only. Always follow instructions from official emergency services.</p>
 
-  <!-- GET READY -->
-  <div class="phase-section" id="get-ready">
-    <div class="phase-header get-ready">
-      <span class="phase-tag get-ready">Get Ready</span>
-      <span class="phase-title">Before a Storm</span>
-    </div>
-    <p class="phase-intro">Preparation before a storm event reduces risk and response time when conditions deteriorate quickly.</p>
-    
-    <div class="step-group">
-      <div class="step-group-title">Information &amp; planning</div>
-      <div class="steps">
-        <div class="step-card">
-          <div class="step-card-title">Stay connected</div>
-          <ul class="step-card-list">
-            <li>Monitor the Cape Storm Monitor and SA Weather Service for watches and warnings.</li>
-            <li>Save this page to your home screen for fast access.</li>
-          </ul>
-        </div>
-        <div class="step-card">
-          <div class="step-card-title">Prepare essentials</div>
-          <ul class="step-card-list">
-            <li>Keep your phone charged and save emergency contacts.</li>
-            <li>Assemble a small bag with water, medication, ID, warm clothing, and a torch.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+<!-- BEFORE -->
+<div class="phase-section" id="get-ready">
+  <h1>Before a Storm</h1>
 
-    <div class="step-group">
-      <div class="step-group-title">Secure your home</div>
-      <div class="steps">
-        <div class="step-card">
-          <div class="step-card-title">Protect the property</div>
-          <ul class="step-card-list">
-            <li>Bring in or secure loose outdoor items such as furniture, planters, and tools.</li>
-            <li>Clear gutters and drains so water can flow away safely.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  <h2>Stay informed</h2>
+  <ul>
+    <li>Monitor the Cape Storm Monitor and SA Weather Service for watches and warnings.</li>
+    <li>Save this page to your home screen for fast access.</li>
+  </ul>
 
-  <!-- GET SET -->
-  <div class="phase-section" id="get-set">
-    <div class="phase-header get-set">
-      <span class="phase-tag get-set">Get Set</span>
-      <span class="phase-title">Watch &amp; Warning</span>
-    </div>
-    <p class="phase-intro">A warning has been issued. Conditions are deteriorating or imminent. Reduce exposure and prepare to act.</p>
-    <div class="step-group">
-      <div class="step-group-title">Stay informed</div>
-      <div class="steps">
-        <div class="step-card">
-          <div class="step-card-title">Keep monitoring</div>
-          <ul class="step-card-list">
-            <li>Check the incident map and weather updates regularly.</li>
-            <li>Expect conditions to deteriorate quickly once a warning is issued.</li>
-          </ul>
-        </div>
-        <div class="step-card">
-          <div class="step-card-title">Avoid hazards</div>
-          <ul class="step-card-list">
-            <li>Stay away from rivers, stormwater channels, and coastal areas.</li>
-            <li>Do not approach fallen trees, damaged power lines, or weakened structures.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  <h2>Prepare essentials</h2>
+  <ul>
+    <li>Keep your phone charged and save emergency contacts.</li>
+    <li>Assemble a bag with water, medication, ID, warm clothing, and a torch.</li>
+  </ul>
 
-  <!-- GO -->
-  <div class="phase-section" id="go">
-    <div class="phase-header go">
-      <span class="phase-tag go">Go</span>
-      <span class="phase-title">Flooding &amp; Evacuation</span>
-    </div>
-
-    <div class="alert-box emergency">
-      <strong>If you are in immediate danger, call 107 or 10111 now.</strong> Do not attempt dangerous crossings. Do not wait for water to recede before calling for help.
-    </div>
-
-    <div class="step-group">
-      <div class="step-group-title">Emergency actions</div>
-      <div class="steps">
-        <div class="step-card">
-          <div class="step-card-title">Floodwater safety</div>
-          <ul class="step-card-list">
-            <li>Never drive or walk through floodwater. Even shallow water can be deadly.</li>
-            <li>If your car stalls in rising water, leave it and move to higher ground immediately.</li>
-          </ul>
-        </div>
-        <div class="step-card">
-          <div class="step-card-title">Evacuation</div>
-          <ul class="step-card-list">
-            <li>If ordered to evacuate, leave without delay with your go-bag, medications, and ID.</li>
-            <li>In informal settlements, move to higher ground or a designated shelter as soon as water rises.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="step-group">
-      <div class="step-group-title">Family safety</div>
-      <div class="steps">
-        <div class="step-card">
-          <div class="step-card-title">Protect people</div>
-          <ul class="step-card-list">
-            <li>Keep children away from stormwater canals and drainage channels.</li>
-            <li>Check on elderly or vulnerable neighbours if you can do so safely.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- AFTER -->
-  <div class="phase-section" id="after">
-    <div class="phase-header after">
-      <span class="phase-tag after">After</span>
-      <span class="phase-title">Post Storm</span>
-    </div>
-    <p class="phase-intro">Hazards persist after a storm passes. Do not assume conditions are safe until officially confirmed.</p>
-    <div class="step-group">
-      <div class="step-group-title">Recovery</div>
-      <div class="steps">
-        <div class="step-card">
-          <div class="step-card-title">Post-storm safety</div>
-          <ul class="step-card-list">
-            <li>Do not return to evacuated areas until the all-clear is given.</li>
-            <li>Avoid floodwater contact — it may contain sewage and chemicals.</li>
-          </ul>
-        </div>
-        <div class="step-card">
-          <div class="step-card-title">Damage & services</div>
-          <ul class="step-card-list">
-            <li>Document damage before repairs for insurance.</li>
-            <li>Report outages to authorities; do not attempt electrical repairs yourself.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CONTACTS -->
-  <div class="phase-section" id="contacts">
-    <div class="phase-header">
-      <span class="phase-title">Emergency Contacts</span>
-    </div>
-    <div class="contacts-grid">
-      <a href="tel:107" class="contact-tile">
-        <div class="contact-tile-name">CT Emergency (24hr)</div>
-        <div class="contact-tile-number">107</div>
-      </a>
-      <a href="tel:0214807700" class="contact-tile">
-        <div class="contact-tile-name">Disaster Risk Management</div>
-        <div class="contact-tile-number">021 480 7700</div>
-      </a>
-      <a href="tel:0870949774" class="contact-tile">
-        <div class="contact-tile-name">NSRI Sea Rescue</div>
-        <div class="contact-tile-number">087 094 9774</div>
-      </a>
-      <a href="tel:10111" class="contact-tile">
-        <div class="contact-tile-name">SAPS Emergency</div>
-        <div class="contact-tile-number">10111</div>
-      </a>
-      <a href="tel:084124" class="contact-tile">
-        <div class="contact-tile-name">ER24 Ambulance</div>
-        <div class="contact-tile-number">084 124</div>
-      </a>
-      <a href="tel:0860103089" class="contact-tile">
-        <div class="contact-tile-name">CT Electricity Faults</div>
-        <div class="contact-tile-number">0860 103 089</div>
-      </a>
-      <a href="tel:0860037566" class="contact-tile">
-        <div class="contact-tile-name">Eskom Faults</div>
-        <div class="contact-tile-number">0860 037 566</div>
-      </a>
-      <a href="tel:0800656463" class="contact-tile">
-        <div class="contact-tile-name">CT Roads &amp; Stormwater</div>
-        <div class="contact-tile-number">0800 656 463</div>
-      </a>
-    </div>
-  </div>
-
+  <h2>Secure your home</h2>
+  <ul>
+    <li>Bring in or secure loose outdoor items — furniture, planters, tools.</li>
+    <li>Clear gutters and drains so water can flow away safely.</li>
+  </ul>
 </div>
+
+<!-- WARNING -->
+<div class="phase-section" id="get-set">
+  <h1>Watch &amp; Warning Issued</h1>
+  <p>Conditions are deteriorating or imminent. Reduce exposure and prepare to act.</p>
+
+  <h2>Keep monitoring</h2>
+  <ul>
+    <li>Check the incident map and weather updates regularly.</li>
+    <li>Expect conditions to deteriorate quickly once a warning is issued.</li>
+  </ul>
+
+  <h2>Avoid hazards</h2>
+  <ul>
+    <li>Stay away from rivers, stormwater channels, and coastal areas.</li>
+    <li>Do not approach fallen trees, damaged power lines, or weakened structures.</li>
+  </ul>
+</div>
+
+<!-- EMERGENCY -->
+<div class="phase-section" id="go">
+  <h1>Flooding &amp; Evacuation</h1>
+
+  <div class="alert">
+    <strong>If in immediate danger, call 107 or 10111 now.</strong> Do not attempt dangerous crossings. Do not wait for water to recede before calling for help.
+  </div>
+
+  <h2>Floodwater safety</h2>
+  <ul>
+    <li>Never drive or walk through floodwater — even shallow water can be deadly.</li>
+    <li>If your car stalls in rising water, leave it and move to higher ground immediately.</li>
+  </ul>
+
+  <h2>Evacuation</h2>
+  <ul>
+    <li>If ordered to evacuate, leave without delay with your bag, medications, and ID.</li>
+    <li>In informal settlements, move to higher ground or a designated shelter as soon as water rises.</li>
+  </ul>
+
+  <h2>Family safety</h2>
+  <ul>
+    <li>Keep children away from stormwater canals and drainage channels.</li>
+    <li>Check on elderly or vulnerable neighbours if you can do so safely.</li>
+  </ul>
+</div>
+
+<!-- AFTER -->
+<div class="phase-section" id="after">
+  <h1>Post Storm</h1>
+  <p>Hazards persist after a storm passes. Do not assume conditions are safe until officially confirmed.</p>
+
+  <h2>Recovery</h2>
+  <ul>
+    <li>Do not return to evacuated areas until the all-clear is given.</li>
+    <li>Avoid floodwater contact — it may contain sewage and chemicals.</li>
+    <li>Document damage before repairs for insurance purposes.</li>
+    <li>Report outages to authorities; do not attempt electrical repairs yourself.</li>
+  </ul>
+</div>
+
+<!-- CONTACTS -->
+<div class="phase-section" id="contacts">
+  <h1>Emergency Contacts</h1>
+  <table class="contacts-table">
+    <thead>
+      <tr><th>Service</th><th>Number</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>CT Emergency (24hr)</td><td class="num"><a href="tel:107">107</a></td></tr>
+      <tr><td>Disaster Risk Management</td><td class="num"><a href="tel:0214807700">021 480 7700</a></td></tr>
+      <tr><td>NSRI Sea Rescue</td><td class="num"><a href="tel:0870949774">087 094 9774</a></td></tr>
+      <tr><td>SAPS Emergency</td><td class="num"><a href="tel:10111">10111</a></td></tr>
+      <tr><td>ER24 Ambulance</td><td class="num"><a href="tel:084124">084 124</a></td></tr>
+      <tr><td>CT Electricity Faults</td><td class="num"><a href="tel:0860103089">0860 103 089</a></td></tr>
+      <tr><td>Eskom Faults</td><td class="num"><a href="tel:0860037566">0860 037 566</a></td></tr>
+      <tr><td>CT Roads &amp; Stormwater</td><td class="num"><a href="tel:0800656463">0800 656 463</a></td></tr>
+    </tbody>
+  </table>
+</div>
+
 </body>
 </html>

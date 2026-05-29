@@ -6,11 +6,11 @@ const TRANSLATIONS = {
   en: {
     'section.incidents': 'Active Incidents',
     'section.timeline':  'Updates Timeline',
-    'section.shelters':  'Open Shelters',
+    'section.shelters':  'Known Shelter Sites',
     'stats.incidents':   'Active Incidents',
     'stats.areas':       'Areas Affected',
     'stats.roads':       'Roads Closed',
-    'stats.shelters':    'Shelters Open',
+    'stats.shelters':    'Shelter Sites',
     'shelter.bring':     'Bring:',
     'status.ALL_CLEAR':  'ALL CLEAR',
     'status.WATCH':      'WATCH',
@@ -20,11 +20,11 @@ const TRANSLATIONS = {
   af: {
     'section.incidents': 'Aktiewe Voorvalle',
     'section.timeline':  'Opdaterings Tydlyn',
-    'section.shelters':  'Oop Skuilings',
+    'section.shelters':  'Bekende Skuilplekke',
     'stats.incidents':   'Aktiewe Voorvalle',
     'stats.areas':       'Gebiede Geraak',
     'stats.roads':       'Paaie Gesluit',
-    'stats.shelters':    'Skuilings Oop',
+    'stats.shelters':    'Skuilplekke',
     'status.ALL_CLEAR':  'ALLES VEILIG',
     'status.WATCH':      'WAAK',
     'status.WARNING':    'WAARSKUWING',
@@ -33,11 +33,11 @@ const TRANSLATIONS = {
   xh: {
     'section.incidents': 'Iziganeko Ezisebenzayo',
     'section.timeline':  'Uluhlu Lweenkcukacha',
-    'section.shelters':  'Iindawo Zokuphepha Ezivulekileyo',
+    'section.shelters':  'Iindawo Zokuphepha Ezaziwayo',
     'stats.incidents':   'Iziganeko Ezisebenzayo',
     'stats.areas':       'Iindawo Ezichatshazelweyo',
     'stats.roads':       'Iindlela Ezivaliweyo',
-    'stats.shelters':    'Iindawo Zokuphepha Ezivulekileyo',
+    'stats.shelters':    'Iindawo Zokuphepha',
     'status.ALL_CLEAR':  'KUKHUSELEKILE',
     'status.WATCH':      'QAPHELA',
     'status.WARNING':    'ISILUMKISO',
@@ -126,7 +126,6 @@ let currentLastUpdated = null;
 let lastData = null;
 let map = null;
 let incidentLayer = null;
-let shelterLayer = null;
 let suburbLayer = null;
 let layerControl = null;
 let currentSuburbColorMap = new Map();
@@ -223,11 +222,9 @@ function initMap() {
   }).addTo(map);
 
   incidentLayer = L.layerGroup().addTo(map);
-  shelterLayer  = L.layerGroup().addTo(map);
 
   layerControl = L.control.layers(null, {
     'Active Incidents': incidentLayer,
-    'Shelters':         shelterLayer
   }, { collapsed: false, position: 'topright' }).addTo(map);
 
   addLegend();
@@ -286,10 +283,9 @@ function makeMarkerIcon(type, severity) {
 }
 
 function updateMapMarkers(incidents, mapMarkers) {
-  if (!incidentLayer || !shelterLayer) return;
+  if (!incidentLayer) return;
 
   incidentLayer.clearLayers();
-  shelterLayer.clearLayers();
 
   incidents
     .filter(inc => inc.active && !isStale(inc) && inc.lat != null && inc.lng != null)
@@ -309,25 +305,6 @@ function updateMapMarkers(incidents, mapMarkers) {
       incidentLayer.addLayer(marker);
     });
 
-  if (mapMarkers) {
-    mapMarkers
-      .filter(m => m.type === 'shelter')
-      .forEach(m => {
-        const color = SEVERITY_COLORS[m.severity || 'ALL_CLEAR'];
-        const lighterColor = lightenColor(color, 0.3);
-        const icon = makeMarkerIcon('shelter', m.severity || 'ALL_CLEAR');
-        const marker = L.marker([m.lat, m.lng], { icon });
-        marker.lighterColor = lighterColor;
-        marker.on('click', function() {
-          this._icon.style.boxShadow = `0 2px 8px rgba(0,0,0,0.35), 0 0 0 3px ${this.lighterColor}`;
-        });
-        marker.on('popupclose', function() {
-          this._icon.style.boxShadow = '0 2px 8px rgba(0,0,0,0.35)';
-        });
-        marker.bindPopup(`<div class="popup-content"><strong class="popup-title">${m.label}</strong></div>`);
-        shelterLayer.addLayer(marker);
-      });
-  }
 }
 
 function buildPopupHtml(inc) {
@@ -371,10 +348,17 @@ function updateStatusBanner(status, lastUpdated, summary) {
 
 // ── Stats bar ─────────────────────────────────────────────────────────────────
 
-function updateStatsBar(incidents, sheltersOpen) {
+function updateStatsBar(incidents, sheltersOpen, event) {
   const fresh = incidents.filter(i => i.active && !isStale(i));
-  const areas = [...new Set(fresh.map(i => i.area.split(/[\/,]/)[0].trim()))];
   const roads = fresh.filter(i => ['road', 'coastal'].includes(i.type)).length;
+
+  // Areas: fresh incidents first; fall back to 14-day recovery window if in recovery
+  let areaSource = fresh;
+  if (fresh.length === 0 && event?.status === 'recovery') {
+    const cutoff = Date.now() - RECOVERY_MS;
+    areaSource = incidents.filter(i => i.active && new Date(i.updated).getTime() > cutoff);
+  }
+  const areas = [...new Set(areaSource.map(i => i.area.split(/[\/,]/)[0].trim()))];
 
   document.getElementById('stat-incidents').textContent = fresh.length || '—';
   document.getElementById('stat-roads').textContent     = roads || '—';
@@ -382,14 +366,14 @@ function updateStatsBar(incidents, sheltersOpen) {
 
   const areaEl = document.getElementById('stat-areas');
   if (areas.length === 0) {
-    areaEl.textContent  = '—';
-    areaEl.className    = 'stat-number';
+    areaEl.textContent = '—';
+    areaEl.className   = 'stat-number';
   } else if (areas.length <= 2) {
-    areaEl.textContent  = areas.join(', ');
-    areaEl.className    = 'stat-number stat-name';
+    areaEl.textContent = areas.join(', ');
+    areaEl.className   = 'stat-number stat-name';
   } else {
-    areaEl.textContent  = areas.length;
-    areaEl.className    = 'stat-number';
+    areaEl.textContent = areas.length;
+    areaEl.className   = 'stat-number';
   }
 }
 
@@ -511,17 +495,47 @@ function filterIncidents() {
 
 // ── Shelters ──────────────────────────────────────────────────────────────────
 
+function updateSeasonalOutlook(outlook) {
+  const section = document.getElementById('seasonal-section');
+  if (!section) return;
+  if (!outlook || !outlook.length) { section.style.display = 'none'; return; }
+  section.style.display = '';
+
+  const rows = outlook.map(m => `
+    <tr>
+      <td style="font-family:'Courier New',monospace;white-space:nowrap;">${m.month}</td>
+      <td>${m.precip_label}</td>
+      <td>${m.temp_label}</td>
+      <td style="font-family:'Courier New',monospace;color:#777;">${m.precip_mm} mm · ${m.temp_c}°C</td>
+    </tr>`).join('');
+
+  document.getElementById('seasonal-list').innerHTML = `
+    <table class="incident-table">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Rainfall</th>
+          <th>Temperature</th>
+          <th>Forecast</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <p style="font-size:11px;color:#777;font-style:italic;margin-top:6px;">SEAS5 ensemble mean · anomalies vs Cape Town climatological normals · not bias-corrected</p>`;
+}
+
 function updateShelters(shelters) {
   const section = document.getElementById('shelters-section');
   if (!section) return;
-  const open = (shelters || []).filter(s => s.open);
-  section.style.display = open.length ? '' : 'none';
-  if (!open.length) return;
+  const all = (shelters || []);
+  section.style.display = all.length ? '' : 'none';
+  if (!all.length) return;
 
-  document.getElementById('shelters-list').innerHTML = open.map(s => `
+  document.getElementById('shelters-list').innerHTML =
+    `<div class="shelter-caution">These are locations previously used as shelters. Current availability is unverified — call 021 480 7700 to confirm before travelling.</div>` +
+    all.map(s => `
     <div class="shelter-card">
       <div class="shelter-header">
-        <span class="shelter-open-dot"></span>
         <strong class="shelter-name">${s.name}</strong>
       </div>
       <div class="shelter-address">${s.address}</div>
@@ -576,28 +590,60 @@ function updateEvent(event, outcomes) {
   badge.textContent = STATUS_LABELS[event.status] || event.status.toUpperCase();
   badge.className = `event-status-badge ${event.status}`;
 
-  document.getElementById('outcomes-grid').innerHTML = '';
+  const statsEl = document.getElementById('outcomes-stats');
+  const listsEl = document.getElementById('outcomes-lists');
 
-  if (!outcomes) { document.getElementById('outcomes-lists').innerHTML = ''; return; }
+  if (!outcomes) {
+    if (statsEl) statsEl.innerHTML = '';
+    if (listsEl) listsEl.innerHTML = '';
+    return;
+  }
 
-  const lists = [];
-  if (outcomes.roads_damaged?.length) {
-    lists.push(`
-      <div class="outcomes-list-block">
+  if (statsEl) {
+    const items = [];
+    if (outcomes.displaced_persons != null) items.push({ num: outcomes.displaced_persons, label: 'Displaced' });
+    if (outcomes.fatalities        != null) items.push({ num: outcomes.fatalities,        label: 'Fatalities' });
+    if (outcomes.injuries          != null) items.push({ num: outcomes.injuries,          label: 'Injuries' });
+    statsEl.innerHTML = items.length ? `<div class="outcomes-stats">${items.map(s =>
+      `<div class="outcomes-stat">
+        <div class="outcomes-stat-num">${s.num}</div>
+        <div class="outcomes-stat-label">${s.label}</div>
+      </div>`).join('')}</div>` : '';
+  }
+
+  if (listsEl) {
+    const lists = [];
+    if (outcomes.roads_damaged?.length) {
+      lists.push(`<div class="outcomes-list-block">
         <div class="outcomes-list-label">Roads Damaged</div>
         <ul class="outcomes-list">${outcomes.roads_damaged.map(r => `<li>${r}</li>`).join('')}</ul>
-      </div>
-    `);
-  }
-  if (outcomes.infrastructure_damage?.length) {
-    lists.push(`
-      <div class="outcomes-list-block">
+      </div>`);
+    }
+    if (outcomes.infrastructure_damage?.length) {
+      lists.push(`<div class="outcomes-list-block">
         <div class="outcomes-list-label">Infrastructure</div>
         <ul class="outcomes-list">${outcomes.infrastructure_damage.map(r => `<li>${r}</li>`).join('')}</ul>
-      </div>
-    `);
+      </div>`);
+    }
+    listsEl.innerHTML = lists.join('');
   }
-  document.getElementById('outcomes-lists').innerHTML = lists.join('');
+}
+
+function toggleSeasonal() {
+  const list = document.getElementById('seasonal-list');
+  const hint = document.getElementById('seasonal-expand-hint');
+  if (!list) return;
+  const open = list.style.display === 'none';
+  list.style.display = open ? '' : 'none';
+  if (hint) hint.innerHTML = open ? '&#9660;' : '&#9658;';
+}
+
+function toggleEventCard() {
+  const detail = document.getElementById('event-card-detail');
+  if (!detail) return;
+  const open = detail.classList.toggle('open');
+  const hint = document.getElementById('event-expand-hint');
+  if (hint) hint.innerHTML = open ? '&#9660;' : '&#9658;';
 }
 
 // ── Stale warning ─────────────────────────────────────────────────────────────
@@ -644,12 +690,13 @@ async function pollUpdates() {
       currentLastUpdated = data.last_updated;
       lastData = data;
       updateStatusBanner(data.status, data.last_updated, data.summary);
-      updateStatsBar(data.incidents, data.stats?.shelters_open);
+      updateStatsBar(data.incidents, data.stats?.shelters_open, data.event);
       updateIncidentCards(data.incidents);
       updateMapMarkers(data.incidents, data.map_markers);
       updateSuburbHighlights(data.incidents, data.event);
       updateTimeline(data.timeline);
       updateShelters(data.shelters);
+      updateSeasonalOutlook(data.seasonal_outlook);
       updateEvent(data.event, data.outcomes);
     }
 
