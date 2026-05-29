@@ -1,6 +1,6 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-05-14T11:52:41+02:00",
+  "last_updated": "2026-05-29T22:20:43+02:00",
   "summary": "Cape Town: Clear sky · Recovery monitoring active",
   "stats": {
     "active_incidents": 10,
@@ -419,6 +419,7 @@
     "season": "Autumn / Winter",
     "text": "Cape Town's winter storm season runs May–August. North-westerly frontal systems bring strong winds and heavy rain, particularly affecting coastal roads, the Cape Peninsula, and low-lying flood plains. Berg wind events in autumn bring extreme fire risk to the northern suburbs and winelands."
   },
+  "seasonal_outlook": [],
   "event": {
     "id": "CSE-052026",
     "name": "CSE-052026",
