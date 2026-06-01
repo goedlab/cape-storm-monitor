@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-05-31T10:42:30+02:00",
-  "summary": "Cape Town: Clear sky",
+  "last_updated": "2026-06-01T05:50:16+02:00",
+  "summary": "Cape Town: Overcast",
   "stats": {
     "active_incidents": 0,
     "roads_closed": 0,
@@ -16,13 +16,6 @@
   "actions": {},
   "outlook": {},
   "seasonal_outlook": [
-    {
-      "month": "Jun 2026",
-      "precip_label": "wetter than normal",
-      "temp_label": "cooler than normal",
-      "precip_mm": 174,
-      "temp_c": 12.7
-    },
     {
       "month": "Jul 2026",
       "precip_label": "drier than normal",
