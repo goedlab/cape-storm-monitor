@@ -1,15 +1,39 @@
 {
-  "status": "ALL_CLEAR",
-  "last_updated": "2026-06-02T12:19:58+02:00",
-  "summary": "Cape Town: Partly cloudy · gusts 59 km/h",
+  "status": "WATCH",
+  "last_updated": "2026-06-02T18:19:39+02:00",
+  "summary": "Cape Town: Mainly clear · gusts 78 km/h · 0.7 mm rain",
   "stats": {
-    "active_incidents": 0,
+    "active_incidents": 1,
     "roads_closed": 0,
     "shelters_open": 0,
-    "areas_affected": 0
+    "areas_affected": 1
   },
-  "incidents": [],
-  "map_markers": [],
+  "incidents": [
+    {
+      "id": "om-wind-cape-town",
+      "type": "wind",
+      "title": "Strong Wind Advisory – Cape Town (78 km/h gusts)",
+      "area": "Cape Town",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "severity": "WATCH",
+      "description": "Wind gusts of 78 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+      "source": "Open-Meteo",
+      "source_url": "https://open-meteo.com",
+      "updated": "2026-06-02T18:19:37+02:00",
+      "active": true
+    }
+  ],
+  "map_markers": [
+    {
+      "id": "m-om-wind-cape-town",
+      "type": "wind",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "label": "Strong Wind Advisory – Cape Town (78 km/h gusts)",
+      "severity": "WATCH"
+    }
+  ],
   "timeline": [],
   "contacts": [],
   "shelters": [],
