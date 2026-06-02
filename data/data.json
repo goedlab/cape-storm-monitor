@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-06-01T05:50:16+02:00",
-  "summary": "Cape Town: Overcast",
+  "last_updated": "2026-06-02T05:42:42+02:00",
+  "summary": "Cape Town: Light drizzle",
   "stats": {
     "active_incidents": 0,
     "roads_closed": 0,
@@ -50,6 +50,13 @@
       "temp_label": "cooler than normal",
       "precip_mm": 34,
       "temp_c": 17.1
+    },
+    {
+      "month": "Dec 2026",
+      "precip_label": "drier than normal",
+      "temp_label": "cooler than normal",
+      "precip_mm": 0,
+      "temp_c": 19.4
     }
   ],
   "event": null,
