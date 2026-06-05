@@ -1,6 +1,6 @@
 {
-  "status": "ALL_CLEAR",
-  "last_updated": "2026-06-04T22:03:06+02:00",
+  "status": "WATCH",
+  "last_updated": "2026-06-05T11:42:49+02:00",
   "summary": "Cape Town: Clear sky",
   "stats": {
     "active_incidents": 1,
@@ -10,27 +10,27 @@
   },
   "incidents": [
     {
-      "id": "om-wind-cape-town",
-      "type": "wind",
-      "title": "Strong Wind Advisory – Cape Town (65 km/h gusts)",
-      "area": "Cape Town",
+      "id": "gdacs-6300",
+      "type": "flood",
+      "title": "Green flood alert in South Africa",
+      "area": "South Africa",
       "lat": -33.9249,
       "lng": 18.4241,
       "severity": "WATCH",
-      "description": "Wind gusts of 65 km/h at Cape Town. Secure loose items and avoid exposed areas.",
-      "source": "Open-Meteo",
-      "source_url": "https://open-meteo.com",
-      "updated": "2026-06-04T16:55:06+02:00",
+      "description": "On 03/06/2026, a flood started in South Africa, lasting until 05/06/2026 (last update). The flood caused 0 deaths and 764 displaced .",
+      "source": "GDACS",
+      "source_url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103929",
+      "updated": "2026-06-05T11:42:49+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-om-wind-cape-town",
-      "type": "wind",
+      "id": "m-gdacs-6300",
+      "type": "flood",
       "lat": -33.9249,
       "lng": 18.4241,
-      "label": "Strong Wind Advisory – Cape Town (65 km/h gusts)",
+      "label": "Green flood alert in South Africa",
       "severity": "WATCH"
     }
   ],
