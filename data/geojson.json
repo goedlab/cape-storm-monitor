@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-06-08T17:45:50+02:00",
+  "generated": "2026-06-08T22:11:42+02:00",
   "features": [
     {
       "type": "Feature",
@@ -12,13 +12,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-4452",
+        "id": "gdacs-7502",
         "type": "flood",
         "title": "Green flood alert in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 03/06/2026, a flood started in South Africa, lasting until 05/06/2026 (last update). The flood caused 0 deaths and 764 displaced .",
-        "updated": "2026-06-08T17:45:50+02:00"
+        "updated": "2026-06-08T22:11:42+02:00"
       }
     }
   ]
