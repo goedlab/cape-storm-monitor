@@ -1,7 +1,7 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-06-09T11:39:26+02:00",
-  "summary": "Cape Town: Clear sky",
+  "last_updated": "2026-06-09T16:45:34+02:00",
+  "summary": "Cape Town: Mainly clear",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-1335",
+      "id": "gdacs-5537",
       "type": "flood",
       "title": "Green flood alert in South Africa",
       "area": "South Africa",
@@ -20,13 +20,13 @@
       "description": "On 03/06/2026, a flood started in South Africa, lasting until 05/06/2026 (last update). The flood caused 0 deaths and 764 displaced .",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103929",
-      "updated": "2026-06-09T11:39:26+02:00",
+      "updated": "2026-06-09T16:45:34+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-1335",
+      "id": "m-gdacs-5537",
       "type": "flood",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -45,14 +45,14 @@
       "precip_label": "drier than normal",
       "temp_label": "near normal",
       "precip_mm": 55,
-      "temp_c": 13.4
+      "temp_c": 13.5
     },
     {
       "month": "Aug 2026",
       "precip_label": "drier than normal",
       "temp_label": "near normal",
       "precip_mm": 56,
-      "temp_c": 13.5
+      "temp_c": 13.6
     },
     {
       "month": "Sep 2026",
@@ -73,7 +73,7 @@
       "precip_label": "wetter than normal",
       "temp_label": "near normal",
       "precip_mm": 34,
-      "temp_c": 19.7
+      "temp_c": 19.8
     },
     {
       "month": "Dec 2026",
