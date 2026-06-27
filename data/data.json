@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-06-27T15:27:36+02:00",
-  "summary": "Cape Town: Partly cloudy",
+  "last_updated": "2026-06-27T21:17:34+02:00",
+  "summary": "Cape Town: Overcast · gusts 50 km/h",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -39,50 +39,7 @@
   "shelters": [],
   "actions": {},
   "outlook": {},
-  "seasonal_outlook": [
-    {
-      "month": "Jul 2026",
-      "precip_label": "wetter than normal",
-      "temp_label": "near normal",
-      "precip_mm": 117,
-      "temp_c": 13.5
-    },
-    {
-      "month": "Aug 2026",
-      "precip_label": "drier than normal",
-      "temp_label": "near normal",
-      "precip_mm": 46,
-      "temp_c": 13.6
-    },
-    {
-      "month": "Sep 2026",
-      "precip_label": "near normal",
-      "temp_label": "cooler than normal",
-      "precip_mm": 46,
-      "temp_c": 14.0
-    },
-    {
-      "month": "Oct 2026",
-      "precip_label": "near normal",
-      "temp_label": "near normal",
-      "precip_mm": 32,
-      "temp_c": 17.3
-    },
-    {
-      "month": "Nov 2026",
-      "precip_label": "near normal",
-      "temp_label": "near normal",
-      "precip_mm": 27,
-      "temp_c": 19.8
-    },
-    {
-      "month": "Dec 2026",
-      "precip_label": "wetter than normal",
-      "temp_label": "cooler than normal",
-      "precip_mm": 29,
-      "temp_c": 19.2
-    }
-  ],
+  "seasonal_outlook": [],
   "event": null,
   "outcomes": null
 }
