@@ -1,6 +1,6 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-06-30T21:52:20+02:00",
+  "last_updated": "2026-07-01T05:35:28+02:00",
   "summary": "Cape Town: Mainly clear · gusts 41 km/h",
   "stats": {
     "active_incidents": 1,
@@ -41,13 +41,6 @@
   "outlook": {},
   "seasonal_outlook": [
     {
-      "month": "Jul 2026",
-      "precip_label": "wetter than normal",
-      "temp_label": "near normal",
-      "precip_mm": 117,
-      "temp_c": 13.5
-    },
-    {
       "month": "Aug 2026",
       "precip_label": "drier than normal",
       "temp_label": "near normal",
@@ -79,8 +72,8 @@
       "month": "Dec 2026",
       "precip_label": "wetter than normal",
       "temp_label": "cooler than normal",
-      "precip_mm": 42,
-      "temp_c": 18.9
+      "precip_mm": 54,
+      "temp_c": 18.8
     }
   ],
   "event": null,
