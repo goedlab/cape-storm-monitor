@@ -1,7 +1,7 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-07-02T15:54:13+02:00",
-  "summary": "Cape Town: Overcast · gusts 72 km/h",
+  "last_updated": "2026-07-02T21:20:47+02:00",
+  "summary": "Cape Town: Rain showers · gusts 72 km/h · 0.5 mm rain",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -20,7 +20,7 @@
       "description": "Wind gusts of 72 km/h at Cape Town. Secure loose items and avoid exposed areas.",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "updated": "2026-07-02T15:54:09+02:00",
+      "updated": "2026-07-02T21:20:43+02:00",
       "active": true
     }
   ],
