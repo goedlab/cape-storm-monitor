@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-07-05T10:49:37+02:00",
-  "summary": "Cape Town: Partly cloudy",
+  "last_updated": "2026-07-05T15:25:26+02:00",
+  "summary": "Cape Town: Overcast",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -42,45 +42,45 @@
   "seasonal_outlook": [
     {
       "month": "Aug 2026",
-      "precip_label": "drier than normal",
-      "temp_label": "near normal",
-      "precip_mm": 46,
-      "temp_c": 13.6
+      "precip_label": "wetter than normal",
+      "temp_label": "cooler than normal",
+      "precip_mm": 116,
+      "temp_c": 11.6
     },
     {
       "month": "Sep 2026",
-      "precip_label": "near normal",
-      "temp_label": "cooler than normal",
-      "precip_mm": 46,
-      "temp_c": 14.0
+      "precip_label": "drier than normal",
+      "temp_label": "near normal",
+      "precip_mm": 19,
+      "temp_c": 15.2
     },
     {
       "month": "Oct 2026",
-      "precip_label": "near normal",
+      "precip_label": "wetter than normal",
       "temp_label": "near normal",
-      "precip_mm": 32,
-      "temp_c": 17.3
+      "precip_mm": 84,
+      "temp_c": 16.5
     },
     {
       "month": "Nov 2026",
-      "precip_label": "near normal",
-      "temp_label": "near normal",
-      "precip_mm": 27,
-      "temp_c": 19.8
+      "precip_label": "wetter than normal",
+      "temp_label": "cooler than normal",
+      "precip_mm": 39,
+      "temp_c": 17.1
     },
     {
       "month": "Dec 2026",
-      "precip_label": "wetter than normal",
-      "temp_label": "cooler than normal",
-      "precip_mm": 55,
-      "temp_c": 18.6
+      "precip_label": "drier than normal",
+      "temp_label": "near normal",
+      "precip_mm": 7,
+      "temp_c": 20.3
     },
     {
       "month": "Jan 2027",
       "precip_label": "drier than normal",
       "temp_label": "cooler than normal",
-      "precip_mm": 0,
-      "temp_c": 16.8
+      "precip_mm": 1,
+      "temp_c": 17.1
     }
   ],
   "event": null,
