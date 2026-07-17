@@ -1,7 +1,7 @@
 {
-  "status": "WATCH",
-  "last_updated": "2026-07-16T21:05:34+02:00",
-  "summary": "Cape Town: Mainly clear",
+  "status": "ALL_CLEAR",
+  "last_updated": "2026-07-17T04:26:15+02:00",
+  "summary": "Cape Town: Overcast",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -80,7 +80,7 @@
       "precip_label": "drier than normal",
       "temp_label": "near normal",
       "precip_mm": 1,
-      "temp_c": 22.6
+      "temp_c": 22.7
     }
   ],
   "event": null,
