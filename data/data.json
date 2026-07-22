@@ -1,6 +1,6 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-07-21T21:17:18+02:00",
+  "last_updated": "2026-07-22T04:25:17+02:00",
   "summary": "Cape Town: Clear sky",
   "stats": {
     "active_incidents": 1,
@@ -80,7 +80,7 @@
       "precip_label": "drier than normal",
       "temp_label": "near normal",
       "precip_mm": 1,
-      "temp_c": 22.4
+      "temp_c": 22.3
     }
   ],
   "event": null,
