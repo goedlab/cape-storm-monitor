@@ -1,7 +1,7 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-07-23T15:50:52+02:00",
-  "summary": "Cape Town: Light drizzle · 0.5 mm rain",
+  "last_updated": "2026-07-23T21:11:43+02:00",
+  "summary": "Cape Town: Clear sky",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-3644",
+      "id": "gdacs-2920",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -20,13 +20,13 @@
       "description": "On 18/07/2026, a forest fire started in South Africa,  until 22/07/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1029567",
-      "updated": "2026-07-23T15:50:52+02:00",
+      "updated": "2026-07-23T21:11:43+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-3644",
+      "id": "m-gdacs-2920",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
