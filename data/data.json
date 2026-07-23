@@ -1,30 +1,16 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-07-23T04:30:01+02:00",
-  "summary": "Cape Town: Light drizzle · gusts 61 km/h",
+  "last_updated": "2026-07-23T10:25:26+02:00",
+  "summary": "Cape Town: Moderate rain · gusts 57 km/h · 0.9 mm rain",
   "stats": {
-    "active_incidents": 2,
+    "active_incidents": 1,
     "roads_closed": 0,
     "shelters_open": 0,
-    "areas_affected": 2
+    "areas_affected": 1
   },
   "incidents": [
     {
-      "id": "om-wind-cape-town",
-      "type": "wind",
-      "title": "Strong Wind Advisory – Cape Town (61 km/h gusts)",
-      "area": "Cape Town",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "severity": "WATCH",
-      "description": "Wind gusts of 61 km/h at Cape Town. Secure loose items and avoid exposed areas.",
-      "source": "Open-Meteo",
-      "source_url": "https://open-meteo.com",
-      "updated": "2026-07-23T04:29:58+02:00",
-      "active": true
-    },
-    {
-      "id": "gdacs-6902",
+      "id": "gdacs-5172",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -34,21 +20,13 @@
       "description": "On 18/07/2026, a forest fire started in South Africa,  until 22/07/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1029567",
-      "updated": "2026-07-23T04:30:01+02:00",
+      "updated": "2026-07-23T10:25:26+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-om-wind-cape-town",
-      "type": "wind",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "label": "Strong Wind Advisory – Cape Town (61 km/h gusts)",
-      "severity": "WATCH"
-    },
-    {
-      "id": "m-gdacs-6902",
+      "id": "m-gdacs-5172",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
