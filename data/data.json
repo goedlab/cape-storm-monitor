@@ -1,6 +1,6 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-07-25T15:19:19+02:00",
+  "last_updated": "2026-07-25T21:03:24+02:00",
   "summary": "Cape Town: Clear sky",
   "stats": {
     "active_incidents": 2,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-7228",
+      "id": "gdacs-5603",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -20,11 +20,11 @@
       "description": "On 18/07/2026, a forest fire started in South Africa,  until 24/07/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1029706",
-      "updated": "2026-07-25T15:19:19+02:00",
+      "updated": "2026-07-25T21:03:24+02:00",
       "active": true
     },
     {
-      "id": "gdacs-7228",
+      "id": "gdacs-5603",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -34,13 +34,13 @@
       "description": "On 18/07/2026, a forest fire started in South Africa,  until 22/07/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1029567",
-      "updated": "2026-07-25T15:19:19+02:00",
+      "updated": "2026-07-25T21:03:24+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-7228",
+      "id": "m-gdacs-5603",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -48,7 +48,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-7228",
+      "id": "m-gdacs-5603",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
