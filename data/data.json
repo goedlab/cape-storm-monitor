@@ -1,7 +1,7 @@
 {
-  "status": "WARNING",
-  "last_updated": "2026-07-27T16:27:25+02:00",
-  "summary": "Cape Town: Overcast · gusts 86 km/h · 0.6 mm rain",
+  "status": "WATCH",
+  "last_updated": "2026-07-27T21:23:22+02:00",
+  "summary": "Cape Town: Clear sky · gusts 79 km/h · 0.3 mm rain",
   "stats": {
     "active_incidents": 3,
     "roads_closed": 0,
@@ -12,33 +12,19 @@
     {
       "id": "om-wind-cape-town",
       "type": "wind",
-      "title": "Strong Wind Advisory – Cape Town (86 km/h gusts)",
+      "title": "Strong Wind Advisory – Cape Town (79 km/h gusts)",
       "area": "Cape Town",
       "lat": -33.9249,
       "lng": 18.4241,
-      "severity": "WARNING",
-      "description": "Wind gusts of 86 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+      "severity": "WATCH",
+      "description": "Wind gusts of 79 km/h at Cape Town. Secure loose items and avoid exposed areas.",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "updated": "2026-07-27T16:27:21+02:00",
+      "updated": "2026-07-27T21:23:19+02:00",
       "active": true
     },
     {
-      "id": "gdacs-1285",
-      "type": "storm",
-      "title": "Green forest fire notification in South Africa",
-      "area": "South Africa",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "severity": "WATCH",
-      "description": "On 18/07/2026, a forest fire started in South Africa,  until 22/07/2026.",
-      "source": "GDACS",
-      "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1029567",
-      "updated": "2026-07-27T16:27:25+02:00",
-      "active": true
-    },
-    {
-      "id": "gdacs-1285",
+      "id": "gdacs-5720",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -48,7 +34,21 @@
       "description": "On 18/07/2026, a forest fire started in South Africa,  until 24/07/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1029706",
-      "updated": "2026-07-27T16:27:25+02:00",
+      "updated": "2026-07-27T21:23:22+02:00",
+      "active": true
+    },
+    {
+      "id": "gdacs-5720",
+      "type": "storm",
+      "title": "Green forest fire notification in South Africa",
+      "area": "South Africa",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "severity": "WATCH",
+      "description": "On 18/07/2026, a forest fire started in South Africa,  until 22/07/2026.",
+      "source": "GDACS",
+      "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1029567",
+      "updated": "2026-07-27T21:23:22+02:00",
       "active": true
     }
   ],
@@ -58,11 +58,11 @@
       "type": "wind",
       "lat": -33.9249,
       "lng": 18.4241,
-      "label": "Strong Wind Advisory – Cape Town (86 km/h gusts)",
-      "severity": "WARNING"
+      "label": "Strong Wind Advisory – Cape Town (79 km/h gusts)",
+      "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-1285",
+      "id": "m-gdacs-5720",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -70,7 +70,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-1285",
+      "id": "m-gdacs-5720",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,

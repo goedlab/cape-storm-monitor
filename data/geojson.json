@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-07-27T16:27:25+02:00",
+  "generated": "2026-07-27T21:23:22+02:00",
   "features": [
     {
       "type": "Feature",
@@ -14,30 +14,11 @@
       "properties": {
         "id": "om-wind-cape-town",
         "type": "wind",
-        "title": "Strong Wind Advisory – Cape Town (86 km/h gusts)",
+        "title": "Strong Wind Advisory – Cape Town (79 km/h gusts)",
         "area": "Cape Town",
-        "severity": "WARNING",
-        "description": "Wind gusts of 86 km/h at Cape Town. Secure loose items and avoid exposed areas.",
-        "updated": "2026-07-27T16:27:21+02:00"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.4241,
-          -33.9249
-        ]
-      },
-      "properties": {
-        "id": "gdacs-1285",
-        "type": "storm",
-        "title": "Green forest fire notification in South Africa",
-        "area": "South Africa",
         "severity": "WATCH",
-        "description": "On 18/07/2026, a forest fire started in South Africa,  until 22/07/2026.",
-        "updated": "2026-07-27T16:27:25+02:00"
+        "description": "Wind gusts of 79 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+        "updated": "2026-07-27T21:23:19+02:00"
       }
     },
     {
@@ -50,13 +31,32 @@
         ]
       },
       "properties": {
-        "id": "gdacs-1285",
+        "id": "gdacs-5720",
         "type": "storm",
         "title": "Green forest fire notification in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 18/07/2026, a forest fire started in South Africa,  until 24/07/2026.",
-        "updated": "2026-07-27T16:27:25+02:00"
+        "updated": "2026-07-27T21:23:22+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.4241,
+          -33.9249
+        ]
+      },
+      "properties": {
+        "id": "gdacs-5720",
+        "type": "storm",
+        "title": "Green forest fire notification in South Africa",
+        "area": "South Africa",
+        "severity": "WATCH",
+        "description": "On 18/07/2026, a forest fire started in South Africa,  until 22/07/2026.",
+        "updated": "2026-07-27T21:23:22+02:00"
       }
     }
   ]
