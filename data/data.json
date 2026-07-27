@@ -1,7 +1,7 @@
 {
   "status": "WARNING",
-  "last_updated": "2026-07-27T11:46:02+02:00",
-  "summary": "Cape Town: Overcast · gusts 86 km/h",
+  "last_updated": "2026-07-27T16:27:25+02:00",
+  "summary": "Cape Town: Overcast · gusts 86 km/h · 0.6 mm rain",
   "stats": {
     "active_incidents": 3,
     "roads_closed": 0,
@@ -20,11 +20,11 @@
       "description": "Wind gusts of 86 km/h at Cape Town. Secure loose items and avoid exposed areas.",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "updated": "2026-07-27T11:45:59+02:00",
+      "updated": "2026-07-27T16:27:21+02:00",
       "active": true
     },
     {
-      "id": "gdacs-2400",
+      "id": "gdacs-1285",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -34,11 +34,11 @@
       "description": "On 18/07/2026, a forest fire started in South Africa,  until 22/07/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1029567",
-      "updated": "2026-07-27T11:46:02+02:00",
+      "updated": "2026-07-27T16:27:25+02:00",
       "active": true
     },
     {
-      "id": "gdacs-2400",
+      "id": "gdacs-1285",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -48,7 +48,7 @@
       "description": "On 18/07/2026, a forest fire started in South Africa,  until 24/07/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1029706",
-      "updated": "2026-07-27T11:46:02+02:00",
+      "updated": "2026-07-27T16:27:25+02:00",
       "active": true
     }
   ],
@@ -62,7 +62,7 @@
       "severity": "WARNING"
     },
     {
-      "id": "m-gdacs-2400",
+      "id": "m-gdacs-1285",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -70,7 +70,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-2400",
+      "id": "m-gdacs-1285",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
