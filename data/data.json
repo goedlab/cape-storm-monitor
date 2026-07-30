@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-07-29T21:11:41+02:00",
-  "summary": "Cape Town: Partly cloudy",
+  "last_updated": "2026-07-30T04:06:35+02:00",
+  "summary": "Cape Town: Mainly clear",
   "stats": {
     "active_incidents": 2,
     "roads_closed": 0,
@@ -102,7 +102,7 @@
       "precip_label": "drier than normal",
       "temp_label": "warmer than normal",
       "precip_mm": 2,
-      "temp_c": 23.2
+      "temp_c": 23.3
     }
   ],
   "event": null,
