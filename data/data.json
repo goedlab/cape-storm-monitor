@@ -1,6 +1,6 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-07-31T21:20:23+02:00",
+  "last_updated": "2026-08-01T04:33:07+02:00",
   "summary": "Cape Town: Overcast",
   "stats": {
     "active_incidents": 2,
@@ -63,13 +63,6 @@
   "outlook": {},
   "seasonal_outlook": [
     {
-      "month": "Aug 2026",
-      "precip_label": "wetter than normal",
-      "temp_label": "cooler than normal",
-      "precip_mm": 116,
-      "temp_c": 11.6
-    },
-    {
       "month": "Sep 2026",
       "precip_label": "drier than normal",
       "temp_label": "near normal",
@@ -102,7 +95,7 @@
       "precip_label": "drier than normal",
       "temp_label": "warmer than normal",
       "precip_mm": 2,
-      "temp_c": 23.3
+      "temp_c": 23.2
     }
   ],
   "event": null,
