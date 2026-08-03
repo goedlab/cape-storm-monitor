@@ -1,6 +1,6 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-08-03T04:33:52+02:00",
+  "last_updated": "2026-08-03T11:38:29+02:00",
   "summary": "Cape Town: Overcast",
   "stats": {
     "active_incidents": 1,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-6399",
+      "id": "gdacs-2568",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -20,13 +20,13 @@
       "description": "On 31/07/2026, a forest fire started in South Africa,  until 02/08/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1030037",
-      "updated": "2026-08-03T04:33:52+02:00",
+      "updated": "2026-08-03T11:38:29+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-6399",
+      "id": "m-gdacs-2568",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
