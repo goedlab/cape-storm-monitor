@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-08-03T16:32:48+02:00",
+  "generated": "2026-08-03T21:26:31+02:00",
   "features": [
     {
       "type": "Feature",
@@ -12,13 +12,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-4788",
+        "id": "gdacs-7731",
         "type": "storm",
         "title": "Green forest fire notification in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 31/07/2026, a forest fire started in South Africa,  until 02/08/2026.",
-        "updated": "2026-08-03T16:32:47+02:00"
+        "updated": "2026-08-03T21:26:31+02:00"
       }
     }
   ]
