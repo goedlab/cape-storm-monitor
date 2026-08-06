@@ -1,7 +1,7 @@
 {
-  "status": "WATCH",
-  "last_updated": "2026-08-05T21:25:36+02:00",
-  "summary": "Cape Town: Overcast · gusts 71 km/h",
+  "status": "ALL_CLEAR",
+  "last_updated": "2026-08-06T04:21:19+02:00",
+  "summary": "Cape Town: Moderate drizzle · 1.0 mm rain",
   "stats": {
     "active_incidents": 3,
     "roads_closed": 0,
@@ -124,7 +124,7 @@
       "precip_label": "drier than normal",
       "temp_label": "warmer than normal",
       "precip_mm": 0,
-      "temp_c": 25.2
+      "temp_c": 25.9
     }
   ],
   "event": null,
