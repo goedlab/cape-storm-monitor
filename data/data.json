@@ -1,7 +1,7 @@
 {
-  "status": "ALL_CLEAR",
-  "last_updated": "2026-08-13T09:22:20+02:00",
-  "summary": "Cape Town: Clear sky · gusts 46 km/h",
+  "status": "WATCH",
+  "last_updated": "2026-08-13T15:03:11+02:00",
+  "summary": "Cape Town: Clear sky · gusts 61 km/h · alerts: Citrusdal",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -10,27 +10,27 @@
   },
   "incidents": [
     {
-      "id": "gdacs-9315",
-      "type": "storm",
-      "title": "Green forest fire notification in South Africa",
-      "area": "South Africa",
-      "lat": -33.9249,
-      "lng": 18.4241,
+      "id": "om-wind-citrusdal",
+      "type": "wind",
+      "title": "Strong Wind Advisory – Citrusdal (61 km/h gusts)",
+      "area": "Citrusdal",
+      "lat": -32.5833,
+      "lng": 19.0167,
       "severity": "WATCH",
-      "description": "On 05/08/2026, a forest fire started in South Africa,  until 07/08/2026.",
-      "source": "GDACS",
-      "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1030209",
-      "updated": "2026-08-11T20:57:58+02:00",
+      "description": "Wind gusts of 61 km/h at Citrusdal. Secure loose items and avoid exposed areas.",
+      "source": "Open-Meteo",
+      "source_url": "https://open-meteo.com",
+      "updated": "2026-08-13T15:03:09+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-9315",
-      "type": "storm",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "label": "Green forest fire notification in South Africa",
+      "id": "m-om-wind-citrusdal",
+      "type": "wind",
+      "lat": -32.5833,
+      "lng": 19.0167,
+      "label": "Strong Wind Advisory – Citrusdal (61 km/h gusts)",
       "severity": "WATCH"
     }
   ],
