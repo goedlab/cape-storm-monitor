@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-08-12T20:58:07+02:00",
-  "summary": "Cape Town: Clear sky",
+  "last_updated": "2026-08-13T03:45:17+02:00",
+  "summary": "Cape Town: Clear sky · gusts 54 km/h",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -77,10 +77,10 @@
     },
     {
       "month": "Feb 2027",
-      "precip_label": "drier than normal",
+      "precip_label": "wetter than normal",
       "temp_label": "warmer than normal",
-      "precip_mm": 0,
-      "temp_c": 24.4
+      "precip_mm": 27,
+      "temp_c": 23.8
     }
   ],
   "event": null,
