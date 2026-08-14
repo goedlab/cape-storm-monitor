@@ -1,7 +1,7 @@
 {
-  "status": "ALL_CLEAR",
-  "last_updated": "2026-08-14T03:43:20+02:00",
-  "summary": "Cape Town: Partly cloudy · gusts 55 km/h",
+  "status": "WATCH",
+  "last_updated": "2026-08-14T09:20:21+02:00",
+  "summary": "Cape Town: Overcast · gusts 66 km/h",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -10,27 +10,27 @@
   },
   "incidents": [
     {
-      "id": "om-wind-citrusdal",
+      "id": "om-wind-cape-town",
       "type": "wind",
-      "title": "Strong Wind Advisory – Citrusdal (61 km/h gusts)",
-      "area": "Citrusdal",
-      "lat": -32.5833,
-      "lng": 19.0167,
+      "title": "Strong Wind Advisory – Cape Town (66 km/h gusts)",
+      "area": "Cape Town",
+      "lat": -33.9249,
+      "lng": 18.4241,
       "severity": "WATCH",
-      "description": "Wind gusts of 61 km/h at Citrusdal. Secure loose items and avoid exposed areas.",
+      "description": "Wind gusts of 66 km/h at Cape Town. Secure loose items and avoid exposed areas.",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "updated": "2026-08-13T15:03:09+02:00",
+      "updated": "2026-08-14T09:20:04+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-om-wind-citrusdal",
+      "id": "m-om-wind-cape-town",
       "type": "wind",
-      "lat": -32.5833,
-      "lng": 19.0167,
-      "label": "Strong Wind Advisory – Citrusdal (61 km/h gusts)",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "label": "Strong Wind Advisory – Cape Town (66 km/h gusts)",
       "severity": "WATCH"
     }
   ],
