@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-08-14T20:49:52+02:00",
-  "summary": "Cape Town: Clear sky",
+  "last_updated": "2026-08-15T03:04:00+02:00",
+  "summary": "Cape Town: Overcast",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -80,7 +80,7 @@
       "precip_label": "wetter than normal",
       "temp_label": "warmer than normal",
       "precip_mm": 27,
-      "temp_c": 23.4
+      "temp_c": 23.2
     }
   ],
   "event": null,
