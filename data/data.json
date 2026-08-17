@@ -1,6 +1,6 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-08-16T20:23:31+02:00",
+  "last_updated": "2026-08-17T03:05:06+02:00",
   "summary": "Cape Town: Overcast",
   "stats": {
     "active_incidents": 1,
@@ -80,7 +80,7 @@
       "precip_label": "wetter than normal",
       "temp_label": "warmer than normal",
       "precip_mm": 27,
-      "temp_c": 23.2
+      "temp_c": 23.0
     }
   ],
   "event": null,
