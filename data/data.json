@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-08-17T20:34:22+02:00",
-  "summary": "Cape Town: Light drizzle",
+  "last_updated": "2026-08-18T03:03:00+02:00",
+  "summary": "Cape Town: Clear sky",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -78,9 +78,9 @@
     {
       "month": "Feb 2027",
       "precip_label": "wetter than normal",
-      "temp_label": "warmer than normal",
+      "temp_label": "near normal",
       "precip_mm": 27,
-      "temp_c": 23.0
+      "temp_c": 22.8
     }
   ],
   "event": null,
