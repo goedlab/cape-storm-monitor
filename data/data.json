@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-08-18T20:33:30+02:00",
-  "summary": "Cape Town: Overcast · gusts 45 km/h",
+  "last_updated": "2026-08-19T03:04:00+02:00",
+  "summary": "Cape Town: Partly cloudy",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -79,8 +79,8 @@
       "month": "Feb 2027",
       "precip_label": "wetter than normal",
       "temp_label": "near normal",
-      "precip_mm": 27,
-      "temp_c": 22.8
+      "precip_mm": 28,
+      "temp_c": 22.6
     }
   ],
   "event": null,
