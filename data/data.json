@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-08-20T20:34:36+02:00",
-  "summary": "Cape Town: Mainly clear · gusts 44 km/h",
+  "last_updated": "2026-08-21T03:07:25+02:00",
+  "summary": "Cape Town: Mainly clear",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -80,7 +80,7 @@
       "precip_label": "wetter than normal",
       "temp_label": "near normal",
       "precip_mm": 31,
-      "temp_c": 22.4
+      "temp_c": 22.3
     }
   ],
   "event": null,
