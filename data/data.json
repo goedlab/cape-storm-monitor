@@ -1,7 +1,7 @@
 {
-  "status": "ALL_CLEAR",
-  "last_updated": "2026-08-24T20:35:36+02:00",
-  "summary": "Cape Town: Clear sky · gusts 57 km/h",
+  "status": "WATCH",
+  "last_updated": "2026-08-25T03:05:34+02:00",
+  "summary": "Cape Town: Clear sky · gusts 67 km/h",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -12,15 +12,15 @@
     {
       "id": "om-wind-cape-town",
       "type": "wind",
-      "title": "Strong Wind Advisory – Cape Town (65 km/h gusts)",
+      "title": "Strong Wind Advisory – Cape Town (67 km/h gusts)",
       "area": "Cape Town",
       "lat": -33.9249,
       "lng": 18.4241,
       "severity": "WATCH",
-      "description": "Wind gusts of 65 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+      "description": "Wind gusts of 67 km/h at Cape Town. Secure loose items and avoid exposed areas.",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "updated": "2026-08-14T14:59:35+02:00",
+      "updated": "2026-08-25T03:05:31+02:00",
       "active": true
     }
   ],
@@ -30,7 +30,7 @@
       "type": "wind",
       "lat": -33.9249,
       "lng": 18.4241,
-      "label": "Strong Wind Advisory – Cape Town (65 km/h gusts)",
+      "label": "Strong Wind Advisory – Cape Town (67 km/h gusts)",
       "severity": "WATCH"
     }
   ],
