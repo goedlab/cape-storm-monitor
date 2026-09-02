@@ -1,6 +1,6 @@
 {
-  "status": "ALL_CLEAR",
-  "last_updated": "2026-09-01T22:31:05+02:00",
+  "status": "WATCH",
+  "last_updated": "2026-09-02T04:48:26+02:00",
   "summary": "Cape Town: Partly cloudy",
   "stats": {
     "active_incidents": 1,
@@ -10,27 +10,27 @@
   },
   "incidents": [
     {
-      "id": "om-wind-cape-town",
-      "type": "wind",
-      "title": "Strong Wind Advisory – Cape Town (72 km/h gusts)",
-      "area": "Cape Town",
+      "id": "gdacs-0559",
+      "type": "storm",
+      "title": "Green forest fire notification in South Africa",
+      "area": "South Africa",
       "lat": -33.9249,
       "lng": 18.4241,
       "severity": "WATCH",
-      "description": "Wind gusts of 72 km/h at Cape Town. Secure loose items and avoid exposed areas.",
-      "source": "Open-Meteo",
-      "source_url": "https://open-meteo.com",
-      "updated": "2026-08-25T14:41:04+02:00",
+      "description": "On 31/08/2026, a forest fire started in South Africa,  until 01/09/2026.",
+      "source": "GDACS",
+      "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1031446",
+      "updated": "2026-09-02T04:48:26+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-om-wind-cape-town",
-      "type": "wind",
+      "id": "m-gdacs-0559",
+      "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
-      "label": "Strong Wind Advisory – Cape Town (72 km/h gusts)",
+      "label": "Green forest fire notification in South Africa",
       "severity": "WATCH"
     }
   ],
@@ -79,8 +79,8 @@
       "month": "Mar 2027",
       "precip_label": "drier than normal",
       "temp_label": "near normal",
-      "precip_mm": 1,
-      "temp_c": 20.9
+      "precip_mm": 3,
+      "temp_c": 20.2
     }
   ],
   "event": null,
