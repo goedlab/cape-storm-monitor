@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-09-04T04:51:49+02:00",
+  "generated": "2026-09-04T12:33:44+02:00",
   "features": [
     {
       "type": "Feature",
@@ -14,11 +14,30 @@
       "properties": {
         "id": "om-wind-cape-town",
         "type": "wind",
-        "title": "Strong Wind Advisory – Cape Town (104 km/h gusts)",
+        "title": "Strong Wind Advisory – Cape Town (95 km/h gusts)",
         "area": "Cape Town",
-        "severity": "EMERGENCY",
-        "description": "Wind gusts of 104 km/h at Cape Town. Secure loose items and avoid exposed areas.",
-        "updated": "2026-09-04T04:51:45+02:00"
+        "severity": "WARNING",
+        "description": "Wind gusts of 95 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+        "updated": "2026-09-04T12:33:39+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.0167,
+          -32.5833
+        ]
+      },
+      "properties": {
+        "id": "om-wind-citrusdal",
+        "type": "wind",
+        "title": "Strong Wind Advisory – Citrusdal (66 km/h gusts)",
+        "area": "Citrusdal",
+        "severity": "WATCH",
+        "description": "Wind gusts of 66 km/h at Citrusdal. Secure loose items and avoid exposed areas.",
+        "updated": "2026-09-04T12:33:39+02:00"
       }
     },
     {
@@ -31,13 +50,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-0029",
+        "id": "gdacs-7588",
         "type": "storm",
         "title": "Green forest fire notification in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 31/08/2026, a forest fire started in South Africa,  until 03/09/2026.",
-        "updated": "2026-09-04T04:51:49+02:00"
+        "updated": "2026-09-04T12:33:44+02:00"
       }
     }
   ]
