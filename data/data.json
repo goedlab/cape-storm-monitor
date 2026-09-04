@@ -1,44 +1,30 @@
 {
   "status": "EMERGENCY",
-  "last_updated": "2026-09-04T17:44:06+02:00",
-  "summary": "Cape Town: Mainly clear · gusts 107 km/h · alerts: Ceres",
+  "last_updated": "2026-09-04T22:15:03+02:00",
+  "summary": "Cape Town: Clear sky · gusts 103 km/h",
   "stats": {
-    "active_incidents": 3,
+    "active_incidents": 2,
     "roads_closed": 0,
     "shelters_open": 0,
-    "areas_affected": 3
+    "areas_affected": 2
   },
   "incidents": [
     {
       "id": "om-wind-cape-town",
       "type": "wind",
-      "title": "Strong Wind Advisory – Cape Town (107 km/h gusts)",
+      "title": "Strong Wind Advisory – Cape Town (103 km/h gusts)",
       "area": "Cape Town",
       "lat": -33.9249,
       "lng": 18.4241,
       "severity": "EMERGENCY",
-      "description": "Wind gusts of 107 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+      "description": "Wind gusts of 103 km/h at Cape Town. Secure loose items and avoid exposed areas.",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "updated": "2026-09-04T17:44:02+02:00",
+      "updated": "2026-09-04T22:14:59+02:00",
       "active": true
     },
     {
-      "id": "om-wind-ceres",
-      "type": "wind",
-      "title": "Strong Wind Advisory – Ceres (60 km/h gusts)",
-      "area": "Ceres",
-      "lat": -33.3667,
-      "lng": 19.3167,
-      "severity": "WATCH",
-      "description": "Wind gusts of 60 km/h at Ceres. Secure loose items and avoid exposed areas.",
-      "source": "Open-Meteo",
-      "source_url": "https://open-meteo.com",
-      "updated": "2026-09-04T17:44:02+02:00",
-      "active": true
-    },
-    {
-      "id": "gdacs-5910",
+      "id": "gdacs-6826",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -48,7 +34,7 @@
       "description": "On 31/08/2026, a forest fire started in South Africa,  until 03/09/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1031446",
-      "updated": "2026-09-04T17:44:06+02:00",
+      "updated": "2026-09-04T22:15:03+02:00",
       "active": true
     }
   ],
@@ -58,19 +44,11 @@
       "type": "wind",
       "lat": -33.9249,
       "lng": 18.4241,
-      "label": "Strong Wind Advisory – Cape Town (107 km/h gusts)",
+      "label": "Strong Wind Advisory – Cape Town (103 km/h gusts)",
       "severity": "EMERGENCY"
     },
     {
-      "id": "m-om-wind-ceres",
-      "type": "wind",
-      "lat": -33.3667,
-      "lng": 19.3167,
-      "label": "Strong Wind Advisory – Ceres (60 km/h gusts)",
-      "severity": "WATCH"
-    },
-    {
-      "id": "m-gdacs-5910",
+      "id": "m-gdacs-6826",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
