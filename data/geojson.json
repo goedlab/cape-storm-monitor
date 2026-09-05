@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-09-05T16:33:18+02:00",
+  "generated": "2026-09-05T21:55:04+02:00",
   "features": [
     {
       "type": "Feature",
@@ -18,7 +18,7 @@
         "area": "Cape Town",
         "severity": "WATCH",
         "description": "Wind gusts of 73 km/h at Cape Town. Secure loose items and avoid exposed areas.",
-        "updated": "2026-09-05T16:33:14+02:00"
+        "updated": "2026-09-05T21:55:00+02:00"
       }
     },
     {
@@ -31,13 +31,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-4128",
+        "id": "gdacs-2462",
         "type": "storm",
         "title": "Green forest fire notification in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 04/09/2026, a forest fire started in South Africa,  until 05/09/2026.",
-        "updated": "2026-09-05T16:33:18+02:00"
+        "updated": "2026-09-05T21:55:04+02:00"
       }
     },
     {
@@ -50,13 +50,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-4128",
+        "id": "gdacs-2462",
         "type": "storm",
         "title": "Green forest fire notification in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 03/09/2026, a forest fire started in South Africa,  until 04/09/2026.",
-        "updated": "2026-09-05T16:33:18+02:00"
+        "updated": "2026-09-05T21:55:04+02:00"
       }
     },
     {
@@ -69,13 +69,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-4128",
+        "id": "gdacs-2462",
         "type": "storm",
         "title": "Green forest fire notification in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 31/08/2026, a forest fire started in South Africa,  until 03/09/2026.",
-        "updated": "2026-09-05T16:33:18+02:00"
+        "updated": "2026-09-05T21:55:04+02:00"
       }
     }
   ]
