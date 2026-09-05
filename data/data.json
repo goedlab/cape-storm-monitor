@@ -1,16 +1,30 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-09-05T11:56:13+02:00",
-  "summary": "Cape Town: Clear sky · gusts 49 km/h",
+  "last_updated": "2026-09-05T16:33:18+02:00",
+  "summary": "Cape Town: Clear sky · gusts 73 km/h",
   "stats": {
-    "active_incidents": 3,
+    "active_incidents": 4,
     "roads_closed": 0,
     "shelters_open": 0,
-    "areas_affected": 1
+    "areas_affected": 2
   },
   "incidents": [
     {
-      "id": "gdacs-6449",
+      "id": "om-wind-cape-town",
+      "type": "wind",
+      "title": "Strong Wind Advisory – Cape Town (73 km/h gusts)",
+      "area": "Cape Town",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "severity": "WATCH",
+      "description": "Wind gusts of 73 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+      "source": "Open-Meteo",
+      "source_url": "https://open-meteo.com",
+      "updated": "2026-09-05T16:33:14+02:00",
+      "active": true
+    },
+    {
+      "id": "gdacs-4128",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -20,11 +34,11 @@
       "description": "On 04/09/2026, a forest fire started in South Africa,  until 05/09/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1031676",
-      "updated": "2026-09-05T11:56:13+02:00",
+      "updated": "2026-09-05T16:33:18+02:00",
       "active": true
     },
     {
-      "id": "gdacs-6449",
+      "id": "gdacs-4128",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -34,11 +48,11 @@
       "description": "On 03/09/2026, a forest fire started in South Africa,  until 04/09/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1031602",
-      "updated": "2026-09-05T11:56:13+02:00",
+      "updated": "2026-09-05T16:33:18+02:00",
       "active": true
     },
     {
-      "id": "gdacs-6449",
+      "id": "gdacs-4128",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -48,13 +62,21 @@
       "description": "On 31/08/2026, a forest fire started in South Africa,  until 03/09/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1031446",
-      "updated": "2026-09-05T11:56:13+02:00",
+      "updated": "2026-09-05T16:33:18+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-6449",
+      "id": "m-om-wind-cape-town",
+      "type": "wind",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "label": "Strong Wind Advisory – Cape Town (73 km/h gusts)",
+      "severity": "WATCH"
+    },
+    {
+      "id": "m-gdacs-4128",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -62,7 +84,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-6449",
+      "id": "m-gdacs-4128",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -70,7 +92,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-6449",
+      "id": "m-gdacs-4128",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -86,45 +108,45 @@
   "seasonal_outlook": [
     {
       "month": "Oct 2026",
-      "precip_label": "drier than normal",
+      "precip_label": "wetter than normal",
       "temp_label": "near normal",
-      "precip_mm": 16,
-      "temp_c": 17.4
+      "precip_mm": 59,
+      "temp_c": 16.7
     },
     {
       "month": "Nov 2026",
       "precip_label": "wetter than normal",
       "temp_label": "cooler than normal",
-      "precip_mm": 52,
+      "precip_mm": 30,
       "temp_c": 18.2
     },
     {
       "month": "Dec 2026",
-      "precip_label": "wetter than normal",
+      "precip_label": "near normal",
       "temp_label": "near normal",
-      "precip_mm": 34,
-      "temp_c": 20.1
+      "precip_mm": 13,
+      "temp_c": 20.7
     },
     {
       "month": "Jan 2027",
       "precip_label": "drier than normal",
-      "temp_label": "near normal",
-      "precip_mm": 6,
-      "temp_c": 21.5
+      "temp_label": "cooler than normal",
+      "precip_mm": 8,
+      "temp_c": 20.2
     },
     {
       "month": "Feb 2027",
-      "precip_label": "wetter than normal",
+      "precip_label": "near normal",
       "temp_label": "near normal",
-      "precip_mm": 31,
-      "temp_c": 22.3
+      "precip_mm": 15,
+      "temp_c": 22.6
     },
     {
       "month": "Mar 2027",
       "precip_label": "drier than normal",
-      "temp_label": "near normal",
-      "precip_mm": 3,
-      "temp_c": 20.2
+      "temp_label": "warmer than normal",
+      "precip_mm": 0,
+      "temp_c": 22.1
     }
   ],
   "event": null,
