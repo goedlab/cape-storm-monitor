@@ -1,6 +1,6 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-09-06T21:58:40+02:00",
+  "last_updated": "2026-09-07T04:49:40+02:00",
   "summary": "Cape Town: Clear sky",
   "stats": {
     "active_incidents": 3,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-8508",
+      "id": "gdacs-4384",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -20,11 +20,11 @@
       "description": "On 04/09/2026, a forest fire started in South Africa,  until 05/09/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1031676",
-      "updated": "2026-09-06T21:58:40+02:00",
+      "updated": "2026-09-07T04:49:40+02:00",
       "active": true
     },
     {
-      "id": "gdacs-8508",
+      "id": "gdacs-4384",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -34,11 +34,11 @@
       "description": "On 03/09/2026, a forest fire started in South Africa,  until 04/09/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1031602",
-      "updated": "2026-09-06T21:58:40+02:00",
+      "updated": "2026-09-07T04:49:40+02:00",
       "active": true
     },
     {
-      "id": "gdacs-8508",
+      "id": "gdacs-4384",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -48,13 +48,13 @@
       "description": "On 31/08/2026, a forest fire started in South Africa,  until 03/09/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1031446",
-      "updated": "2026-09-06T21:58:40+02:00",
+      "updated": "2026-09-07T04:49:40+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-8508",
+      "id": "m-gdacs-4384",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -62,7 +62,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-8508",
+      "id": "m-gdacs-4384",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -70,7 +70,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-8508",
+      "id": "m-gdacs-4384",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -124,7 +124,7 @@
       "precip_label": "drier than normal",
       "temp_label": "warmer than normal",
       "precip_mm": 0,
-      "temp_c": 22.2
+      "temp_c": 21.9
     }
   ],
   "event": null,
