@@ -1,16 +1,16 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-09-07T23:05:36+02:00",
+  "last_updated": "2026-09-08T04:59:45+02:00",
   "summary": "Cape Town: Clear sky",
   "stats": {
-    "active_incidents": 3,
+    "active_incidents": 2,
     "roads_closed": 0,
     "shelters_open": 0,
     "areas_affected": 1
   },
   "incidents": [
     {
-      "id": "gdacs-3715",
+      "id": "gdacs-1257",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -20,11 +20,11 @@
       "description": "On 04/09/2026, a forest fire started in South Africa,  until 05/09/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1031676",
-      "updated": "2026-09-07T23:05:36+02:00",
+      "updated": "2026-09-08T04:59:45+02:00",
       "active": true
     },
     {
-      "id": "gdacs-3715",
+      "id": "gdacs-1257",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -34,27 +34,13 @@
       "description": "On 03/09/2026, a forest fire started in South Africa,  until 04/09/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1031602",
-      "updated": "2026-09-07T23:05:36+02:00",
-      "active": true
-    },
-    {
-      "id": "gdacs-3715",
-      "type": "storm",
-      "title": "Green forest fire notification in South Africa",
-      "area": "South Africa",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "severity": "WATCH",
-      "description": "On 31/08/2026, a forest fire started in South Africa,  until 03/09/2026.",
-      "source": "GDACS",
-      "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1031446",
-      "updated": "2026-09-07T23:05:36+02:00",
+      "updated": "2026-09-08T04:59:45+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-3715",
+      "id": "m-gdacs-1257",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -62,15 +48,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-3715",
-      "type": "storm",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "label": "Green forest fire notification in South Africa",
-      "severity": "WATCH"
-    },
-    {
-      "id": "m-gdacs-3715",
+      "id": "m-gdacs-1257",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -123,8 +101,8 @@
       "month": "Mar 2027",
       "precip_label": "drier than normal",
       "temp_label": "warmer than normal",
-      "precip_mm": 0,
-      "temp_c": 21.9
+      "precip_mm": 1,
+      "temp_c": 21.6
     }
   ],
   "event": null,
