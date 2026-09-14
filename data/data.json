@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-09-13T22:17:55+02:00",
-  "summary": "Cape Town: Moderate drizzle · 0.3 mm rain",
+  "last_updated": "2026-09-14T05:18:38+02:00",
+  "summary": "Cape Town: Overcast · gusts 57 km/h · 0.6 mm rain",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -80,7 +80,7 @@
       "precip_label": "drier than normal",
       "temp_label": "warmer than normal",
       "precip_mm": 1,
-      "temp_c": 21.6
+      "temp_c": 21.8
     }
   ],
   "event": null,
