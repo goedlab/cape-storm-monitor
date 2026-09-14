@@ -1,7 +1,7 @@
 {
-  "status": "ALL_CLEAR",
-  "last_updated": "2026-09-14T05:18:38+02:00",
-  "summary": "Cape Town: Overcast · gusts 57 km/h · 0.6 mm rain",
+  "status": "WATCH",
+  "last_updated": "2026-09-14T13:45:43+02:00",
+  "summary": "Cape Town: Light drizzle · gusts 73 km/h · 0.4 mm rain",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -12,15 +12,15 @@
     {
       "id": "om-wind-cape-town",
       "type": "wind",
-      "title": "Strong Wind Advisory – Cape Town (60 km/h gusts)",
+      "title": "Strong Wind Advisory – Cape Town (73 km/h gusts)",
       "area": "Cape Town",
       "lat": -33.9249,
       "lng": 18.4241,
       "severity": "WATCH",
-      "description": "Wind gusts of 60 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+      "description": "Wind gusts of 73 km/h at Cape Town. Secure loose items and avoid exposed areas.",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "updated": "2026-09-12T16:57:57+02:00",
+      "updated": "2026-09-14T13:45:40+02:00",
       "active": true
     }
   ],
@@ -30,7 +30,7 @@
       "type": "wind",
       "lat": -33.9249,
       "lng": 18.4241,
-      "label": "Strong Wind Advisory – Cape Town (60 km/h gusts)",
+      "label": "Strong Wind Advisory – Cape Town (73 km/h gusts)",
       "severity": "WATCH"
     }
   ],
@@ -39,50 +39,7 @@
   "shelters": [],
   "actions": {},
   "outlook": {},
-  "seasonal_outlook": [
-    {
-      "month": "Oct 2026",
-      "precip_label": "wetter than normal",
-      "temp_label": "near normal",
-      "precip_mm": 59,
-      "temp_c": 16.7
-    },
-    {
-      "month": "Nov 2026",
-      "precip_label": "wetter than normal",
-      "temp_label": "cooler than normal",
-      "precip_mm": 30,
-      "temp_c": 18.2
-    },
-    {
-      "month": "Dec 2026",
-      "precip_label": "near normal",
-      "temp_label": "near normal",
-      "precip_mm": 13,
-      "temp_c": 20.7
-    },
-    {
-      "month": "Jan 2027",
-      "precip_label": "drier than normal",
-      "temp_label": "cooler than normal",
-      "precip_mm": 8,
-      "temp_c": 20.2
-    },
-    {
-      "month": "Feb 2027",
-      "precip_label": "near normal",
-      "temp_label": "near normal",
-      "precip_mm": 15,
-      "temp_c": 22.6
-    },
-    {
-      "month": "Mar 2027",
-      "precip_label": "drier than normal",
-      "temp_label": "warmer than normal",
-      "precip_mm": 1,
-      "temp_c": 21.8
-    }
-  ],
+  "seasonal_outlook": [],
   "event": null,
   "outcomes": null
 }
