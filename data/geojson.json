@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-09-15T05:20:21+02:00",
+  "generated": "2026-09-15T13:02:18+02:00",
   "features": [
     {
       "type": "Feature",
@@ -14,11 +14,30 @@
       "properties": {
         "id": "om-wind-cape-town",
         "type": "wind",
-        "title": "Strong Wind Advisory – Cape Town (69 km/h gusts)",
+        "title": "Strong Wind Advisory – Cape Town (90 km/h gusts)",
         "area": "Cape Town",
+        "severity": "WARNING",
+        "description": "Wind gusts of 90 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+        "updated": "2026-09-15T13:02:14+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.8602,
+          -33.9321
+        ]
+      },
+      "properties": {
+        "id": "om-wind-stellenbosch",
+        "type": "wind",
+        "title": "Strong Wind Advisory – Stellenbosch (64 km/h gusts)",
+        "area": "Stellenbosch",
         "severity": "WATCH",
-        "description": "Wind gusts of 69 km/h at Cape Town. Secure loose items and avoid exposed areas.",
-        "updated": "2026-09-15T05:20:19+02:00"
+        "description": "Wind gusts of 64 km/h at Stellenbosch. Secure loose items and avoid exposed areas.",
+        "updated": "2026-09-15T13:02:14+02:00"
       }
     }
   ]
