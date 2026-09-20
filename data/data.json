@@ -1,7 +1,7 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-09-20T17:24:46+02:00",
-  "summary": "Cape Town: Clear sky",
+  "last_updated": "2026-09-20T22:19:02+02:00",
+  "summary": "Cape Town: Clear sky · gusts 40 km/h",
   "stats": {
     "active_incidents": 3,
     "roads_closed": 0,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-4644",
+      "id": "gdacs-1538",
       "type": "flood",
       "title": "Green flood alert in South Africa",
       "area": "South Africa",
@@ -20,11 +20,11 @@
       "description": "On 17/09/2026, a flood started in South Africa, lasting until 19/09/2026 (last update). The flood caused 0 deaths and 0 displaced .",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1104177",
-      "updated": "2026-09-20T17:24:46+02:00",
+      "updated": "2026-09-20T22:19:02+02:00",
       "active": true
     },
     {
-      "id": "gdacs-4985",
+      "id": "gdacs-6512",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -34,11 +34,11 @@
       "description": "On 16/09/2026, a forest fire started in South Africa,  until 16/09/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1032039",
-      "updated": "2026-09-20T17:24:46+02:00",
+      "updated": "2026-09-20T22:19:02+02:00",
       "active": true
     },
     {
-      "id": "gdacs-4985",
+      "id": "gdacs-6512",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -48,13 +48,13 @@
       "description": "On 14/09/2026, a forest fire started in South Africa,  until 16/09/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1032041",
-      "updated": "2026-09-20T17:24:46+02:00",
+      "updated": "2026-09-20T22:19:02+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-4644",
+      "id": "m-gdacs-1538",
       "type": "flood",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -62,7 +62,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-4985",
+      "id": "m-gdacs-6512",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -70,7 +70,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-4985",
+      "id": "m-gdacs-6512",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
