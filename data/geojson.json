@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-09-21T05:15:45+02:00",
+  "generated": "2026-09-21T13:58:04+02:00",
   "features": [
     {
       "type": "Feature",
@@ -12,51 +12,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-0920",
+        "id": "gdacs-8209",
         "type": "flood",
         "title": "Green flood alert in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 17/09/2026, a flood started in South Africa, lasting until 19/09/2026 (last update). The flood caused 0 deaths and 0 displaced .",
-        "updated": "2026-09-21T05:15:45+02:00"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.4241,
-          -33.9249
-        ]
-      },
-      "properties": {
-        "id": "gdacs-3230",
-        "type": "storm",
-        "title": "Green forest fire notification in South Africa",
-        "area": "South Africa",
-        "severity": "WATCH",
-        "description": "On 16/09/2026, a forest fire started in South Africa,  until 16/09/2026.",
-        "updated": "2026-09-21T05:15:45+02:00"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.4241,
-          -33.9249
-        ]
-      },
-      "properties": {
-        "id": "gdacs-3230",
-        "type": "storm",
-        "title": "Green forest fire notification in South Africa",
-        "area": "South Africa",
-        "severity": "WATCH",
-        "description": "On 14/09/2026, a forest fire started in South Africa,  until 16/09/2026.",
-        "updated": "2026-09-21T05:15:45+02:00"
+        "updated": "2026-09-21T13:58:04+02:00"
       }
     }
   ]

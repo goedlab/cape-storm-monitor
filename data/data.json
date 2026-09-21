@@ -1,16 +1,16 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-09-21T05:15:45+02:00",
-  "summary": "Cape Town: Mainly clear",
+  "last_updated": "2026-09-21T13:58:04+02:00",
+  "summary": "Cape Town: Clear sky",
   "stats": {
-    "active_incidents": 3,
+    "active_incidents": 1,
     "roads_closed": 0,
     "shelters_open": 0,
     "areas_affected": 1
   },
   "incidents": [
     {
-      "id": "gdacs-0920",
+      "id": "gdacs-8209",
       "type": "flood",
       "title": "Green flood alert in South Africa",
       "area": "South Africa",
@@ -20,61 +20,17 @@
       "description": "On 17/09/2026, a flood started in South Africa, lasting until 19/09/2026 (last update). The flood caused 0 deaths and 0 displaced .",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1104177",
-      "updated": "2026-09-21T05:15:45+02:00",
-      "active": true
-    },
-    {
-      "id": "gdacs-3230",
-      "type": "storm",
-      "title": "Green forest fire notification in South Africa",
-      "area": "South Africa",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "severity": "WATCH",
-      "description": "On 16/09/2026, a forest fire started in South Africa,  until 16/09/2026.",
-      "source": "GDACS",
-      "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1032039",
-      "updated": "2026-09-21T05:15:45+02:00",
-      "active": true
-    },
-    {
-      "id": "gdacs-3230",
-      "type": "storm",
-      "title": "Green forest fire notification in South Africa",
-      "area": "South Africa",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "severity": "WATCH",
-      "description": "On 14/09/2026, a forest fire started in South Africa,  until 16/09/2026.",
-      "source": "GDACS",
-      "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1032041",
-      "updated": "2026-09-21T05:15:45+02:00",
+      "updated": "2026-09-21T13:58:04+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-0920",
+      "id": "m-gdacs-8209",
       "type": "flood",
       "lat": -33.9249,
       "lng": 18.4241,
       "label": "Green flood alert in South Africa",
-      "severity": "WATCH"
-    },
-    {
-      "id": "m-gdacs-3230",
-      "type": "storm",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "label": "Green forest fire notification in South Africa",
-      "severity": "WATCH"
-    },
-    {
-      "id": "m-gdacs-3230",
-      "type": "storm",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "label": "Green forest fire notification in South Africa",
       "severity": "WATCH"
     }
   ],
