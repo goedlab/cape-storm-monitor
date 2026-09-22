@@ -1,6 +1,6 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-09-21T20:04:27+02:00",
+  "last_updated": "2026-09-22T05:15:31+02:00",
   "summary": "Cape Town: Mainly clear",
   "stats": {
     "active_incidents": 1,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-5468",
+      "id": "gdacs-5136",
       "type": "flood",
       "title": "Green flood alert in South Africa",
       "area": "South Africa",
@@ -20,13 +20,13 @@
       "description": "On 17/09/2026, a flood started in South Africa, lasting until 19/09/2026 (last update). The flood caused 0 deaths and 0 displaced .",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1104177",
-      "updated": "2026-09-21T20:04:27+02:00",
+      "updated": "2026-09-22T05:15:31+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-5468",
+      "id": "m-gdacs-5136",
       "type": "flood",
       "lat": -33.9249,
       "lng": 18.4241,
