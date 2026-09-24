@@ -1,6 +1,6 @@
 {
-  "status": "WATCH",
-  "last_updated": "2026-09-23T23:03:37+02:00",
+  "status": "ALL_CLEAR",
+  "last_updated": "2026-09-24T05:05:31+02:00",
   "summary": "Cape Town: Overcast",
   "stats": {
     "active_incidents": 1,
@@ -80,7 +80,7 @@
       "precip_label": "drier than normal",
       "temp_label": "warmer than normal",
       "precip_mm": 1,
-      "temp_c": 22.4
+      "temp_c": 22.3
     }
   ],
   "event": null,
