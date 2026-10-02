@@ -1,6 +1,6 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-10-02T00:19:46+02:00",
+  "last_updated": "2026-10-02T05:59:54+02:00",
   "summary": "Cape Town: Overcast",
   "stats": {
     "active_incidents": 1,
@@ -78,9 +78,9 @@
     {
       "month": "Apr 2027",
       "precip_label": "drier than normal",
-      "temp_label": "near normal",
+      "temp_label": "warmer than normal",
       "precip_mm": 0,
-      "temp_c": 19.2
+      "temp_c": 19.6
     }
   ],
   "event": null,
