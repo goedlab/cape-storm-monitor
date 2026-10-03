@@ -1,7 +1,7 @@
 {
-  "status": "ALL_CLEAR",
-  "last_updated": "2026-10-02T23:48:16+02:00",
-  "summary": "Cape Town: Partly cloudy · gusts 54 km/h",
+  "status": "WATCH",
+  "last_updated": "2026-10-03T05:45:15+02:00",
+  "summary": "Cape Town: Overcast · gusts 61 km/h",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -12,15 +12,15 @@
     {
       "id": "om-wind-cape-town",
       "type": "wind",
-      "title": "Strong Wind Advisory – Cape Town (72 km/h gusts)",
+      "title": "Strong Wind Advisory – Cape Town (61 km/h gusts)",
       "area": "Cape Town",
       "lat": -33.9249,
       "lng": 18.4241,
       "severity": "WATCH",
-      "description": "Wind gusts of 72 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+      "description": "Wind gusts of 61 km/h at Cape Town. Secure loose items and avoid exposed areas.",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "updated": "2026-10-01T14:24:44+02:00",
+      "updated": "2026-10-03T05:45:11+02:00",
       "active": true
     }
   ],
@@ -30,7 +30,7 @@
       "type": "wind",
       "lat": -33.9249,
       "lng": 18.4241,
-      "label": "Strong Wind Advisory – Cape Town (72 km/h gusts)",
+      "label": "Strong Wind Advisory – Cape Town (61 km/h gusts)",
       "severity": "WATCH"
     }
   ],
@@ -80,7 +80,7 @@
       "precip_label": "drier than normal",
       "temp_label": "warmer than normal",
       "precip_mm": 0,
-      "temp_c": 19.6
+      "temp_c": 20.4
     }
   ],
   "event": null,
