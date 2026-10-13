@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-10-12T16:23:37+02:00",
-  "summary": "Cape Town: Overcast · gusts 50 km/h",
+  "last_updated": "2026-10-13T02:07:16+02:00",
+  "summary": "Cape Town: Overcast",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -80,7 +80,7 @@
       "precip_label": "drier than normal",
       "temp_label": "near normal",
       "precip_mm": 0,
-      "temp_c": 19.3
+      "temp_c": 19.2
     }
   ],
   "event": null,
