@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-10-14T00:16:45+02:00",
-  "summary": "Cape Town: Partly cloudy",
+  "last_updated": "2026-10-14T05:29:02+02:00",
+  "summary": "Cape Town: Overcast",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -80,7 +80,7 @@
       "precip_label": "drier than normal",
       "temp_label": "near normal",
       "precip_mm": 0,
-      "temp_c": 19.2
+      "temp_c": 19.0
     }
   ],
   "event": null,
