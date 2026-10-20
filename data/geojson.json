@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-10-19T23:58:32+02:00",
+  "generated": "2026-10-20T05:20:43+02:00",
   "features": [
     {
       "type": "Feature",
@@ -12,13 +12,32 @@
         ]
       },
       "properties": {
-        "id": "gdacs-0065",
+        "id": "gdacs-1598",
+        "type": "storm",
+        "title": "Green forest fire notification in South Africa, Botswana",
+        "area": "South Africa",
+        "severity": "WATCH",
+        "description": "On 15/10/2026, a forest fire started in South Africa, Botswana,  until 19/10/2026.",
+        "updated": "2026-10-20T05:20:43+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.4241,
+          -33.9249
+        ]
+      },
+      "properties": {
+        "id": "gdacs-3364",
         "type": "storm",
         "title": "Green forest fire notification in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 10/10/2026, a forest fire started in South Africa,  until 16/10/2026.",
-        "updated": "2026-10-19T23:58:32+02:00"
+        "updated": "2026-10-20T05:20:43+02:00"
       }
     }
   ]
