@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-10-20T18:19:49+02:00",
+  "generated": "2026-10-20T23:13:34+02:00",
   "features": [
     {
       "type": "Feature",
@@ -14,11 +14,11 @@
       "properties": {
         "id": "om-wind-cape-town",
         "type": "wind",
-        "title": "Strong Wind Advisory – Cape Town (61 km/h gusts)",
+        "title": "Strong Wind Advisory – Cape Town (65 km/h gusts)",
         "area": "Cape Town",
         "severity": "WATCH",
-        "description": "Wind gusts of 61 km/h at Cape Town. Secure loose items and avoid exposed areas.",
-        "updated": "2026-10-20T18:19:47+02:00"
+        "description": "Wind gusts of 65 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+        "updated": "2026-10-20T23:13:32+02:00"
       }
     },
     {
@@ -31,13 +31,32 @@
         ]
       },
       "properties": {
-        "id": "gdacs-8606",
+        "id": "gdacs-7121",
+        "type": "storm",
+        "title": "Green forest fire notification in South Africa, Mozambique",
+        "area": "South Africa",
+        "severity": "WATCH",
+        "description": "On 18/10/2026, a forest fire started in South Africa, Mozambique,  until 20/10/2026.",
+        "updated": "2026-10-20T23:13:34+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.4241,
+          -33.9249
+        ]
+      },
+      "properties": {
+        "id": "gdacs-4339",
         "type": "storm",
         "title": "Green forest fire notification in Botswana, South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 15/10/2026, a forest fire started in Botswana, South Africa,  until 20/10/2026.",
-        "updated": "2026-10-20T18:19:49+02:00"
+        "updated": "2026-10-20T23:13:34+02:00"
       }
     },
     {
@@ -50,13 +69,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-6157",
+        "id": "gdacs-6541",
         "type": "storm",
         "title": "Green forest fire notification in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 10/10/2026, a forest fire started in South Africa,  until 16/10/2026.",
-        "updated": "2026-10-20T18:19:49+02:00"
+        "updated": "2026-10-20T23:13:34+02:00"
       }
     }
   ]
