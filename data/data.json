@@ -1,9 +1,9 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-10-20T23:13:34+02:00",
-  "summary": "Cape Town: Light drizzle · gusts 65 km/h",
+  "last_updated": "2026-10-21T05:15:37+02:00",
+  "summary": "Cape Town: Slight rain · gusts 78 km/h · 0.4 mm rain",
   "stats": {
-    "active_incidents": 4,
+    "active_incidents": 3,
     "roads_closed": 0,
     "shelters_open": 0,
     "areas_affected": 2
@@ -12,33 +12,33 @@
     {
       "id": "om-wind-cape-town",
       "type": "wind",
-      "title": "Strong Wind Advisory – Cape Town (65 km/h gusts)",
+      "title": "Strong Wind Advisory – Cape Town (78 km/h gusts)",
       "area": "Cape Town",
       "lat": -33.9249,
       "lng": 18.4241,
       "severity": "WATCH",
-      "description": "Wind gusts of 65 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+      "description": "Wind gusts of 78 km/h at Cape Town. Secure loose items and avoid exposed areas.",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "updated": "2026-10-20T23:13:32+02:00",
+      "updated": "2026-10-21T05:15:34+02:00",
       "active": true
     },
     {
-      "id": "gdacs-7121",
+      "id": "gdacs-1868",
       "type": "storm",
-      "title": "Green forest fire notification in South Africa, Mozambique",
+      "title": "Green forest fire notification in Mozambique, South Africa",
       "area": "South Africa",
       "lat": -33.9249,
       "lng": 18.4241,
       "severity": "WATCH",
-      "description": "On 18/10/2026, a forest fire started in South Africa, Mozambique,  until 20/10/2026.",
+      "description": "On 18/10/2026, a forest fire started in Mozambique, South Africa,  until 20/10/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1032974",
-      "updated": "2026-10-20T23:13:34+02:00",
+      "updated": "2026-10-21T05:15:37+02:00",
       "active": true
     },
     {
-      "id": "gdacs-4339",
+      "id": "gdacs-4614",
       "type": "storm",
       "title": "Green forest fire notification in Botswana, South Africa",
       "area": "South Africa",
@@ -48,21 +48,7 @@
       "description": "On 15/10/2026, a forest fire started in Botswana, South Africa,  until 20/10/2026.",
       "source": "GDACS",
       "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1032943",
-      "updated": "2026-10-20T23:13:34+02:00",
-      "active": true
-    },
-    {
-      "id": "gdacs-6541",
-      "type": "storm",
-      "title": "Green forest fire notification in South Africa",
-      "area": "South Africa",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "severity": "WATCH",
-      "description": "On 10/10/2026, a forest fire started in South Africa,  until 16/10/2026.",
-      "source": "GDACS",
-      "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1032854",
-      "updated": "2026-10-20T23:13:34+02:00",
+      "updated": "2026-10-21T05:15:37+02:00",
       "active": true
     }
   ],
@@ -72,31 +58,23 @@
       "type": "wind",
       "lat": -33.9249,
       "lng": 18.4241,
-      "label": "Strong Wind Advisory – Cape Town (65 km/h gusts)",
+      "label": "Strong Wind Advisory – Cape Town (78 km/h gusts)",
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-7121",
+      "id": "m-gdacs-1868",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
-      "label": "Green forest fire notification in South Africa, Mozambique",
+      "label": "Green forest fire notification in Mozambique, South Africa",
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-4339",
+      "id": "m-gdacs-4614",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
       "label": "Green forest fire notification in Botswana, South Africa",
-      "severity": "WATCH"
-    },
-    {
-      "id": "m-gdacs-6541",
-      "type": "storm",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "label": "Green forest fire notification in South Africa",
       "severity": "WATCH"
     }
   ],
@@ -146,7 +124,7 @@
       "precip_label": "near normal",
       "temp_label": "near normal",
       "precip_mm": 37,
-      "temp_c": 18.1
+      "temp_c": 18.0
     }
   ],
   "event": null,
