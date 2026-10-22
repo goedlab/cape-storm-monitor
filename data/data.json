@@ -1,7 +1,7 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-10-22T05:14:10+02:00",
-  "summary": "Cape Town: Light drizzle · gusts 42 km/h",
+  "last_updated": "2026-10-22T13:07:56+02:00",
+  "summary": "Cape Town: Partly cloudy · gusts 48 km/h · 0.3 mm rain",
   "stats": {
     "active_incidents": 2,
     "roads_closed": 0,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-8505",
+      "id": "gdacs-7579",
       "type": "storm",
       "title": "Green forest fire notification in South Africa, Mozambique",
       "area": "South Africa",
@@ -19,12 +19,12 @@
       "severity": "WATCH",
       "description": "On 18/10/2026, a forest fire started in South Africa, Mozambique,  until 20/10/2026.",
       "source": "GDACS",
-      "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1032974",
-      "updated": "2026-10-22T05:14:10+02:00",
+      "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1032974",
+      "updated": "2026-10-22T13:07:56+02:00",
       "active": true
     },
     {
-      "id": "gdacs-2646",
+      "id": "gdacs-7975",
       "type": "storm",
       "title": "Green forest fire notification in Botswana, South Africa",
       "area": "South Africa",
@@ -33,14 +33,14 @@
       "severity": "WATCH",
       "description": "On 15/10/2026, a forest fire started in Botswana, South Africa,  until 20/10/2026.",
       "source": "GDACS",
-      "source_url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1032943",
-      "updated": "2026-10-22T05:14:10+02:00",
+      "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1032943",
+      "updated": "2026-10-22T13:07:56+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-8505",
+      "id": "m-gdacs-7579",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -48,7 +48,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-2646",
+      "id": "m-gdacs-7975",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
