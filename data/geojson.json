@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-10-23T05:20:04+02:00",
+  "generated": "2026-10-23T12:59:09+02:00",
   "features": [
     {
       "type": "Feature",
@@ -12,13 +12,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-4895",
+        "id": "gdacs-7008",
         "type": "storm",
         "title": "Green forest fire notification in Mozambique, South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 18/10/2026, a forest fire started in Mozambique, South Africa,  until 20/10/2026.",
-        "updated": "2026-10-23T05:20:04+02:00"
+        "updated": "2026-10-23T12:59:09+02:00"
       }
     },
     {
@@ -31,13 +31,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-4036",
+        "id": "gdacs-3651",
         "type": "storm",
         "title": "Green forest fire notification in Botswana, South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 15/10/2026, a forest fire started in Botswana, South Africa,  until 20/10/2026.",
-        "updated": "2026-10-23T05:20:04+02:00"
+        "updated": "2026-10-23T12:59:09+02:00"
       }
     }
   ]
