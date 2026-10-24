@@ -1,7 +1,7 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-10-23T22:58:12+02:00",
-  "summary": "Cape Town: Mainly clear",
+  "last_updated": "2026-10-24T05:13:34+02:00",
+  "summary": "Cape Town: Overcast",
   "stats": {
     "active_incidents": 2,
     "roads_closed": 0,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-1812",
+      "id": "gdacs-5311",
       "type": "storm",
       "title": "Green forest fire notification in Mozambique, South Africa",
       "area": "South Africa",
@@ -20,11 +20,11 @@
       "description": "On 18/10/2026, a forest fire started in Mozambique, South Africa,  until 20/10/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1032974",
-      "updated": "2026-10-23T22:58:12+02:00",
+      "updated": "2026-10-24T05:13:34+02:00",
       "active": true
     },
     {
-      "id": "gdacs-5033",
+      "id": "gdacs-2675",
       "type": "storm",
       "title": "Green forest fire notification in Botswana, South Africa",
       "area": "South Africa",
@@ -34,13 +34,13 @@
       "description": "On 15/10/2026, a forest fire started in Botswana, South Africa,  until 20/10/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1032943",
-      "updated": "2026-10-23T22:58:12+02:00",
+      "updated": "2026-10-24T05:13:34+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-1812",
+      "id": "m-gdacs-5311",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -48,7 +48,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-5033",
+      "id": "m-gdacs-2675",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -102,7 +102,7 @@
       "precip_label": "near normal",
       "temp_label": "near normal",
       "precip_mm": 37,
-      "temp_c": 17.8
+      "temp_c": 17.9
     }
   ],
   "event": null,
