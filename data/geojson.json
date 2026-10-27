@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-10-27T05:39:26+02:00",
+  "generated": "2026-10-27T13:35:07+02:00",
   "features": [
     {
       "type": "Feature",
@@ -12,13 +12,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-8977",
+        "id": "gdacs-8093",
         "type": "storm",
         "title": "Green forest fire notification in Botswana, South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 24/10/2026, a forest fire started in Botswana, South Africa,  until 26/10/2026.",
-        "updated": "2026-10-27T05:39:26+02:00"
+        "updated": "2026-10-27T13:35:07+02:00"
       }
     },
     {
@@ -31,13 +31,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-4288",
+        "id": "gdacs-6344",
         "type": "storm",
         "title": "Green forest fire notification in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 21/10/2026, a forest fire started in South Africa,  until 26/10/2026.",
-        "updated": "2026-10-27T05:39:26+02:00"
+        "updated": "2026-10-27T13:35:07+02:00"
       }
     },
     {
@@ -50,13 +50,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-4288",
+        "id": "gdacs-6344",
         "type": "storm",
         "title": "Green forest fire notification in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 20/10/2026, a forest fire started in South Africa,  until 26/10/2026.",
-        "updated": "2026-10-27T05:39:26+02:00"
+        "updated": "2026-10-27T13:35:07+02:00"
       }
     },
     {
@@ -69,13 +69,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-9053",
+        "id": "gdacs-7905",
         "type": "storm",
         "title": "Green forest fire notification in South Africa, Mozambique",
         "area": "South Africa",
         "severity": "WATCH",
         "description": "On 20/10/2026, a forest fire started in South Africa, Mozambique,  until 26/10/2026.",
-        "updated": "2026-10-27T05:39:26+02:00"
+        "updated": "2026-10-27T13:35:07+02:00"
       }
     }
   ]
