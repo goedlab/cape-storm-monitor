@@ -1,7 +1,7 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-10-27T23:48:27+02:00",
-  "summary": "Cape Town: Overcast",
+  "last_updated": "2026-10-28T05:55:52+02:00",
+  "summary": "Cape Town: Mainly clear",
   "stats": {
     "active_incidents": 4,
     "roads_closed": 0,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-4516",
+      "id": "gdacs-6532",
       "type": "storm",
       "title": "Green forest fire notification in Botswana, South Africa",
       "area": "South Africa",
@@ -20,11 +20,11 @@
       "description": "On 24/10/2026, a forest fire started in Botswana, South Africa,  until 26/10/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033213",
-      "updated": "2026-10-27T23:48:27+02:00",
+      "updated": "2026-10-28T05:55:52+02:00",
       "active": true
     },
     {
-      "id": "gdacs-6879",
+      "id": "gdacs-4828",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -34,25 +34,11 @@
       "description": "On 21/10/2026, a forest fire started in South Africa,  until 26/10/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033240",
-      "updated": "2026-10-27T23:48:27+02:00",
+      "updated": "2026-10-28T05:55:52+02:00",
       "active": true
     },
     {
-      "id": "gdacs-4791",
-      "type": "storm",
-      "title": "Green forest fire notification in South Africa, Mozambique",
-      "area": "South Africa",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "severity": "WATCH",
-      "description": "On 20/10/2026, a forest fire started in South Africa, Mozambique,  until 26/10/2026.",
-      "source": "GDACS",
-      "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033215",
-      "updated": "2026-10-27T23:48:27+02:00",
-      "active": true
-    },
-    {
-      "id": "gdacs-6879",
+      "id": "gdacs-4828",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -62,13 +48,27 @@
       "description": "On 20/10/2026, a forest fire started in South Africa,  until 26/10/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033131",
-      "updated": "2026-10-27T23:48:27+02:00",
+      "updated": "2026-10-28T05:55:52+02:00",
+      "active": true
+    },
+    {
+      "id": "gdacs-5885",
+      "type": "storm",
+      "title": "Green forest fire notification in South Africa, Mozambique",
+      "area": "South Africa",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "severity": "WATCH",
+      "description": "On 20/10/2026, a forest fire started in South Africa, Mozambique,  until 26/10/2026.",
+      "source": "GDACS",
+      "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033215",
+      "updated": "2026-10-28T05:55:52+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-4516",
+      "id": "m-gdacs-6532",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -76,7 +76,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-6879",
+      "id": "m-gdacs-4828",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -84,19 +84,19 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-4791",
+      "id": "m-gdacs-4828",
+      "type": "storm",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "label": "Green forest fire notification in South Africa",
+      "severity": "WATCH"
+    },
+    {
+      "id": "m-gdacs-5885",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
       "label": "Green forest fire notification in South Africa, Mozambique",
-      "severity": "WATCH"
-    },
-    {
-      "id": "m-gdacs-6879",
-      "type": "storm",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "label": "Green forest fire notification in South Africa",
       "severity": "WATCH"
     }
   ],
