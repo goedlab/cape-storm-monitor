@@ -1,7 +1,7 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-10-29T00:09:25+02:00",
-  "summary": "Cape Town: Clear sky · gusts 44 km/h",
+  "last_updated": "2026-10-29T06:19:11+02:00",
+  "summary": "Cape Town: Clear sky",
   "stats": {
     "active_incidents": 4,
     "roads_closed": 0,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-3602",
+      "id": "gdacs-0328",
       "type": "storm",
       "title": "Green forest fire notification in Botswana, South Africa",
       "area": "South Africa",
@@ -20,11 +20,11 @@
       "description": "On 24/10/2026, a forest fire started in Botswana, South Africa,  until 26/10/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033213",
-      "updated": "2026-10-29T00:09:25+02:00",
+      "updated": "2026-10-29T06:19:11+02:00",
       "active": true
     },
     {
-      "id": "gdacs-7856",
+      "id": "gdacs-6782",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -34,25 +34,11 @@
       "description": "On 21/10/2026, a forest fire started in South Africa,  until 26/10/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033240",
-      "updated": "2026-10-29T00:09:25+02:00",
+      "updated": "2026-10-29T06:19:11+02:00",
       "active": true
     },
     {
-      "id": "gdacs-4474",
-      "type": "storm",
-      "title": "Green forest fire notification in South Africa, Mozambique",
-      "area": "South Africa",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "severity": "WATCH",
-      "description": "On 20/10/2026, a forest fire started in South Africa, Mozambique,  until 26/10/2026.",
-      "source": "GDACS",
-      "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033215",
-      "updated": "2026-10-29T00:09:25+02:00",
-      "active": true
-    },
-    {
-      "id": "gdacs-7856",
+      "id": "gdacs-6782",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -62,13 +48,27 @@
       "description": "On 20/10/2026, a forest fire started in South Africa,  until 26/10/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033131",
-      "updated": "2026-10-29T00:09:25+02:00",
+      "updated": "2026-10-29T06:19:11+02:00",
+      "active": true
+    },
+    {
+      "id": "gdacs-6753",
+      "type": "storm",
+      "title": "Green forest fire notification in South Africa, Mozambique",
+      "area": "South Africa",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "severity": "WATCH",
+      "description": "On 20/10/2026, a forest fire started in South Africa, Mozambique,  until 26/10/2026.",
+      "source": "GDACS",
+      "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033215",
+      "updated": "2026-10-29T06:19:11+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-3602",
+      "id": "m-gdacs-0328",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -76,7 +76,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-7856",
+      "id": "m-gdacs-6782",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -84,19 +84,19 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-4474",
+      "id": "m-gdacs-6782",
+      "type": "storm",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "label": "Green forest fire notification in South Africa",
+      "severity": "WATCH"
+    },
+    {
+      "id": "m-gdacs-6753",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
       "label": "Green forest fire notification in South Africa, Mozambique",
-      "severity": "WATCH"
-    },
-    {
-      "id": "m-gdacs-7856",
-      "type": "storm",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "label": "Green forest fire notification in South Africa",
       "severity": "WATCH"
     }
   ],
@@ -145,7 +145,7 @@
       "month": "Apr 2027",
       "precip_label": "near normal",
       "temp_label": "near normal",
-      "precip_mm": 37,
+      "precip_mm": 38,
       "temp_c": 18.0
     }
   ],
