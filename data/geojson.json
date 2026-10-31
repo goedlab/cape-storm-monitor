@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-10-31T13:39:59+02:00",
+  "generated": "2026-10-31T18:47:53+02:00",
   "features": [
     {
       "type": "Feature",
@@ -12,13 +12,13 @@
         ]
       },
       "properties": {
-        "id": "gdacs-1714",
+        "id": "gdacs-8313",
         "type": "storm",
-        "title": "Green forest fire notification in Botswana, South Africa",
+        "title": "Green forest fire notification in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
-        "description": "On 27/10/2026, a forest fire started in Botswana, South Africa,  until 30/10/2026.",
-        "updated": "2026-10-31T13:39:59+02:00"
+        "description": "On 28/10/2026, a forest fire started in South Africa,  until 31/10/2026.",
+        "updated": "2026-10-31T18:47:53+02:00"
       }
     },
     {
@@ -31,13 +31,32 @@
         ]
       },
       "properties": {
-        "id": "gdacs-0772",
+        "id": "gdacs-4814",
+        "type": "storm",
+        "title": "Green forest fire notification in Botswana, South Africa",
+        "area": "South Africa",
+        "severity": "WATCH",
+        "description": "On 27/10/2026, a forest fire started in Botswana, South Africa,  until 31/10/2026.",
+        "updated": "2026-10-31T18:47:53+02:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.4241,
+          -33.9249
+        ]
+      },
+      "properties": {
+        "id": "gdacs-8313",
         "type": "storm",
         "title": "Green forest fire notification in South Africa",
         "area": "South Africa",
         "severity": "WATCH",
-        "description": "On 26/10/2026, a forest fire started in South Africa,  until 30/10/2026.",
-        "updated": "2026-10-31T13:39:59+02:00"
+        "description": "On 26/10/2026, a forest fire started in South Africa,  until 31/10/2026.",
+        "updated": "2026-10-31T18:47:53+02:00"
       }
     }
   ]
