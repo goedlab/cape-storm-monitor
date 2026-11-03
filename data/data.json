@@ -1,30 +1,16 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-11-02T16:43:42+02:00",
-  "summary": "Cape Town: Overcast · gusts 67 km/h",
+  "last_updated": "2026-11-03T02:28:39+02:00",
+  "summary": "Cape Town: Clear sky",
   "stats": {
-    "active_incidents": 4,
+    "active_incidents": 3,
     "roads_closed": 0,
     "shelters_open": 0,
-    "areas_affected": 2
+    "areas_affected": 1
   },
   "incidents": [
     {
-      "id": "om-wind-cape-town",
-      "type": "wind",
-      "title": "Strong Wind Advisory – Cape Town (67 km/h gusts)",
-      "area": "Cape Town",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "severity": "WATCH",
-      "description": "Wind gusts of 67 km/h at Cape Town. Secure loose items and avoid exposed areas.",
-      "source": "Open-Meteo",
-      "source_url": "https://open-meteo.com",
-      "updated": "2026-11-02T16:43:38+02:00",
-      "active": true
-    },
-    {
-      "id": "gdacs-6335",
+      "id": "gdacs-2138",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -34,11 +20,11 @@
       "description": "On 28/10/2026, a forest fire started in South Africa,  until 01/11/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033369",
-      "updated": "2026-11-02T16:43:42+02:00",
+      "updated": "2026-11-03T02:28:39+02:00",
       "active": true
     },
     {
-      "id": "gdacs-9664",
+      "id": "gdacs-7717",
       "type": "storm",
       "title": "Green forest fire notification in Botswana, South Africa",
       "area": "South Africa",
@@ -48,35 +34,27 @@
       "description": "On 27/10/2026, a forest fire started in Botswana, South Africa,  until 31/10/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033307",
-      "updated": "2026-11-02T16:43:42+02:00",
+      "updated": "2026-11-03T02:28:39+02:00",
       "active": true
     },
     {
-      "id": "gdacs-6335",
+      "id": "gdacs-2138",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
       "lat": -33.9249,
       "lng": 18.4241,
       "severity": "WATCH",
-      "description": "On 26/10/2026, a forest fire started in South Africa,  until 01/11/2026.",
+      "description": "On 26/10/2026, a forest fire started in South Africa,  until 02/11/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033326",
-      "updated": "2026-11-02T16:43:42+02:00",
+      "updated": "2026-11-03T02:28:39+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-om-wind-cape-town",
-      "type": "wind",
-      "lat": -33.9249,
-      "lng": 18.4241,
-      "label": "Strong Wind Advisory – Cape Town (67 km/h gusts)",
-      "severity": "WATCH"
-    },
-    {
-      "id": "m-gdacs-6335",
+      "id": "m-gdacs-2138",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -84,7 +62,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-9664",
+      "id": "m-gdacs-7717",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -92,7 +70,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-6335",
+      "id": "m-gdacs-2138",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
