@@ -1,16 +1,44 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-11-05T07:01:50+02:00",
-  "summary": "Cape Town: Mainly clear",
+  "last_updated": "2026-11-05T15:57:59+02:00",
+  "summary": "Cape Town: Partly cloudy · gusts 66 km/h · alerts: Ceres",
   "stats": {
-    "active_incidents": 2,
+    "active_incidents": 4,
     "roads_closed": 0,
     "shelters_open": 0,
-    "areas_affected": 1
+    "areas_affected": 3
   },
   "incidents": [
     {
-      "id": "gdacs-6699",
+      "id": "om-wind-cape-town",
+      "type": "wind",
+      "title": "Strong Wind Advisory – Cape Town (65 km/h gusts)",
+      "area": "Cape Town",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "severity": "WATCH",
+      "description": "Wind gusts of 65 km/h at Cape Town. Secure loose items and avoid exposed areas.",
+      "source": "Open-Meteo",
+      "source_url": "https://open-meteo.com",
+      "updated": "2026-11-05T15:57:56+02:00",
+      "active": true
+    },
+    {
+      "id": "om-wind-ceres",
+      "type": "wind",
+      "title": "Strong Wind Advisory – Ceres (66 km/h gusts)",
+      "area": "Ceres",
+      "lat": -33.3667,
+      "lng": 19.3167,
+      "severity": "WATCH",
+      "description": "Wind gusts of 66 km/h at Ceres. Secure loose items and avoid exposed areas.",
+      "source": "Open-Meteo",
+      "source_url": "https://open-meteo.com",
+      "updated": "2026-11-05T15:57:56+02:00",
+      "active": true
+    },
+    {
+      "id": "gdacs-3784",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -20,11 +48,11 @@
       "description": "On 28/10/2026, a forest fire started in South Africa,  until 01/11/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033369",
-      "updated": "2026-11-05T07:01:50+02:00",
+      "updated": "2026-11-05T15:57:59+02:00",
       "active": true
     },
     {
-      "id": "gdacs-6699",
+      "id": "gdacs-3784",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -34,13 +62,29 @@
       "description": "On 26/10/2026, a forest fire started in South Africa,  until 04/11/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033326",
-      "updated": "2026-11-05T07:01:50+02:00",
+      "updated": "2026-11-05T15:57:59+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-6699",
+      "id": "m-om-wind-cape-town",
+      "type": "wind",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "label": "Strong Wind Advisory – Cape Town (65 km/h gusts)",
+      "severity": "WATCH"
+    },
+    {
+      "id": "m-om-wind-ceres",
+      "type": "wind",
+      "lat": -33.3667,
+      "lng": 19.3167,
+      "label": "Strong Wind Advisory – Ceres (66 km/h gusts)",
+      "severity": "WATCH"
+    },
+    {
+      "id": "m-gdacs-3784",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -48,7 +92,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-6699",
+      "id": "m-gdacs-3784",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -64,45 +108,45 @@
   "seasonal_outlook": [
     {
       "month": "Dec 2026",
-      "precip_label": "wetter than normal",
+      "precip_label": "drier than normal",
       "temp_label": "near normal",
-      "precip_mm": 32,
-      "temp_c": 20.6
+      "precip_mm": 11,
+      "temp_c": 21.7
     },
     {
       "month": "Jan 2027",
-      "precip_label": "wetter than normal",
-      "temp_label": "cooler than normal",
-      "precip_mm": 23,
-      "temp_c": 20.5
+      "precip_label": "drier than normal",
+      "temp_label": "near normal",
+      "precip_mm": 10,
+      "temp_c": 22.8
     },
     {
       "month": "Feb 2027",
-      "precip_label": "near normal",
+      "precip_label": "drier than normal",
       "temp_label": "near normal",
-      "precip_mm": 12,
+      "precip_mm": 4,
       "temp_c": 22.4
     },
     {
       "month": "Mar 2027",
       "precip_label": "wetter than normal",
-      "temp_label": "warmer than normal",
-      "precip_mm": 81,
-      "temp_c": 22.5
+      "temp_label": "near normal",
+      "precip_mm": 43,
+      "temp_c": 20.8
     },
     {
       "month": "Apr 2027",
-      "precip_label": "near normal",
-      "temp_label": "near normal",
-      "precip_mm": 41,
-      "temp_c": 17.9
+      "precip_label": "drier than normal",
+      "temp_label": "warmer than normal",
+      "precip_mm": 21,
+      "temp_c": 19.7
     },
     {
       "month": "May 2027",
       "precip_label": "drier than normal",
       "temp_label": "near normal",
-      "precip_mm": 0,
-      "temp_c": 16.6
+      "precip_mm": 7,
+      "temp_c": 15.7
     }
   ],
   "event": null,
