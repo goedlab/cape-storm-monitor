@@ -1,7 +1,7 @@
 {
-  "status": "WATCH",
-  "last_updated": "2026-11-09T17:07:45+02:00",
-  "summary": "Cape Town: Partly cloudy · gusts 42 km/h",
+  "status": "ALL_CLEAR",
+  "last_updated": "2026-11-10T03:09:48+02:00",
+  "summary": "Cape Town: Mainly clear · gusts 49 km/h",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -80,7 +80,7 @@
       "precip_label": "drier than normal",
       "temp_label": "near normal",
       "precip_mm": 7,
-      "temp_c": 16.4
+      "temp_c": 16.5
     }
   ],
   "event": null,
