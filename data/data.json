@@ -1,7 +1,7 @@
 {
   "status": "ALL_CLEAR",
-  "last_updated": "2026-11-11T15:31:33+02:00",
-  "summary": "Cape Town: Overcast · gusts 45 km/h",
+  "last_updated": "2026-11-12T02:01:28+02:00",
+  "summary": "Cape Town: Clear sky · gusts 53 km/h",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -79,8 +79,8 @@
       "month": "May 2027",
       "precip_label": "drier than normal",
       "temp_label": "near normal",
-      "precip_mm": 9,
-      "temp_c": 16.3
+      "precip_mm": 12,
+      "temp_c": 16.1
     }
   ],
   "event": null,
