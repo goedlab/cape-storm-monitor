@@ -1,7 +1,7 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-11-17T17:29:02+02:00",
-  "summary": "Cape Town: Clear sky · gusts 67 km/h",
+  "last_updated": "2026-11-18T02:30:19+02:00",
+  "summary": "Cape Town: Clear sky",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-2723",
+      "id": "gdacs-1842",
       "type": "flood",
       "title": "Green flood alert in South Africa",
       "area": "South Africa",
@@ -20,13 +20,13 @@
       "description": "On 15/11/2026, a flood started in South Africa, lasting until 17/11/2026 (last update). The flood caused 0 deaths and 0 displaced .",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=FL&eventid=1104286",
-      "updated": "2026-11-17T17:29:02+02:00",
+      "updated": "2026-11-18T02:30:19+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-2723",
+      "id": "m-gdacs-1842",
       "type": "flood",
       "lat": -33.9249,
       "lng": 18.4241,
