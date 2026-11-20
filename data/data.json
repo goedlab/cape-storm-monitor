@@ -1,7 +1,7 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-11-20T02:17:17+02:00",
-  "summary": "Cape Town: Overcast · gusts 52 km/h",
+  "last_updated": "2026-11-20T16:52:14+02:00",
+  "summary": "Cape Town: Clear sky · gusts 44 km/h",
   "stats": {
     "active_incidents": 2,
     "roads_closed": 0,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-2684",
+      "id": "gdacs-0592",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -20,11 +20,11 @@
       "description": "On 17/11/2026, a forest fire started in South Africa,  until 18/11/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033939",
-      "updated": "2026-11-20T02:17:17+02:00",
+      "updated": "2026-11-20T16:52:14+02:00",
       "active": true
     },
     {
-      "id": "gdacs-0007",
+      "id": "gdacs-2263",
       "type": "flood",
       "title": "Green flood alert in South Africa",
       "area": "South Africa",
@@ -34,13 +34,13 @@
       "description": "On 15/11/2026, a flood started in South Africa, lasting until 17/11/2026 (last update). The flood caused 0 deaths and 0 displaced .",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=FL&eventid=1104286",
-      "updated": "2026-11-20T02:17:17+02:00",
+      "updated": "2026-11-20T16:52:14+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-2684",
+      "id": "m-gdacs-0592",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
@@ -48,7 +48,7 @@
       "severity": "WATCH"
     },
     {
-      "id": "m-gdacs-0007",
+      "id": "m-gdacs-2263",
       "type": "flood",
       "lat": -33.9249,
       "lng": 18.4241,
