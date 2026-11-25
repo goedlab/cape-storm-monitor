@@ -1,7 +1,7 @@
 {
   "status": "WATCH",
-  "last_updated": "2026-11-24T18:56:37+02:00",
-  "summary": "Cape Town: Clear sky · gusts 59 km/h",
+  "last_updated": "2026-11-25T03:53:46+02:00",
+  "summary": "Cape Town: Clear sky · gusts 47 km/h",
   "stats": {
     "active_incidents": 1,
     "roads_closed": 0,
@@ -10,7 +10,7 @@
   },
   "incidents": [
     {
-      "id": "gdacs-0282",
+      "id": "gdacs-7101",
       "type": "storm",
       "title": "Green forest fire notification in South Africa",
       "area": "South Africa",
@@ -20,13 +20,13 @@
       "description": "On 18/11/2026, a forest fire started in South Africa,  until 20/11/2026.",
       "source": "GDACS",
       "source_url": "http://www.gdacs.org/report.aspx?eventtype=WF&eventid=1033985",
-      "updated": "2026-11-24T18:56:37+02:00",
+      "updated": "2026-11-25T03:53:46+02:00",
       "active": true
     }
   ],
   "map_markers": [
     {
-      "id": "m-gdacs-0282",
+      "id": "m-gdacs-7101",
       "type": "storm",
       "lat": -33.9249,
       "lng": 18.4241,
